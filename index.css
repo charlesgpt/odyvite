@@ -1,0 +1,229 @@
+.bg-icon2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.back-button-icon3,
+.settings-button-icon3 {
+  position: absolute;
+  top: 0;
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.back-button-icon3:hover,
+.settings-button-icon3:hover {
+  transform: scale(1.1);
+}
+.back-button-icon3 {
+  left: 0;
+}
+.settings-button-icon3 {
+  right: 0;
+}
+.title-scroll {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 160px);
+  width: 320px;
+  height: 80px;
+  object-fit: cover;
+  z-index: -1;
+}
+.welcome {
+  position: absolute;
+  top: 18px;
+  left: calc(50% - 70px);
+  font-family: "Augusta", serif;
+  font-size: 36px;
+}
+.title-buttons1 {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  width: 480px;
+  height: 72px;
+}
+.start-button-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.start-button {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.start-button:hover {
+  transform: scale(1.05);
+}
+.profile1 {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 28px);
+}
+.user-icon {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 32px);
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+}
+.profile-parent {
+  position: absolute;
+  top: 0;
+  left: -38px;
+  width: 128px;
+  height: 80px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.profile-parent:hover {
+  transform: scale(1.1);
+}
+.shop1 {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+.shop-parent {
+  position: absolute;
+  top: 0;
+  left: 70px;
+  width: 128px;
+  height: 80px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.shop-parent:hover {
+  transform: scale(1.1);
+}
+.quests {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 26px);
+}
+.quest-icom-parent {
+  position: absolute;
+  top: 0;
+  left: 178px;
+  width: 128px;
+  height: 80px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.quest-icom-parent:hover {
+  transform: scale(1.1);
+}
+.leaderboard {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 54px);
+  display: flex;
+  align-items: center;
+  width: 108px;
+}
+.trophy-icon {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 32px);
+  width: 64.6px;
+  height: 64px;
+  object-fit: cover;
+}
+.leaderboard-parent {
+  position: absolute;
+  top: 0;
+  left: 286px;
+  width: 128px;
+  height: 80px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.leaderboard-parent:hover {
+  transform: scale(1.1);
+}
+.menu-bar {
+  position: absolute;
+  top: 880px;
+  left: calc(50% - 187px);
+  width: 375px;
+  height: 64px;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+  font-family: var(--font-gemfont-one);
+}
+.main-menu {
+  width: 500px;
+  max-width: 100%;
+  height: 1000px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-13xl);
+  color: var(--color-saddlebrown-200);
+  font-family: var(--font-augusta);
+  position: relative;
+}
+
+/* Volume Controls Panel */
+.volume-controls {
+  position: absolute;
+  top: 80px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #ffd700;
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 100;
+  display: none;
+}
+
+.volume-control {
+  margin-bottom: 15px;
+}
+
+.volume-control:last-child {
+  margin-bottom: 0;
+}
+
+.volume-control label {
+  display: block;
+  color: #ffd700;
+  margin-bottom: 8px;
+  font-family: "GemFont One", sans-serif;
+  font-size: 16px;
+}
+
+.volume-control input[type="range"] {
+  width: 100%;
+  height: 8px;
+  background: #4a4a4a;
+  border-radius: 4px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.volume-control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #ffd700;
+  border-radius: 50%;
+  cursor: pointer;
+}

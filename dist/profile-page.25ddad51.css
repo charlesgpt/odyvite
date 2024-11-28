@@ -1,0 +1,493 @@
+.bg-icon {
+  object-fit: cover;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  margin: 0 !important;
+}
+
+.title-scroll-icon {
+  object-fit: cover;
+  width: 320px;
+  height: 80px;
+  display: none;
+  position: relative;
+}
+
+.profile {
+  color: inherit;
+  z-index: 3;
+  text-decoration: none;
+  position: relative;
+}
+
+.profile-page-inner, .title-scroll-parent {
+  flex-direction: row;
+  align-items: flex-start;
+  display: flex;
+}
+
+.title-scroll-parent {
+  padding: var(--padding-3xl) var(--padding-74xl) var(--padding-xl) 94px;
+  z-index: 2;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: flex-start;
+}
+
+.profile-page-inner {
+  padding: 0 var(--padding-5xs) 0 var(--padding-sm);
+  justify-content: flex-end;
+}
+
+.panel-short-1-1-icon, .profile-panel-icon {
+  object-fit: cover;
+  width: 500px;
+  position: absolute;
+  left: 0;
+}
+
+.profile-panel-icon {
+  z-index: 1;
+  height: 500px;
+  top: 0;
+  overflow: hidden;
+}
+
+.panel-short-1-1-icon {
+  z-index: 2;
+  height: 682.6px;
+  top: 317px;
+}
+
+.back-button-icon {
+  z-index: 2;
+  width: 72px;
+  height: 72px;
+  top: 20px;
+  left: 10px;
+  overflow: hidden;
+}
+
+.back-button-icon, .coin-icon, .settings-button-icon {
+  object-fit: cover;
+  position: absolute;
+}
+
+.settings-button-icon {
+  z-index: 2;
+  width: 72px;
+  height: 72px;
+  top: 20px;
+  left: 418px;
+  overflow: hidden;
+}
+
+.coin-icon {
+  z-index: 4;
+  width: 48px;
+  height: 48px;
+  top: 452px;
+  left: 178px;
+}
+
+.navigation {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 !important;
+}
+
+.rhaenerys {
+  font-size: inherit;
+  z-index: 3;
+  margin: 0;
+  font-family: inherit;
+  font-weight: 400;
+  position: relative;
+}
+
+.rhaenerys-wrapper {
+  padding: 0 var(--padding-74xl) var(--padding-7xs) var(--padding-81xl);
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.coin-icon1 {
+  z-index: 3;
+  min-width: 89px;
+  display: inline-block;
+  position: relative;
+}
+
+.coin-icon-wrapper {
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0 0 0 40px;
+  display: flex;
+}
+
+.total-coin-balance {
+  width: 124px;
+  font-size: var(--font-size-base);
+  font-family: var(--font-gemfont-one);
+  color: #744a0fbf;
+  text-align: center;
+  z-index: 3;
+  justify-content: center;
+  align-items: center;
+  margin-top: -2px;
+  display: flex;
+  position: relative;
+}
+
+.frame-parent {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.battle-icon, .player-stats-inner {
+  justify-content: center;
+  display: flex;
+}
+
+.player-stats-inner {
+  padding: 0 var(--padding-xl) 7px 31px;
+  flex-direction: row;
+  align-self: stretch;
+  align-items: flex-start;
+}
+
+.battle-icon {
+  z-index: 3;
+  align-items: center;
+  width: 57px;
+  position: relative;
+}
+
+.p {
+  margin: 0;
+}
+
+.battles-won {
+  font-size: var(--font-size-base);
+  line-height: 12px;
+  font-family: var(--font-gemfont-one);
+  color: var(--color-saddlebrown-100);
+  text-align: left;
+  z-index: 3;
+  position: relative;
+}
+
+.battle-icon-parent {
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--gap-12xs);
+  flex-direction: column;
+  display: flex;
+}
+
+.successful-coin-flips-container {
+  font-size: var(--font-size-base);
+  line-height: 12px;
+  font-family: var(--font-gemfont-one);
+  color: var(--color-saddlebrown-100);
+  text-align: left;
+  z-index: 4;
+  position: relative;
+}
+
+.frame-group, .frame-wrapper, .player-stats-child {
+  flex-direction: row;
+  align-items: flex-start;
+  display: flex;
+}
+
+.frame-group {
+  justify-content: space-between;
+  gap: var(--gap-xl);
+  flex: 1;
+  max-width: 100%;
+}
+
+.frame-wrapper, .player-stats-child {
+  justify-content: flex-start;
+}
+
+.player-stats-child {
+  padding: 0 0 var(--padding-9xs) var(--padding-4xs);
+  box-sizing: border-box;
+  text-align: center;
+  max-width: 100%;
+  font-size: var(--font-size-13xl);
+  align-self: stretch;
+}
+
+.frame-wrapper {
+  padding: 0 var(--padding-smi) 0 var(--padding-4xs);
+}
+
+.helmet-icon1 {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 50px);
+}
+
+.trading-power-txt-container {
+  line-break: anywhere;
+  width: 100%;
+}
+
+.trading-power {
+  z-index: 1;
+  align-items: center;
+  width: 53px;
+  height: 24px;
+  line-height: 12px;
+  display: flex;
+  position: absolute;
+  top: 99px;
+  left: calc(50% - 26px);
+}
+
+.item {
+  border-radius: var(--br-5xs);
+  background-color: var(--color-gray-100);
+  z-index: 3;
+  height: 128px;
+  font-size: var(--font-size-base);
+  color: var(--color-saddlebrown-100);
+  font-family: var(--font-gemfont-one);
+  flex-shrink: 0;
+  align-self: stretch;
+  position: relative;
+  overflow: hidden;
+}
+
+.frame-div {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 81px;
+  display: flex;
+}
+
+.items {
+  font-size: inherit;
+  z-index: 3;
+  min-width: 85px;
+  margin: 0;
+  font-family: inherit;
+  font-weight: 400;
+  display: inline-block;
+  position: relative;
+}
+
+.items-wrapper {
+  padding: 0 var(--padding-3xs) 0 var(--padding-2xs);
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.shield-icon {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.loss-protection {
+  flex: 1;
+  line-height: 12px;
+  position: relative;
+}
+
+.loss-protection-wrapper {
+  padding: 0 var(--padding-mini) 0 var(--padding-base);
+  flex-direction: row;
+  align-self: stretch;
+  align-items: flex-start;
+  margin-top: -1px;
+  display: flex;
+}
+
+.item1, .loss-protection-wrapper, .protection-items {
+  justify-content: flex-start;
+}
+
+.item1 {
+  border-radius: var(--br-5xs);
+  background-color: var(--color-gray-100);
+  padding: 0 0 var(--padding-8xs);
+  z-index: 3;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-start;
+  display: flex;
+  overflow: hidden;
+}
+
+.protection-items {
+  align-self: stretch;
+  gap: var(--gap-xl);
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--color-saddlebrown-100);
+  font-family: var(--font-gemfont-one);
+  flex-direction: row;
+}
+
+.frame-parent2, .frame-wrapper1, .protection-items {
+  align-items: flex-start;
+  display: flex;
+}
+
+.frame-parent2 {
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.frame-wrapper1 {
+  padding: 0 var(--padding-11xs) 0 0;
+  text-align: left;
+  font-size: var(--font-size-17xl);
+  flex-direction: row;
+  justify-content: flex-end;
+  align-self: stretch;
+}
+
+.frame-container, .frame-parent1 {
+  justify-content: flex-start;
+  display: flex;
+}
+
+.frame-parent1 {
+  align-items: flex-end;
+  gap: var(--gap-14xl);
+  flex-direction: column;
+  flex: 1;
+  min-width: 144px;
+}
+
+.frame-container {
+  align-self: stretch;
+  align-items: flex-start;
+  gap: var(--gap-xl);
+  text-align: center;
+  font-size: var(--font-size-13xl);
+  flex-direction: row;
+}
+
+.scroll-content {
+  background-color: #492b0099;
+  border-radius: 2px;
+  flex-shrink: 0;
+  width: 100px;
+  height: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-wheel {
+  background-color: var(--color-gray-200);
+  padding: var(--padding-11xs);
+  z-index: 3;
+  border-radius: 4px;
+  flex-direction: row;
+  flex: 1;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.player-stats, .profile-page, .scroll, .scroll-wheel {
+  justify-content: flex-start;
+  display: flex;
+}
+
+.scroll {
+  flex-direction: row;
+  align-self: stretch;
+  align-items: flex-start;
+  padding: 0 90px 0 96px;
+}
+
+.player-stats, .profile-page {
+  flex-direction: column;
+}
+
+.player-stats {
+  align-self: stretch;
+  align-items: flex-start;
+  gap: var(--gap-4xs);
+  max-width: 100%;
+  font-size: var(--font-size-17xl);
+}
+
+.profile-page {
+  background-color: var(--color-white);
+  width: 100%;
+  padding: var(--padding-base) 82px 99px 76px;
+  box-sizing: border-box;
+  letter-spacing: normal;
+  text-align: left;
+  line-height: normal;
+  font-size: var(--font-size-13xl);
+  color: var(--color-saddlebrown-200);
+  font-family: var(--font-augusta);
+  align-items: flex-end;
+  gap: 305px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (width <= 450px) {
+  .rhaenerys-wrapper, .title-scroll-parent {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+
+  .frame-group {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .frame-div {
+    flex: 1;
+  }
+
+  .frame-container {
+    flex-wrap: wrap;
+  }
+
+  .profile-page, .scroll {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+
+  .profile-page {
+    gap: 152px;
+  }
+}
+/*# sourceMappingURL=profile-page.25ddad51.css.map */

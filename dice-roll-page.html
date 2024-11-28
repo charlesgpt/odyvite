@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./dice-roll-page.css" />
+
+    <style>
+      @font-face {
+        font-family: "GemFont One";
+        src: url("/GemFont One.ttf");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Augusta";
+        src: url("/Augusta.ttf");
+        font-weight: 400;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="diceroll-page">
+      <!-- Audio elements -->
+      <div class="market-state-panel" style="display: none;">
+        <img class="panel-small-1" alt="" src="/panel-short-1-1@2x.png" />
+
+        <img class="button-icon2" alt="" src="/button@2x.png" />
+
+        <div class="continue">Continue</div>
+        <div class="market-desription">
+          <div class="prices-are-volatile-container">
+            <p class="prices-are-volatile">Prices are volatile!</p>
+            <p class="prices-are-volatile">The Market is uncertain and</p>
+            <p class="prices-are-volatile">moving sideways</p>
+          </div>
+          <div class="market-state-revealed">Market State Revealed!</div>
+        </div>
+        <div class="market-state-icon">
+          <img class="bear-icon" alt="" src="/bear@2x.png" />
+          <div class="bear-market">BEAR MARKET</div>
+        </div>
+      </div>
+
+      <div class="market-state-overlay" style="display: none;">
+        <img class="bg-icon2" alt="" src="/bg@2x.png" />
+      </div>
+
+      <audio id="background-music" src="/sound.mp3" loop></audio>
+      <audio id="click-sound" src="/click.mp3" preload="auto"></audio>
+
+
+      <div class="volume-controls" style="display: none;">
+        <div class="volume-slider">
+          <label for="music-volume">Music Volume</label>
+          <input type="range" id="music-volume" min="0" max="100" value="50">
+        </div>
+        <div class="volume-slider">
+          <label for="effects-volume">Effects Volume</label>
+          <input type="range" id="effects-volume" min="0" max="100" value="50">
+        </div>
+      </div>
+
+      <img
+        class="platform-05-1-icon"
+        alt=""
+        src="/platform05-1@2x.png"
+      />
+
+      <div class="cast-the-oracles-container">
+        <p class="cast-the-oracles">CAST THE ORACLE'S</p>
+        <p class="cast-the-oracles">BONES</p>
+      </div>
+
+      <div class="dice-container">
+        <div class="dice">
+          <!-- Face 1 -->
+          <div class="dice-face front">
+            <div class="dice-dot"></div>
+          </div>
+          <!-- Face 2 -->
+          <div class="dice-face back">
+            <div class="dice-dot"></div>
+            <div class="dice-dot"></div>
+          </div>
+          <!-- Face 3 -->
+          <div class="dice-face right">
+            <div class="dice-dot"></div>
+            <div class="dice-dot"></div>
+            <div class="dice-dot"></div>
+          </div>
+          <!-- Face 4 -->
+          <div class="dice-face left">
+            <div class="dice-dot"></div>
+            <div class="dice-dot"></div>
+            <div class="dice-dot"></div>
+            <div class="dice-dot"></div>
+          </div>
+          <!-- Face 5 -->
+          <div class="dice-face top">
+            <div class="dice-dot"></div>
+            <div class="dice-dot"></div>
+            <div class="dice-dot"></div>
+            <div class="dice-dot"></div>
+            <div class="dice-dot"></div>
+          </div>
+          <!-- Face 6 -->
+          <div class="dice-face bottom">
+            <div class="dice-dot"></div>
+            <div class="dice-dot"></div>
+            <div class="dice-dot"></div>
+            <div class="dice-dot"></div>
+            <div class="dice-dot"></div>
+            <div class="dice-dot"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cast-buton">
+        <img class="button-icon1" alt="" src="/button@2x.png" />
+        <div class="cast-bones" id="roll-dice">cast bones</div>
+      </div>
+
+      <div class="coin-balance1">
+        <img class="coin-icon8" alt="" src="/coin1@2x.png" />
+        <div class="div2" id="gold-amount">100</div>
+      </div>
+
+      <div class="title-buttons">
+        <img
+          class="back-button-icon2"
+          alt=""
+          src="/back-button@2x.png"
+        />
+
+        <img
+          class="settings-button-icon2"
+          alt=""
+          src="/settings-button@2x.png"
+        />
+
+        <img
+          class="title-scroll-icon2"
+          alt=""
+          src="/title-scroll@2x.png"
+        />
+
+        <div class="oracle2">ORACLE</div>
+      </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

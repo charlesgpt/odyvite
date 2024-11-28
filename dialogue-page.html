@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./dialogue-page.css" />
+
+    <style>
+      @font-face {
+        font-family: "GemFont One";
+        src: url("/GemFont One.ttf");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Augusta";
+        src: url("/Augusta.ttf");
+        font-weight: 400;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dialogue-page">
+      <!-- Audio elements -->
+      <audio id="background-music" src="/sound.mp3" loop></audio>
+      <audio id="typing-sound" src="/typing.mp3" preload="auto"></audio>
+      <audio id="click-sound" src="/click.mp3" preload="auto"></audio>
+
+      <img
+        class="throneroom-bg"
+        alt=""
+        src="/throneroom-1@2x.png"
+      />
+      
+      <div class="dialogue-content">
+        <!-- Narrative Text -->
+        <div class="narrative-text">
+          <p class="typing-text">Ten years of war. One night of cunning. Troy burns, but the journey has just begun...</p>
+        </div>
+
+        <!-- Gods Dialogue -->
+        <div class="gods-dialogue">
+          <!-- Athena's Message -->
+          <div class="god-message athena">
+            <div class="god-avatar">
+              <img src="/gods/athena.png" alt="Athena" class="god-image">
+            </div>
+            <div class="message-content">
+              <div class="god-name">Athena</div>
+              <p class="typing-text">Their victory was mine. My wisdom built the horse. My guidance led them to triumph. Now they must prove themselves worthy of such divine favor.</p>
+            </div>
+          </div>
+
+          <!-- Poseidon's Message -->
+          <div class="god-message poseidon right">
+            <div class="god-avatar">
+              <img src="/gods/poseidon.png" alt="Poseidon" class="god-image">
+            </div>
+            <div class="message-content">
+              <div class="god-name">Poseidon</div>
+              <p class="typing-text">Triumph? They desecrated my temples! Their arrogance knows no bounds. The seas shall test their mettle, and we shall see if their pride survives the storms.</p>
+            </div>
+          </div>
+
+          <!-- Zeus's Message -->
+          <div class="god-message zeus">
+            <div class="god-avatar">
+              <img src="/gods/zeus.png" alt="Zeus" class="god-image">
+            </div>
+            <div class="message-content">
+              <div class="god-name">Zeus</div>
+              <p class="typing-text">Enough! The fates themselves shall weigh their worth. Let the mortals cast the bones, and destiny will chart their course through the tempest of chance.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Oracle Message -->
+        <div class="oracle-message">
+          <p class="typing-text">Cast the bones, mortal, and let the Fates determine your path...</p>
+        </div>
+
+        <!-- Continue Button -->
+        <button type="button" class="continue-button">
+          <span>⚔️</span>
+          Cast the Bones
+          <span>⚔️</span>
+        </button>
+      </div>
+    </div>
+
+    <script type="module">
+      import { initializeDialogue, audioManager } from './main.js';
+      
+      // Start initialization when DOM is ready
+      document.addEventListener('DOMContentLoaded', () => {
+        // Start background music on first interaction
+        document.addEventListener('click', () => {
+          audioManager.playBackgroundMusic();
+        }, { once: true });
+
+        // Initialize dialogue
+        initializeDialogue().catch(error => {
+          console.error('Failed to initialize dialogue:', error);
+        });
+      });
+    </script>
+  </body>
+</html>

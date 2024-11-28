@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  --font-gemfont-one: "GemFont One";
+  --font-augusta: Augusta;
+  --font-size-base: 16px;
+  --font-size-17xl: 36px;
+  --font-size-13xl: 32px;
+  --font-size-xl: 20px;
+  --font-size-5xl: 24px;
+  --color-white: #fff;
+  --color-gray-100: #0003;
+  --color-gray-200: #00000040;
+  --color-saddlebrown-100: #744a0f;
+  --color-saddlebrown-200: #492b00;
+  --gap-4xs: 9px;
+  --gap-xl: 20px;
+  --gap-14xl: 33px;
+  --gap-12xs: 1px;
+  --gap-9xs: 4px;
+  --gap-mini: 15px;
+  --padding-base: 16px;
+  --padding-xl: 20px;
+  --padding-11xs: 2px;
+  --padding-8xs: 5px;
+  --padding-mini: 15px;
+  --padding-3xs: 10px;
+  --padding-2xs: 11px;
+  --padding-smi: 13px;
+  --padding-4xs: 9px;
+  --padding-9xs: 4px;
+  --padding-74xl: 93px;
+  --padding-7xs: 6px;
+  --padding-81xl: 100px;
+  --padding-5xs: 8px;
+  --padding-sm: 14px;
+  --padding-3xl: 22px;
+  --padding-76xl: 95px;
+  --padding-54xl: 73px;
+  --padding-5xl: 24px;
+  --padding-smi-7: 12.7px;
+  --padding-15xl: 34px;
+  --padding-16xl: 35px;
+  --br-5xs: 8px;
+}
+/*# sourceMappingURL=dialogue-page.689f5f05.css.map */

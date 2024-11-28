@@ -1,0 +1,173 @@
+.bg-icon2 {
+  object-fit: cover;
+  width: 500px;
+  height: 1000px;
+  position: absolute;
+  top: calc(50% - 500px);
+  left: calc(50% - 250px);
+}
+
+.back-button-icon3, .settings-button-icon3 {
+  object-fit: cover;
+  width: 72px;
+  height: 72px;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+
+.back-button-icon3 {
+  left: 0;
+}
+
+.settings-button-icon3 {
+  right: 0;
+}
+
+.title-scroll-icon3 {
+  object-fit: cover;
+  width: 320px;
+  height: 80px;
+  position: absolute;
+  top: -4px;
+  left: calc(50% - 160px);
+}
+
+.welcome {
+  position: absolute;
+  top: 18px;
+  left: calc(50% - 70px);
+}
+
+.title-buttons1 {
+  width: 480px;
+  height: 72px;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+}
+
+.start-button-container {
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 100px;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.start-button {
+  object-fit: contain;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  transition: transform .2s;
+}
+
+.start-button:hover {
+  transform: scale(1.05);
+}
+
+.profile1 {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 28px);
+}
+
+.user-icon {
+  object-fit: cover;
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 32px);
+}
+
+.profile-parent {
+  width: 128px;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  left: -38px;
+}
+
+.shop1 {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+.shop-parent {
+  width: 128px;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  left: 70px;
+}
+
+.quests {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 26px);
+}
+
+.quest-icom-parent {
+  width: 128px;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  left: 178px;
+}
+
+.leaderboard {
+  align-items: center;
+  width: 108px;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 54px);
+}
+
+.trophy-icon {
+  object-fit: cover;
+  width: 64.6px;
+  height: 64px;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 32px);
+}
+
+.leaderboard-parent {
+  width: 128px;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  left: 286px;
+}
+
+.menu-bar {
+  width: 375px;
+  height: 64px;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+  font-family: var(--font-gemfont-one);
+  position: absolute;
+  top: 880px;
+  left: calc(50% - 187px);
+}
+
+.main-menu {
+  background-color: var(--color-white);
+  text-align: left;
+  width: 500px;
+  max-width: 100%;
+  height: 1000px;
+  font-size: var(--font-size-13xl);
+  color: var(--color-saddlebrown-200);
+  font-family: var(--font-augusta);
+  overflow: hidden;
+}
+/*# sourceMappingURL=index.9e4c6fd2.css.map */

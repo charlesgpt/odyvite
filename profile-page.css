@@ -1,0 +1,643 @@
+.bg-icon {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+  min-height: 100vh;
+  z-index: 0;
+}
+.title-scroll-icon {
+  height: 80px;
+  width: 320px;
+  position: relative;
+  object-fit: cover;
+  display: none;
+}
+.profile {
+  text-decoration: none;
+  position: relative;
+  color: inherit;
+  z-index: 3;
+}
+.profile-page-inner,
+.title-scroll-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.title-scroll-parent {
+  justify-content: flex-start;
+  padding: var(--padding-3xl) var(--padding-74xl) var(--padding-xl) 94px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  z-index: 2;
+}
+.profile-page-inner {
+  justify-content: flex-end;
+  padding: 0 var(--padding-5xs) 0 var(--padding-sm);
+}
+.panel-short-1-1-icon,
+.profile-panel-icon {
+  position: absolute;
+  left: 0;
+  width: min(500px, 100%);
+  max-width: min(500px, 100vw);
+  object-fit: contain;
+}
+.profile-panel-icon {
+  top: 0;
+  height: min(500px, 60vh);
+  overflow: hidden;
+  z-index: 1;
+}
+.panel-short-1-1-icon {
+  width: min(500px, 100%);
+  height: auto;
+  max-height: min(682.6px, calc(100vh - 250px));
+  top: 317px;
+  height: auto;
+  z-index: 2;
+}
+.back-button-icon {
+  top: 20px;
+  left: 10px;
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  z-index: 2;
+}
+.back-button-icon,
+.coin-icon,
+.settings-button-icon {
+  position: absolute;
+  object-fit: cover;
+}
+.settings-button-icon {
+  top: 20px;
+  right: 10px;
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  z-index: 2;
+}
+.coin-icon {
+  top: 452px;
+  left: min(50%, calc(50vw - 24px - env(safe-area-inset-left)));
+  width: 48px;
+  height: 48px;
+  z-index: 4;
+}
+.navigation {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.rhaenerys {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  z-index: 3;
+}
+.rhaenerys-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: min(20px, 3vw) var(--padding-xl) var(--padding-7xs) var(--padding-xl);
+  font-size: min(2.5rem, 8vw);
+  width: 100%;
+}
+.coin-icon1 {
+  position: relative;
+  display: inline-block;
+  min-width: min(89px, 25vw);
+  z-index: 3;
+}
+.coin-icon-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 0 0 40px;
+}
+.total-coin-balance {
+  width: 124px;
+  position: relative;
+  font-size: var(--font-size-base);
+  font-family: var(--font-gemfont-one);
+  color: rgba(116, 74, 15, 0.75);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  margin-top: -2px;
+}
+.frame-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.battle-icon,
+.player-stats-inner {
+  display: flex;
+  justify-content: center;
+}
+.player-stats-inner {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 var(--padding-xl) 7px var(--padding-xl);
+  width: 100%;
+}
+.battle-icon {
+  width: min(57px, 15vw);
+  position: relative;
+  align-items: center;
+  z-index: 3;
+}
+.p {
+  margin: 0;
+}
+.battles-won {
+  position: relative;
+  font-size: var(--font-size-base);
+  line-height: 12px;
+  font-family: var(--font-gemfont-one);
+  color: var(--color-saddlebrown-100);
+  text-align: left;
+  z-index: 3;
+}
+.battle-icon-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-12xs);
+}
+.successful-coin-flips-container {
+  position: relative;
+  font-size: var(--font-size-base);
+  line-height: 12px;
+  font-family: var(--font-gemfont-one);
+  color: var(--color-saddlebrown-100);
+  text-align: left;
+  z-index: 4;
+}
+.frame-group,
+.frame-wrapper,
+.player-stats-child {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.frame-group {
+  flex: 1;
+  justify-content: space-between;
+  max-width: 100%;
+  gap: var(--gap-xl);
+}
+.frame-wrapper,
+.player-stats-child {
+  justify-content: flex-start;
+}
+.player-stats-child {
+  align-self: stretch;
+  padding: 0 0 var(--padding-9xs) var(--padding-4xs);
+  box-sizing: border-box;
+  max-width: 100%;
+  text-align: center;
+  font-size: var(--font-size-13xl);
+}
+.frame-wrapper {
+  padding: 0 var(--padding-smi) 0 var(--padding-4xs);
+}
+.helmet-icon1 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+.trading-power-txt-container {
+  line-break: anywhere;
+  width: 100%;
+}
+.trading-power {
+  position: absolute;
+  top: min(99px, 80%);
+  left: calc(50% - 26px);
+  line-height: 12px;
+  display: flex;
+  align-items: center;
+  width: 53px;
+  height: 24px;
+  z-index: 1;
+}
+.item {
+  align-self: stretch;
+  height: min(128px, 25vw);
+  position: relative;
+  border-radius: var(--br-5xs);
+  background-color: var(--color-gray-100);
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 3;
+  font-size: var(--font-size-base);
+  color: var(--color-saddlebrown-100);
+  font-family: var(--font-gemfont-one);
+}
+.frame-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: min(81px, 10vh);
+}
+.items {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  display: inline-block;
+  min-width: min(85px, 20vw);
+  z-index: 3;
+}
+.items-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-3xs) 0 var(--padding-2xs);
+}
+.shield-icon {
+  width: min(100px, 20vw);
+  height: min(100px, 20vw);
+  position: relative;
+  object-fit: cover;
+}
+.loss-protection {
+  flex: 1;
+  position: relative;
+  line-height: 12px;
+}
+.loss-protection-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 var(--padding-mini) 0 var(--padding-base);
+  margin-top: -1px;
+}
+.item1,
+.loss-protection-wrapper,
+.protection-items {
+  justify-content: flex-start;
+}
+.item1 {
+  flex: 1;
+  border-radius: var(--br-5xs);
+  background-color: var(--color-gray-100);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 0 var(--padding-8xs);
+  z-index: 3;
+}
+.protection-items {
+  align-self: stretch;
+  flex-direction: row;
+  gap: var(--gap-xl);
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--color-saddlebrown-100);
+  font-family: var(--font-gemfont-one);
+}
+.frame-parent2,
+.frame-wrapper1,
+.protection-items {
+  display: flex;
+  align-items: flex-start;
+}
+.frame-parent2 {
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 6px;
+}
+.frame-wrapper1 {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 var(--padding-11xs) 0 0;
+  text-align: left;
+  font-size: var(--font-size-17xl);
+}
+.frame-container,
+.frame-parent1 {
+  display: flex;
+  justify-content: flex-start;
+}
+.frame-parent1 {
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 33px;
+  min-width: min(144px, 40vw);
+}
+.frame-container {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--gap-xl);
+  text-align: center;
+  font-size: var(--font-size-13xl);
+}
+.scroll-content {
+  height: 8px;
+  width: min(100px, 30vw);
+  position: relative;
+  border-radius: 2px;
+  background-color: rgba(73, 43, 0, 0.6);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.scroll-wheel {
+  flex: 1;
+  border-radius: 4px;
+  background-color: var(--color-gray-200);
+  overflow: hidden;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: var(--padding-11xs);
+  z-index: 3;
+}
+.player-stats,
+.profile-page,
+.scroll,
+.scroll-wheel {
+  display: flex;
+  justify-content: flex-start;
+}
+.scroll {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 min(90px, 10vw) 0 min(96px, 10vw);
+}
+.player-stats,
+.profile-page {
+  flex-direction: column;
+}
+.player-stats {
+  align-self: stretch;
+  align-items: flex-start;
+  gap: 9px;
+  max-width: 100%;
+  font-size: var(--font-size-17xl);
+}
+.profile-page {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  align-items: flex-end;
+  padding: var(--padding-base) var(--padding-xl) 99px var(--padding-xl);
+  box-sizing: border-box;
+  gap: min(305px, 25vh);
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  font-size: var(--font-size-13xl);
+  color: var(--color-saddlebrown-200);
+  font-family: var(--font-augusta);
+}
+@media screen and (max-width: 960px) {
+  .rhaenerys-wrapper,
+  .title-scroll-parent {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .frame-group {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap-xs);
+  }
+  .frame-div {
+    flex: 1;
+  }
+  .frame-container {
+    flex-wrap: wrap;
+  }
+  .profile-page,
+  .scroll {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .profile-page {
+    gap: min(152px, 12vh);
+  }
+}
+/* Menu bar styles */
+.menu-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs);
+  gap: var(--gap-xl);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  margin-bottom: 0;
+}
+
+.profile-parent,
+.shop-parent,
+.quest-icom-parent,
+.leaderboard-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-9xs);
+  cursor: pointer;
+  padding: var(--padding-3xs);
+  border-radius: var(--br-5xs);
+  transition: background-color 0.2s;
+  min-width: min(80px, 20vw);
+}
+
+.profile-parent:hover,
+.shop-parent:hover,
+.quest-icom-parent:hover,
+.leaderboard-parent:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.profile1,
+.shop1,
+.quests,
+.leaderboard {
+  color: var(--color-white);
+  font-family: var(--font-gemfont-one);
+  font-size: var(--font-size-base);
+  text-align: center;
+  margin-top: 4px;
+}
+
+.user-icon,
+.trophy-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  margin-bottom: 4px;
+}
+
+.menu-bar > div {
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-bar > div:hover {
+  opacity: 1;
+}
+
+.menu-bar > div.active {
+  opacity: 1;
+}
+
+@media screen and (max-width: 640px) {
+  .menu-bar {
+    padding: var(--padding-2xs) 0;
+  }
+  
+  .menu-bar > div {
+    padding: var(--padding-3xs);
+    min-width: min(60px, 15vw);
+  }
+  
+  .user-icon, .trophy-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .profile-panel-icon,
+  .panel-short-1-1-icon {
+    width: min(100%, calc(100vw - 20px - env(safe-area-inset-left) - env(safe-area-inset-right)));
+  }
+  
+  .frame-parent2 {
+    width: 100%;
+  }
+  
+  .protection-items {
+    flex-direction: column;
+    gap: var(--gap-xs);
+  }
+  
+  .item1 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .frame-container {
+    flex-direction: column;
+  }
+  
+  .frame-parent1 {
+    width: 100%;
+  }
+  
+  .profile-panel-icon {
+    height: min(500px, 42vh);
+  }
+  
+  .panel-short-1-1-icon {
+    max-height: min(682.6px, calc(100vh - 200px));
+  }
+  
+  .rhaenerys-wrapper {
+    font-size: min(2rem, 7vw);
+  }
+  
+  .battle-icon {
+    font-size: min(1.8rem, 6vw);
+  }
+  
+  .items {
+    font-size: min(2rem, 7vw);
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .profile-panel-icon {
+    height: min(500px, 35vh);
+  }
+  
+  .panel-short-1-1-icon {
+    max-height: min(682.6px, calc(100vh - 120px));
+    top: 280px;
+  }
+  
+  .rhaenerys-wrapper {
+    font-size: min(1.8rem, 6vw);
+  }
+  
+  .battle-icon {
+    font-size: min(1.5rem, 5vw);
+  }
+  
+  .items {
+    font-size: min(1.8rem, 6vw);
+  }
+  
+  .menu-bar {
+    padding: var(--padding-3xs) 0;
+  }
+  
+  .menu-bar > div {
+    min-width: min(50px, 12vw);
+  }
+  
+  .user-icon, .trophy-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .profile1,
+  .shop1,
+  .quests,
+  .leaderboard {
+    font-size: min(var(--font-size-base), 3.5vw);
+  }
+}

@@ -1,0 +1,128 @@
+.platform-05-1-icon {
+  object-fit: cover;
+  width: 500px;
+  height: 1000px;
+  position: absolute;
+  top: calc(50% - 500px);
+  left: calc(50% - 250px);
+}
+
+.cast-the-oracles {
+  margin: 0;
+}
+
+.cast-the-oracles-container {
+  text-shadow: 1px 0 #ffcf72, 0 1px #ffcf72, -1px 0 #ffcf72, 0 -1px #ffcf72;
+  font-size: 40px;
+  position: absolute;
+  top: 176px;
+  left: calc(50% - 184px);
+}
+
+.button-icon1 {
+  object-fit: cover;
+  width: 240px;
+  height: 103.5px;
+  position: absolute;
+  top: calc(50% - 52px);
+  left: calc(50% - 120px);
+}
+
+.cast-bones {
+  position: absolute;
+  top: calc(50% - 19px);
+  left: calc(50% - 73px);
+}
+
+.cast-buton {
+  text-align: left;
+  width: 240px;
+  height: 100px;
+  font-family: var(--font-gemfont-one);
+  position: absolute;
+  top: 745px;
+  left: calc(50% - 120px);
+}
+
+.coin-icon8 {
+  object-fit: cover;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: calc(50% - 16px);
+  left: 6px;
+}
+
+.div2 {
+  position: absolute;
+  top: 6px;
+  left: 48px;
+}
+
+.coin-balance1 {
+  border-radius: var(--br-5xs);
+  background-color: var(--color-gray-200);
+  width: 151px;
+  height: 36px;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-gemfont-one);
+  position: absolute;
+  top: 116px;
+  left: calc(50% - 76px);
+  overflow: hidden;
+}
+
+.back-button-icon2, .settings-button-icon2 {
+  object-fit: cover;
+  width: 72px;
+  height: 72px;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+
+.back-button-icon2 {
+  left: 0;
+}
+
+.settings-button-icon2 {
+  right: 0;
+}
+
+.title-scroll-icon2 {
+  object-fit: cover;
+  width: 320px;
+  height: 80px;
+  position: absolute;
+  top: -4px;
+  left: calc(50% - 160px);
+}
+
+.oracle2 {
+  position: absolute;
+  top: 18px;
+  left: calc(50% - 56px);
+}
+
+.title-buttons {
+  text-align: left;
+  width: 480px;
+  height: 72px;
+  color: var(--color-saddlebrown-200);
+  position: absolute;
+  top: 20px;
+  left: 10px;
+}
+
+.diceroll-page {
+  background-color: var(--color-white);
+  text-align: center;
+  width: 100%;
+  height: 1000px;
+  font-size: var(--font-size-13xl);
+  color: var(--color-white);
+  font-family: var(--font-augusta);
+  position: relative;
+  overflow: hidden;
+}
+/*# sourceMappingURL=dice-roll-page.29228ec5.css.map */

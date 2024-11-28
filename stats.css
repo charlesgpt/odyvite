@@ -1,0 +1,178 @@
+.stats-page {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-icon {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.stats-panel {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.stats-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.player-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.dice-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.player-title {
+  font-family: var(--font-augusta);
+  font-size: 32px;
+  color: var(--color-saddlebrown-200);
+  text-align: center;
+}
+
+.player-message {
+  font-family: var(--font-gemfont-one);
+  font-size: 18px;
+  color: var(--color-saddlebrown-100);
+  text-align: center;
+  margin-bottom: 30px;
+  max-width: 80%;
+}
+
+.stats-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+}
+
+.stat-label {
+  font-family: var(--font-gemfont-one);
+  font-size: 16px;
+  color: var(--color-saddlebrown-100);
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-family: var(--font-augusta);
+  font-size: 24px;
+  color: var(--color-saddlebrown-200);
+}
+
+.continue-button {
+  position: relative;
+  width: 240px;
+  height: 80px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.button-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.button-text {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-gemfont-one);
+  font-size: 24px;
+  color: var(--color-white);
+}
+
+/* Hover effects */
+.continue-button:hover {
+  transform: scale(1.05);
+}
+
+.continue-button:active {
+  transform: scale(0.95);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  .stats-panel {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    margin: 20px;
+  }
+
+  .stats-content {
+    padding: 20px;
+  }
+
+  .player-title {
+    font-size: 28px;
+  }
+
+  .player-message {
+    font-size: 16px;
+  }
+
+  .stat-label {
+    font-size: 14px;
+  }
+
+  .stat-value {
+    font-size: 20px;
+  }
+}
