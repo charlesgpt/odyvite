@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./convo.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Autour One:wght@400&display=swap"
+    />
+
+    <style>
+      @font-face {
+        font-family: "Xtra";
+        src: url("/Xtra.ttf");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "GemFont One";
+        src: url("/GemFont One.ttf");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Greek-Freak";
+        src: url("/Greek-Freak.ttf");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Greek";
+        src: url("/Greek-Regular.ttf");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Augusta";
+        src: url("/Augusta.ttf");
+        font-weight: 400;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="convo1">
+      <!-- Background Music -->
+      <audio id="bgMusic" loop>
+        <source src="/music.mp3" type="audio/mpeg">
+      </audio>
+
+      <img
+        class="throneroom-1-icon1"
+        alt=""
+        src="/throneroom-1@2x.png"
+      />
+
+      <img
+        class="soti1111-greek-trireme-sailing-icon1"
+        alt=""
+        src="/soti1111-greek-trireme-sailing-away-from-burning-troy-ar-5191-52affaba18774b91820c6b542e6e16ca@2x.png"
+      />
+
+      <section class="menu">
+        <div class="menu-child"></div>
+        <div class="buttons">
+          <img
+            class="back-button-icon1"
+            loading="lazy"
+            alt=""
+            src="/back-button@2x.png"
+            onclick="history.back()"
+            style="cursor: pointer;"
+          />
+        </div>
+        <div class="prologue1">
+          <img
+            class="title-scroll-icon1"
+            alt=""
+            src="/title-scroll@2x.png"
+          />
+
+          <a class="prologue2">prologue</a>
+        </div>
+        <div class="buttons">
+          <img
+            class="back-button-icon1"
+            loading="lazy"
+            alt=""
+            src="/settings-button@2x.png"
+            onclick="document.getElementById('settings-panel').style.display = 'block'"
+            style="cursor: pointer;"
+          />
+        </div>
+      </section>
+      <img class="panel-small-12" alt="" src="/panel-small-11@2x.png" />
+
+      <section class="title">
+        <div class="ten-years-of-war-one-night-of-wrapper">
+          <div class="ten-years-of">
+            Ten years of war. One night of cunning. Troy burns, but the journey
+            has just begun. The gods are watching, and fate awaits. Will you
+            seize the opportunities ahead and return to Ithaca—safe and rich?
+          </div>
+        </div>
+        <div class="frame-group">
+          <div class="frame-wrapper">
+            <a href="./convoa.html" class="button-group">
+              <img class="button-icon2" alt="" src="/button@2x.png" />
+              <img class="button-icon3" alt="" src="/button@2x.png" />
+              <div class="continue">Continue</div>
+            </a>
+          </div>
+          <footer class="lower-menu">
+            <div class="lower-menu-child"></div>
+            <div class="store">
+              <a href="./referral.html" class="shop">
+                <img
+                  class="shop-icon1"
+                  loading="lazy"
+                  alt=""
+                  src="/shop-icon@2x.png"
+                />
+              </a>
+              <a href="./referral.html" class="referral1">Referral</a>
+            </div>
+            <div class="progress">
+              <a href="./convo3.html" class="button-container">
+                <img class="button-icon2" alt="" src="/button@2x.png" />
+                <img class="button-icon3" alt="" src="/button@2x.png" />
+                <div class="continue">Skip</div>
+              </a>
+              <div class="tasks">
+                <a href="./quest.html" class="mission">
+                  <img
+                    class="quest-icom-icon1"
+                    loading="lazy"
+                    alt=""
+                    src="/quest-icom@2x.png"
+                  />
+                  <div class="quests1">Quests</div>
+                </a>
+              </div>
+              <a href="./leader-board.html" class="leaderboard1">Leaderboard</a>
+            </div>
+            <a href="./leader-board.html" class="achievements">
+              <img
+                class="trophy-icon1"
+                loading="lazy"
+                alt=""
+                src="/trophy-icon@2x.png"
+              />
+            </a>
+          </footer>
+        </div>
+      </section>
+
+      <!-- Settings Panel -->
+      <div id="settings-panel" class="settings-panel" style="display: none;">
+        <div class="settings-content">
+          <h3>Settings</h3>
+          <div class="volume-control">
+            <label for="volume">Music Volume:</label>
+            <input 
+              type="range" 
+              id="volume" 
+              min="0" 
+              max="1" 
+              step="0.1" 
+              value="0.5"
+              onchange="document.getElementById('bgMusic').volume = this.value"
+            >
+          </div>
+          <button onclick="document.getElementById('settings-panel').style.display = 'none'">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Start background music when the page loads
+      window.addEventListener('load', function() {
+        const bgMusic = document.getElementById('bgMusic');
+        bgMusic.volume = 0.5; // Set initial volume
+        bgMusic.play().catch(function(error) {
+          console.log("Audio autoplay failed:", error);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-gemfont-one: "GemFont One";
+  --font-greek-freak: Greek-Freak;
+  --font-autour-one: "Autour One";
+  --font-xtra: Xtra;
+
+  /* font sizes */
+  --font-size-xl: 20px;
+  --font-size-base: 16px;
+  --font-size-17xl: 36px;
+  --font-size-13xl: 32px;
+  --font-size-3xl: 22px;
+  --font-size-3xs: 10px;
+  --font-size-5xl: 24px;
+  --font-size-11xl: 30px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-saddlebrown: #492b00;
+  --color-saddlebrown-100: rgba(116, 73, 15, 0.5);
+  --color-gray-100: rgba(0, 0, 0, 0.6);
+  --color-goldenrod: #e8b81a;
+
+  /* Gaps */
+  --gap-xl: 20px;
+  --gap-smi: 13px;
+  --gap-3xl: 22px;
+
+  /* Paddings */
+  --padding-39xl: 58px;
+  --padding-3xs: 10px;
+  --padding-4xl: 23px;
+  --padding-xl: 20px;
+  --padding-54xl: 73px;
+  --padding-12xs: 1px;
+  --padding-11xs: 2px;
+  --padding-xs: 12px;
+  --padding-mid: 17px;
+  --padding-10xs: 3px;
+  --padding-smi: 13px;
+  --padding-sm: 14px;
+  --padding-base: 16px;
+  --padding-9xs: 4px;
+  --padding-7xs: 6px;
+  --padding-8xl: 27px;
+  --padding-5xl: 24px;
+
+  /* Border radiuses */
+  --br-5xs: 8px;
+  --br-11xs: 2px;
+}

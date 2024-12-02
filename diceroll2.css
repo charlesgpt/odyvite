@@ -1,0 +1,389 @@
+.title-scroll-icon {
+  height: 80px;
+  width: 320px;
+  position: relative;
+  object-fit: cover;
+  display: none;
+}
+.oracle {
+  text-decoration: none;
+  flex: 1;
+  position: relative;
+  color: inherit;
+  text-shadow: 0.2px 0 0#492b00, 0 0.2px 0#492b00, -0.2px 0 0#492b00,
+    0-0.2px 0#492b00;
+  z-index: 2;
+}
+.frame-wrapper,
+.title-scroll-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.title-scroll-parent {
+  flex: 1;
+  justify-content: flex-start;
+  padding: 27px 115px 24px 116px;
+  background-image: url(/title-scroll@2x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  z-index: 1;
+}
+.frame-wrapper {
+  align-self: stretch;
+  justify-content: flex-end;
+  padding: 0 11px 0 12px;
+}
+.frame-child {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.cast-the-bones,
+.frame-group {
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+.cast-the-bones {
+  margin: 0;
+  width: 216.8px;
+  font-size: inherit;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: inherit;
+  align-items: center;
+  flex-shrink: 0;
+}
+.frame-group {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 38px 58px 34.5px;
+  text-align: left;
+  font-size: 32px;
+  color: var(--color-white);
+}
+.dice,
+.frame-parent {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.frame-parent {
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 45px;
+}
+.dice {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 79px 0 78px;
+  box-sizing: border-box;
+}
+.frame-item {
+  height: 323px;
+  width: 500px;
+  position: relative;
+  background: linear-gradient(180deg, transparent, #000);
+  display: none;
+  max-width: 100%;
+}
+.shop-icon {
+  height: 64px;
+  width: 64px;
+  position: relative;
+  object-fit: cover;
+  z-index: 3;
+}
+.shop-icon-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-11xs);
+  text-decoration: none;
+}
+.referral {
+  align-self: stretch;
+  position: relative;
+  z-index: 2;
+  margin-top: -4px;
+  color: white;
+  text-decoration: none;
+}
+.frame-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.quest-icom-icon {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  object-fit: cover;
+  z-index: 2;
+}
+.quests {
+  flex: 1;
+  position: relative;
+  z-index: 3;
+  color: white;
+  text-decoration: none;
+}
+.quests-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 1px 0 var(--padding-11xs);
+  margin-top: -4px;
+}
+.leaderboard {
+  width: 119px;
+  position: absolute;
+  margin: 0 !important;
+  bottom: -16px;
+  left: -27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 119px;
+  z-index: 2;
+  color: white;
+  text-decoration: none;
+}
+.trophy-icon {
+  height: 64px;
+  width: 64.6px;
+  position: relative;
+  object-fit: cover;
+  z-index: 3;
+}
+.leaderboard-parent,
+.rectangle-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.leaderboard-parent {
+  justify-content: flex-start;
+  position: relative;
+}
+.rectangle-parent {
+  align-self: stretch;
+  background: linear-gradient(180deg, transparent, #000);
+  justify-content: space-between;
+  padding: 220px 83px 23px 82px;
+  box-sizing: border-box;
+  max-width: 100%;
+  gap: 20px;
+  z-index: 1;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+  font-family: var(--font-gemfont-one);
+}
+.image-114-icon {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: -25px;
+  max-height: 100%;
+  width: 561px;
+  object-fit: cover;
+}
+.back-button-icon,
+.settings-button-icon {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 1;
+}
+.settings-button-icon {
+  left: 418px;
+}
+.untitled-3-bear-icon {
+  position: absolute;
+  top: 576px;
+  left: 116px;
+  width: 262px;
+  height: 262px;
+  object-fit: cover;
+  z-index: 2;
+}
+.navigation {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.diceroll {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 16px 0 0;
+  box-sizing: border-box;
+  gap: 432.5px;
+  background-image: url(/diceroll@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  font-size: var(--font-size-11xl);
+  color: var(--color-saddlebrown);
+  font-family: var(--font-greek-freak);
+}
+
+/* Spin Animation Styles */
+.spin-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 200px;
+  height: 200px;
+  display: none;
+}
+
+.spin-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.spinning {
+  animation: horizontalSpin 1s linear infinite;
+}
+
+@keyframes horizontalSpin {
+  from {
+    transform: rotateX(360deg);
+  }
+  to {
+    transform: rotateX(0deg);
+  }
+}
+
+/* Settings Panel Styles */
+.settings-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.settings-content {
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 300px;
+  color: white;
+  font-family: var(--font-greek-freak);
+}
+
+.settings-content h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: goldenrod;
+}
+
+.volume-control {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.volume-control input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}
+
+.settings-content button {
+  width: 100%;
+  padding: 10px;
+  background-color: goldenrod;
+  border: none;
+  border-radius: 5px;
+  color: #2a2a2a;
+  font-family: var(--font-greek-freak);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.settings-content button:hover {
+  background-color: #d4af37;
+}
+
+@media screen and (max-width: 450px) {
+  .frame-group,
+  .title-scroll-parent {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .frame-parent {
+    gap: 22px;
+  }
+  .dice {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .leaderboard,
+  .quests,
+  .referral {
+    font-size: var(--font-size-base);
+  }
+  .rectangle-parent {
+    flex-wrap: wrap;
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .diceroll {
+    gap: 216px;
+  }
+  .settings-content {
+    margin: 20px;
+    width: calc(100% - 40px);
+  }
+}

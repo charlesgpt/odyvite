@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global2.css" />
+    <link rel="stylesheet" href="./convoa.css" />
+
+    <style>
+      @font-face {
+        font-family: "Xtra";
+        src: url("/Xtra.ttf");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Greek-Freak";
+        src: url("/Greek-Freak.ttf");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "GemFont One";
+        src: url("/GemFont One.ttf");
+        font-weight: 400;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="convo3">
+      <!-- Background Music -->
+      <audio id="bgMusic" loop>
+        <source src="/music.mp3" type="audio/mpeg">
+      </audio>
+
+      <img
+        class="throneroom-1-icon"
+        alt=""
+        src="/throneroom-1@2x.png"
+      />
+
+      <img
+        class="soti1111-greek-trireme-sailing-icon"
+        alt=""
+        src="/soti1111-greek-trireme-sailing-away-from-burning-troy-ar-5191-52affaba18774b91820c6b542e6e16ca@2x.png"
+      />
+
+      <div class="convo3-child"></div>
+      <div class="convo3-item"></div>
+      <div class="panel-small-1-parent">
+        <img class="panel-small-1" alt="" src="/panel-small-1@2x.png" />
+
+        <div class="let-them-sail-container">
+          <span class="let-them-sail-container1">
+            <p class="let-them-sail">Triumph? They looted my temples.</p>
+            <p class="let-them-sail">They Mocked a God! You call this wisdom? I call it arrogance</p>
+          </span>
+        </div>
+        <div class="athena">Poseidon:</div>
+        <img
+          class="group-child"
+          alt=""
+          src="/group-1707479564-1@2x.png"
+        />
+      </div>
+      <div class="panel-small-1-group">
+        <img class="panel-small-1" alt="" src="/panel-small-1@2x.png" />
+
+        <div class="triumph-they-looted">
+          Their Victory was mine, Poseidon. My wisdom built the horse. My Guidance led them to triumph.
+        </div>
+        <div class="athena">Athena:</div>
+        <img
+          class="group-child"
+          alt=""
+          src="/group-1707479564@2x.png"
+        />
+      </div>
+      <div class="title-buttons">
+        <img
+          class="back-button-icon"
+          alt=""
+          src="/back-button@2x.png"
+          onclick="history.back()"
+          style="cursor: pointer;"
+        />
+
+        <img
+          class="settings-button-icon"
+          alt=""
+          src="/settings-button@2x.png"
+          onclick="document.getElementById('settings-panel').style.display = 'block'"
+          style="cursor: pointer;"
+        />
+
+        <img
+          class="title-scroll-icon"
+          alt=""
+          src="/title-scroll@2x.png"
+        />
+
+        <div class="prologue">prologue</div>
+      </div>
+      <a href="./convob.html" class="button-parent">
+        <img class="button-icon" alt="" src="/button@2x.png" />
+        <img class="button-icon" alt="" src="/button@2x.png" />
+        <div class="skip">Skip</div>
+      </a>
+      <div class="group-parent">
+        <div class="referral-parent">
+          <a href="./referral.html" class="referral">Referral</a>
+          <a href="./referral.html">
+            <img class="shop-icon" alt="" src="/shop-icon@2x.png" />
+          </a>
+        </div>
+        <div class="quest-icom-parent">
+          <a href="./quest.html">
+            <img class="shop-icon" alt="" src="/quest-icom@2x.png" />
+          </a>
+          <a href="./quest.html" class="quests">Quests</a>
+        </div>
+        <div class="leaderboard-parent">
+          <a href="./leader-board.html" class="leaderboard">Leaderboard</a>
+          <a href="./leader-board.html">
+            <img class="trophy-icon" alt="" src="/trophy-icon@2x.png" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Settings Panel -->
+      <div id="settings-panel" class="settings-panel" style="display: none;">
+        <div class="settings-content">
+          <h3>Settings</h3>
+          <div class="volume-control">
+            <label for="volume">Music Volume:</label>
+            <input 
+              type="range" 
+              id="volume" 
+              min="0" 
+              max="1" 
+              step="0.1" 
+              value="0.5"
+              onchange="document.getElementById('bgMusic').volume = this.value"
+            >
+          </div>
+          <button onclick="document.getElementById('settings-panel').style.display = 'none'">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Start background music when the page loads
+      window.addEventListener('load', function() {
+        const bgMusic = document.getElementById('bgMusic');
+        bgMusic.volume = 0.5; // Set initial volume
+        bgMusic.play().catch(function(error) {
+          console.log("Audio autoplay failed:", error);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,377 @@
+.button-icon1 {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 86.3px;
+  object-fit: cover;
+}
+
+.continue {
+  position: absolute;
+  top: 33px;
+  left: 54px;
+  display: flex;
+  align-items: center;
+  width: 92px;
+  color: var(--color-white);
+}
+
+.button {
+  position: absolute;
+  top: 634px;
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 86.3px;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--color-white);
+  font-family: var(--font-greek-freak);
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Rest of the existing styles remain unchanged */
+.image-114-icon1 {
+  position: absolute;
+  top: 0;
+  left: -25px;
+  width: 561px;
+  height: 1000px;
+  object-fit: cover;
+}
+.endownment-child {
+  position: absolute;
+  top: 677px;
+  left: 0;
+  background: linear-gradient(180deg, transparent, #000);
+  width: 500px;
+  height: 323px;
+}
+.back-button-icon2,
+.settings-button-icon2 {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 3;
+  cursor: pointer;
+}
+.back-button-icon2 {
+  top: 20px;
+  left: 10px;
+}
+.settings-button-icon2 {
+  top: 20px;
+  right: 10px;
+}
+.title-scroll-icon2 {
+  position: absolute;
+  top: -4px;
+  left: calc(50% - 160px);
+  width: 320px;
+  height: 80px;
+  object-fit: cover;
+}
+.oracle1 {
+  position: absolute;
+  top: 23px;
+  left: calc(50% - 44px);
+  text-shadow: 0.2px 0 0#492b00, 0 0.2px 0#492b00, -0.2px 0 0#492b00,
+    0-0.2px 0#492b00;
+}
+.title-buttons {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 72px;
+}
+.panel3-1-icon {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 250px);
+  width: 500px;
+  height: 788.6px;
+  object-fit: cover;
+}
+.the-oracle-has {
+  color: var(--color-saddlebrown-200);
+}
+.heads-with-a {
+  color: var(--color-saddlebrown);
+}
+.but-beware-for {
+  white-space: pre-wrap;
+}
+.the-oracle-has-biased-the-sacr {
+  margin: 0;
+  padding: 0 35px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  min-height: 28px;
+  font-size: 14px;
+  text-align: center;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.the-oracle-has-container1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.the-oracle-has-container {
+  position: absolute;
+  top: 40px;
+  left: calc(50% - 187px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 374px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.coin-icon13 {
+  display: inline;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin: 0 4px;
+}
+.coin-icon14 {
+  display: inline;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin: 0 4px;
+}
+.the-divine-challenge-is-thus-parent {
+  position: absolute;
+  top: 160px;
+  left: calc(50% - 187px);
+  width: 374px;
+  height: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.panel3-1-parent {
+  position: absolute;
+  top: 106px;
+  left: calc(50% - 250px);
+  width: 500px;
+  height: 788.6px;
+  font-size: var(--font-size-lg);
+  color: var(--color-saddlebrown-200);
+  font-family: var(--font-xtra);
+}
+.endownment {
+  width: 100%;
+  position: relative;
+  height: 1000px;
+  overflow: hidden;
+  background-image: url(/diceroll@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  text-align: center;
+  font-size: var(--font-size-11xl);
+  color: var(--color-saddlebrown);
+  font-family: var(--font-greek-freak);
+}
+
+/* Sidebar Menu Styles */
+.sidebar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(180deg, transparent, #000);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--padding-201xl) var(--padding-64xl) var(--padding-4xl) var(--padding-63xl);
+  box-sizing: border-box;
+  z-index: 2;
+  font-family: var(--font-gemfont-one);
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+}
+
+.sidebar-child {
+  height: 323px;
+  width: 500px;
+  position: relative;
+  background: linear-gradient(180deg, transparent, #000);
+  display: none;
+  max-width: 100%;
+}
+
+.shop-icon-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-11xs);
+  text-decoration: none;
+}
+
+.shop-icon4 {
+  height: 64px;
+  width: 64px;
+  position: relative;
+  object-fit: cover;
+  z-index: 4;
+}
+
+.referral4 {
+  align-self: stretch;
+  position: relative;
+  z-index: 3;
+  margin-top: -4px;
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.shop-icon-container-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.quest-icom-icon4 {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  object-fit: cover;
+  z-index: 3;
+}
+
+.quests4 {
+  flex: 1;
+  position: relative;
+  z-index: 4;
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.quests-container {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-12xs) 0 var(--padding-11xs);
+  margin-top: -4px;
+}
+
+.leaderboard4 {
+  width: 119px;
+  position: absolute;
+  margin: 0 !important;
+  bottom: -16px;
+  left: -27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 119px;
+  z-index: 3;
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.trophy-icon4 {
+  height: 64px;
+  width: 64.6px;
+  position: relative;
+  object-fit: cover;
+  z-index: 4;
+}
+
+.leaderboard-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+
+/* Settings Panel Styles */
+.settings-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.settings-content {
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 300px;
+  color: var(--color-white);
+  font-family: var(--font-greek-freak);
+}
+
+.settings-content h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--color-goldenrod);
+}
+
+.volume-control {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.volume-control input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}
+
+.settings-content button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--color-goldenrod);
+  border: none;
+  border-radius: 5px;
+  color: #2a2a2a;
+  font-family: var(--font-greek-freak);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.settings-content button:hover {
+  background-color: #d4af37;
+}
+
+@media screen and (max-width: 450px) {
+  .sidebar {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .settings-content {
+    margin: 20px;
+    width: calc(100% - 40px);
+  }
+  .leaderboard4,
+  .quests4,
+  .referral4 {
+    font-size: var(--font-size-base);
+  }
+}

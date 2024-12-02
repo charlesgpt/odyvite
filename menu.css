@@ -1,0 +1,219 @@
+/* Menu Link Styles */
+.referral, .quests1, .leaderboard1 {
+  text-decoration: none;
+  color: var(--color-white);
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+}
+
+.shop-icon-wrapper {
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+}
+
+/* Menu Styles */
+.shop-icon {
+  height: 64px;
+  width: 64px;
+  position: relative;
+  object-fit: cover;
+  z-index: 10;
+}
+
+.shop-icon-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-11xs);
+  text-decoration: none;
+}
+
+.referral {
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  margin: -4px 0 0;
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.frame-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 10;
+}
+
+.quest-icom-icon {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  object-fit: cover;
+  z-index: 10;
+}
+
+.quests1 {
+  margin: 0;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.quests-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-12xs) 0 var(--padding-11xs);
+  margin-top: -4px;
+  position: relative;
+  z-index: 10;
+}
+
+.leaderboard1 {
+  margin: 0 !important;
+  width: 119px;
+  position: absolute;
+  bottom: -16px;
+  left: -27px;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 119px;
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.trophy-icon {
+  height: 64px;
+  width: 64.6px;
+  position: relative;
+  object-fit: cover;
+  z-index: 10;
+}
+
+.inner-options,
+.leaderboard {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.leaderboard {
+  justify-content: flex-start;
+  position: relative;
+  z-index: 10;
+}
+
+.inner-options {
+  flex: 1;
+  justify-content: space-between;
+  max-width: 100%;
+  gap: var(--gap-xl);
+  position: relative;
+  z-index: 10;
+}
+
+.footer {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-54xl) 0 72px;
+  box-sizing: border-box;
+  max-width: 100%;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-gemfont-one);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 10;
+}
+
+/* Settings Panel Styles */
+.settings-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.settings-content {
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 300px;
+  color: var(--color-white);
+  font-family: var(--font-greek-freak);
+}
+
+.settings-content h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--color-goldenrod);
+}
+
+.volume-control {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.volume-control input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}
+
+.settings-content button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--color-goldenrod);
+  border: none;
+  border-radius: 5px;
+  color: #2a2a2a;
+  font-family: var(--font-greek-freak);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.settings-content button:hover {
+  background-color: #d4af37;
+}
+
+@media screen and (max-width: 450px) {
+  .leaderboard1,
+  .quests1,
+  .referral {
+    font-size: var(--font-size-base);
+  }
+  .inner-options {
+    flex-wrap: wrap;
+  }
+  .settings-content {
+    margin: 20px;
+    width: calc(100% - 40px);
+  }
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./convo3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Autour One:wght@400&display=swap"
+    />
+
+    <style>
+      @font-face {
+        font-family: "Xtra";
+        src: url("/Xtra.ttf");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "GemFont One";
+        src: url("/GemFont One.ttf");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Greek-Freak";
+        src: url("/Greek-Freak.ttf");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Greek";
+        src: url("/Greek-Regular.ttf");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Augusta";
+        src: url("/Augusta.ttf");
+        font-weight: 400;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="convo5">
+      <!-- Background Music -->
+      <audio id="bgMusic" loop>
+        <source src="/music.mp3" type="audio/mpeg">
+      </audio>
+
+      <img
+        class="throneroom-1-icon4"
+        alt=""
+        src="/throneroom-1@2x.png"
+      />
+
+      <div class="dialogue">
+        <div class="zeus">Zeus:</div>
+      </div>
+      <div class="dialogue1">
+        <div class="enough-this-will">
+          Enough! This will not be settled by storms or favor. Let the mortals
+          cast the knuckle bones. Fate will decide their journey—and your
+          quarrel.
+        </div>
+      </div>
+      <div class="convo5-inner">
+        <a href="./endownment.html" class="group-div">
+          <img
+            class="button-icon9"
+            loading="lazy"
+            alt=""
+            src="/button@2x.png"
+          />
+
+          <img class="button-icon10" alt="" src="/button-1@2x.png" />
+
+          <div class="cast-bone-dice">Cast Bone Dice</div>
+        </a>
+      </div>
+      <main class="soti1111-greek-trireme-sailing-container">
+        <img
+          class="soti1111-greek-trireme-sailing-icon4"
+          alt=""
+          src="/soti1111-greek-trireme-sailing-away-from-burning-troy-ar-5191-52affaba18774b91820c6b542e6e16ca@2x.png"
+        />
+
+        <img
+          class="panel-small-15"
+          alt=""
+          src="/panel-small-11@2x.png"
+        />
+
+        <img
+          class="user-icon"
+          loading="lazy"
+          alt=""
+          src="/user-icon@2x.png"
+        />
+
+        <section class="back-settings">
+          <div class="back-settings-child"></div>
+          <img
+            class="back-button-icon4"
+            loading="lazy"
+            alt=""
+            src="/back-button@2x.png"
+            onclick="history.back()"
+            style="cursor: pointer;"
+          />
+
+          <img
+            class="settings-button-icon4"
+            loading="lazy"
+            alt=""
+            src="/settings-button@2x.png"
+            onclick="document.getElementById('settings-panel').style.display = 'block'"
+            style="cursor: pointer;"
+          />
+
+          <div class="prologue4">
+            <img
+              class="title-scroll-icon4"
+              alt=""
+              src="/title-scroll@2x.png"
+            />
+
+            <a class="prologue5">prologue</a>
+          </div>
+        </section>
+      </main>
+      <footer class="sidebar">
+        <div class="sidebar-child"></div>
+        <div class="shop-icon-container-parent">
+          <a href="./referral.html" class="shop-icon-container">
+            <img
+              class="shop-icon4"
+              loading="lazy"
+              alt=""
+              src="/shop-icon@2x.png"
+            />
+          </a>
+          <a href="./referral.html" class="referral4">Referral</a>
+        </div>
+        <div class="shop-icon-container-parent">
+          <a href="./quest.html">
+            <img
+              class="quest-icom-icon4"
+              loading="lazy"
+              alt=""
+              src="/quest-icom@2x.png"
+            />
+          </a>
+          <div class="quests-container">
+            <a href="./quest.html" class="quests4">Quests</a>
+          </div>
+        </div>
+        <div class="leaderboard-container">
+          <a href="./leader-board.html" class="leaderboard4">Leaderboard</a>
+          <a href="./leader-board.html">
+            <img
+              class="trophy-icon4"
+              loading="lazy"
+              alt=""
+              src="/trophy-icon@2x.png"
+            />
+          </a>
+        </div>
+      </footer>
+
+      <!-- Settings Panel -->
+      <div id="settings-panel" class="settings-panel" style="display: none;">
+        <div class="settings-content">
+          <h3>Settings</h3>
+          <div class="volume-control">
+            <label for="volume">Music Volume:</label>
+            <input 
+              type="range" 
+              id="volume" 
+              min="0" 
+              max="1" 
+              step="0.1" 
+              value="0.5"
+              onchange="document.getElementById('bgMusic').volume = this.value"
+            >
+          </div>
+          <button onclick="document.getElementById('settings-panel').style.display = 'none'">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Start background music when the page loads
+      window.addEventListener('load', function() {
+        const bgMusic = document.getElementById('bgMusic');
+        bgMusic.volume = 0.5; // Set initial volume
+        bgMusic.play().catch(function(error) {
+          console.log("Audio autoplay failed:", error);
+        });
+      });
+    </script>
+  </body>
+</html>

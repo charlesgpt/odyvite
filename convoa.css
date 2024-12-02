@@ -1,0 +1,315 @@
+.throneroom-1-icon {
+  position: absolute;
+  top: calc(50% - 500px);
+  left: calc(50% - 250px);
+  width: 500px;
+  height: 1000px;
+  object-fit: cover;
+}
+.soti1111-greek-trireme-sailing-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 560px;
+  height: 1000px;
+  object-fit: cover;
+}
+.convo3-child {
+  top: 677px;
+  left: 0;
+  background: linear-gradient(180deg, transparent, #000);
+  height: 323px;
+}
+.convo3-child,
+.convo3-item,
+.panel-small-1 {
+  position: absolute;
+  width: 500px;
+}
+.convo3-item {
+  top: 323px;
+  left: 500px;
+  background: linear-gradient(180deg, transparent, #000);
+  height: 323px;
+  transform: rotate(-180deg);
+  transform-origin: 0 0;
+}
+.panel-small-1 {
+  top: calc(50% - 131.5px);
+  left: calc(50% - 250px);
+  height: 307px;
+  object-fit: cover;
+}
+.let-them-sail {
+  margin: 0;
+}
+.let-them-sail-container1 {
+  width: 100%;
+}
+.athena,
+.let-them-sail-container {
+  position: absolute;
+  text-shadow: 1px 0 0#492b00, 0 1px 0#492b00, -1px 0 0#492b00, 0-1px 0#492b00;
+}
+.let-them-sail-container {
+  top: 206px;
+  left: calc(50% - 182px);
+  display: flex;
+  align-items: center;
+  width: 360px;
+  height: 104px;
+}
+.athena {
+  top: 173px;
+  left: calc(50% - 197px);
+  font-size: var(--font-size-xl);
+  color: var(--color-goldenrod);
+  display: inline-block;
+  width: 390px;
+  height: 28px;
+}
+.group-child {
+  position: absolute;
+  top: 0;
+  left: 166px;
+  width: 168px;
+  height: 168px;
+  object-fit: contain;
+}
+.panel-small-1-parent {
+  position: absolute;
+  top: calc(50% - 31px);
+  left: calc(50% - 250px);
+  width: 500px;
+  height: 351px;
+}
+.triumph-they-looted {
+  position: absolute;
+  top: 206px;
+  left: calc(50% - 182px);
+  display: inline-block;
+  width: 360px;
+  height: 116px;
+  text-shadow: 1px 0 0#492b00, 0 1px 0#492b00, -1px 0 0#492b00, 0-1px 0#492b00;
+}
+.panel-small-1-group {
+  position: absolute;
+  top: calc(50% - 390px);
+  left: calc(50% - 250px);
+  width: 500px;
+  height: 351px;
+}
+.back-button-icon,
+.settings-button-icon {
+  position: absolute;
+  top: calc(50% - 36px);
+  left: calc(50% - 240px);
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+}
+.settings-button-icon {
+  left: calc(50% + 168px);
+}
+.title-scroll-icon {
+  position: absolute;
+  top: -4px;
+  left: calc(50% - 160px);
+  width: 320px;
+  height: 80px;
+  object-fit: cover;
+}
+.prologue {
+  position: absolute;
+  top: 23px;
+  left: calc(50% - 60px);
+  text-shadow: 0.2px 0 0#492b00, 0 0.2px 0#492b00, -0.2px 0 0#492b00,
+    0-0.2px 0#492b00;
+}
+.title-buttons {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  width: 480px;
+  height: 72px;
+  font-size: 30px;
+  color: #492b00;
+  font-family: var(--font-greek-freak);
+}
+.button-icon {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 86.3px;
+  object-fit: cover;
+}
+.skip {
+  position: absolute;
+  top: 32px;
+  left: 54px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 92px;
+  color: var(--color-white);
+}
+.button-parent {
+  position: absolute;
+  top: 811px;
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 86.3px;
+  font-size: 24px;
+  font-family: var(--font-greek-freak);
+  text-decoration: none;
+}
+.referral {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 34px);
+  text-decoration: none;
+  color: var(--color-white);
+}
+.shop-icon {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 32px);
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+}
+.quests,
+.referral-parent {
+  position: absolute;
+  bottom: 0;
+}
+.referral-parent {
+  left: calc(50% - 180.5px);
+  width: 68px;
+  height: 80px;
+}
+.quests {
+  left: calc(50% - 30px);
+  text-decoration: none;
+  color: var(--color-white);
+}
+.quest-icom-parent {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 44.5px);
+  width: 64px;
+  height: 80px;
+}
+.leaderboard {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 59px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 118px;
+  text-decoration: none;
+  color: var(--color-white);
+}
+.trophy-icon {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 32px);
+  width: 64.6px;
+  height: 64px;
+  object-fit: cover;
+}
+.group-parent,
+.leaderboard-parent {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% + 62.5px);
+  width: 118px;
+  height: 80px;
+}
+.group-parent {
+  bottom: 23px;
+  left: calc(50% - 168px);
+  width: 361px;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-gemfont-one);
+}
+.convo3 {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  height: 1000px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-3xl);
+  color: var(--color-white);
+  font-family: var(--font-xtra);
+}
+
+/* Settings Panel Styles */
+.settings-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.settings-content {
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 300px;
+  color: var(--color-white);
+  font-family: var(--font-greek-freak);
+}
+
+.settings-content h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--color-goldenrod);
+}
+
+.volume-control {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.volume-control input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}
+
+.settings-content button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--color-goldenrod);
+  border: none;
+  border-radius: 5px;
+  color: #2a2a2a;
+  font-family: var(--font-greek-freak);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.settings-content button:hover {
+  background-color: #d4af37;
+}
+
+@media screen and (max-width: 450px) {
+  .settings-content {
+    margin: 20px;
+    width: calc(100% - 40px);
+  }
+}
