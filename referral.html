@@ -2,14 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="theme-color" content="#000000" />
 
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./referral.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Autour One:wght@400&display=swap"
-    />
 
     <style>
       @font-face {
@@ -27,27 +30,97 @@
         src: url("./public/Greek-Freak.ttf");
         font-weight: 400;
       }
-      @font-face {
-        font-family: "Greek";
-        src: url("./public/Greek-Regular.ttf");
-        font-weight: 400;
-      }
-      @font-face {
-        font-family: "Augusta";
-        src: url("./public/Augusta.ttf");
-        font-weight: 400;
-      }
     </style>
   </head>
   <body>
-    <div class="referral12">
-      <img class="bg-icon3" alt="" src="./public/bg@2x.png" />
-      
+    <div class="referral">
       <!-- Background Music -->
       <audio id="bgMusic" loop>
         <source src="./public/music.mp3" type="audio/mpeg">
       </audio>
-      
+
+      <img
+        class="background-image"
+        alt=""
+        src="./public/image-114@2x.png"
+      />
+
+      <section class="menu">
+        <div class="buttons">
+          <img
+            class="back-button-icon"
+            alt=""
+            src="./public/back-button@2x.png"
+            onclick="history.back()"
+          />
+        </div>
+        <div class="title-wrapper">
+          <div class="title">REFERRAL</div>
+        </div>
+        <div class="buttons">
+          <img
+            class="settings-button-icon"
+            alt=""
+            src="./public/settings-button@2x.png"
+            onclick="document.getElementById('settings-panel').style.display = 'block'"
+          />
+        </div>
+      </section>
+
+      <section class="game-content">
+        <div class="referral-stats">
+          <div class="stats-container">
+            <h3 class="stats-title">Your Referrals</h3>
+            <div class="stats-value" id="referralCount">0 Referrals</div>
+          </div>
+          <div class="reward-container">
+            <div class="reward-title">Reward per Referral</div>
+            <div class="reward-value">
+              <span id="referralReward">300</span>
+              <img class="coin-icon" src="./public/coin@2x.png" alt="coins" />
+            </div>
+          </div>
+        </div>
+
+        <div class="referral-panel">
+          <div class="greek-pattern top"></div>
+          <div class="panel-content">
+            <h2 class="panel-title">Invite Friends</h2>
+            <p class="panel-description">Share your referral link and earn rewards for each friend who joins!</p>
+            
+            <div class="link-container">
+              <div class="link-box">
+                <span id="referralLink" class="link-text"></span>
+              </div>
+              <div class="link-actions">
+                <button class="action-button copy" onclick="copyReferralLink()">
+                  <span class="button-text">Copy Link</span>
+                </button>
+                <button class="action-button share" onclick="shareReferralLink()">
+                  <span class="button-text">Share</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="greek-pattern bottom"></div>
+        </div>
+      </section>
+
+      <footer class="lower-menu">
+        <a href="./referral.html" class="menu-item active">
+          <img class="menu-icon" src="./public/shop-icon@2x.png" alt="Referral" />
+          <span class="menu-text">Referral</span>
+        </a>
+        <a href="./quest.html" class="menu-item">
+          <img class="menu-icon" src="./public/quest-icom@2x.png" alt="Quests" />
+          <span class="menu-text">Quests</span>
+        </a>
+        <a href="./leader-board.html" class="menu-item">
+          <img class="menu-icon" src="./public/trophy-icon@2x.png" alt="Leaderboard" />
+          <span class="menu-text">Leaderboard</span>
+        </a>
+      </footer>
+
       <!-- Settings Panel -->
       <div id="settings-panel" class="settings-panel" style="display: none;">
         <div class="settings-content">
@@ -67,185 +140,38 @@
           <button onclick="document.getElementById('settings-panel').style.display = 'none'">Close</button>
         </div>
       </div>
-
-      <img class="image-103-icon3" alt="" src="./public/image-103@2x.png" />
-
-      <img
-        class="soti1111-scene-of-an-ancient-g-icon7"
-        alt=""
-        src="./public/soti1111-scene-of-an-ancient-greek-coin-flipping-in-midair-glo-ad535c06450d4988be9bab2507b82aa8-1@2x.png"
-      />
-
-      <img class="referral-child" alt="" src="./public/frame-13@2x.png" />
-
-      <div class="referral-inner">
-        <div class="title-scroll-parent5">
-          <img
-            class="title-scroll-icon11"
-            alt=""
-            src="./public/title-scroll@2x.png"
-          />
-
-          <a class="referral13">Referral</a>
-        </div>
-      </div>
-      <main class="group-main">
-        <section class="panel3-1-group">
-          <img class="panel3-1-icon2" alt="" src="./public/panel3-1@2x.png" />
-
-          <img
-            class="coin-icon26"
-            loading="lazy"
-            alt=""
-            src="./public/coin3@2x.png"
-          />
-        </section>
-        <section class="points-container-parent">
-          <div class="points-container">
-            <h2 class="invite-friends">Invite Friends</h2>
-          </div>
-          <div class="your-referrals-parent">
-            <h3 class="your-referrals">Your Referrals</h3>
-            <h1 class="referrals" id="referralCount">0 Referrals</h1>
-          </div>
-        </section>
-        <section class="referrals-title-container">
-          <div class="your-referral-link-to-share-wrapper">
-            <h3 class="your-referral-link">Your referral link to share:</h3>
-          </div>
-          <div class="frame-parent28">
-            <div class="coin-amount-wrapper">
-              <div class="coin-amount1">
-                <div class="httpstmeodysseyoffate-123">
-                  <span id="referralLink"></span>
-                </div>
-              </div>
-            </div>
-            <div class="frame-parent29">
-              <div class="empty-container-parent">
-                <div class="empty-container">
-                  <div class="copy-link-button-wrapper">
-                    <button class="button2" onclick="copyReferralLink()">
-                      <img
-                        class="button-icon15"
-                        alt=""
-                        src="./public/button2@2x.png"
-                      />
-
-                      <div class="copy-link">Copy Link</div>
-                    </button>
-                    <button class="button-parent3" onclick="shareReferralLink()">
-                      <img
-                        class="button-icon16"
-                        alt=""
-                        src="./public/button@2x.png"
-                      />
-
-                      <div class="share">Share</div>
-                    </button>
-                  </div>
-                </div>
-                <div class="earnings-container">
-                  <div class="buttons-container">
-                    <div class="invite-your-friends">
-                      Invite your friends and Earn
-                    </div>
-                  </div>
-                  <div class="invite-referrals-container">
-                    <div class="for-each-referral">for each referral</div>
-                    <div class="invite-your-friends-and-earn-x-wrapper">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="coin-amount-container">
-                  <div class="div13" id="referralReward">300</div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <div class="navigation-bar">
-        <img
-          class="soti1111-scene-of-an-ancient-g-icon8"
-          alt=""
-          src="./public/soti1111-scene-of-an-ancient-greek-ornate-altar-with-greek-symb-443696c315ce43ca98fe120e80f26663-11@2x.png"
-        />
-
-        <div class="rectangle-parent7">
-          <div class="frame-child24"></div>
-          <footer class="leaderboard-menu">
-            <div class="referral14">Referral</div>
-            <div class="quests13">Quests</div>
-            <div class="leaderboard14">Leaderboard</div>
-          </footer>
-          <img
-            class="shop-icon12"
-            loading="lazy"
-            alt=""
-            src="./public/shop-icon@2x.png"
-          />
-
-          <img
-            class="quest-icom-icon12"
-            loading="lazy"
-            alt=""
-            src="./public/quest-icom@2x.png"
-          />
-
-          <img
-            class="trophy-icon12"
-            loading="lazy"
-            alt=""
-            src="./public/trophy-icon@2x.png"
-          />
-        </div>
-        <div class="rectangle-parent8">
-          <textarea class="frame-child25" rows="{16}" cols="{25}"> </textarea>
-          <div class="frame-child26"></div>
-        </div>
-        <img
-          class="back-button-icon12"
-          loading="lazy"
-          alt=""
-          src="./public/back-button@2x.png"
-          onclick="history.back()"
-          style="cursor: pointer;"
-        />
-
-        <img
-          class="settings-button-icon12"
-          loading="lazy"
-          alt=""
-          src="./public/settings-button@2x.png"
-          onclick="document.getElementById('settings-panel').style.display = 'block'"
-          style="cursor: pointer;"
-        />
-      </div>
     </div>
+
     <script>
-      // Start background music when the page loads
-      window.addEventListener('load', function() {
+      document.addEventListener('DOMContentLoaded', function() {
+        // Initialize Telegram WebApp
+        if (window.Telegram && window.Telegram.WebApp) {
+          const webapp = window.Telegram.WebApp;
+          webapp.ready();
+          webapp.expand();
+        }
+
+        // Start background music
         const bgMusic = document.getElementById('bgMusic');
-        bgMusic.volume = 0.5; // Set initial volume
-        bgMusic.play().catch(function(error) {
-          console.log("Audio autoplay failed:", error);
-        });
+        bgMusic.volume = 0.5;
+        bgMusic.play().catch(console.error);
 
         // Initialize referral data
         initializeReferralData();
       });
 
-      // Placeholder username (will be replaced with Telegram username later)
-      const PLACEHOLDER_USERNAME = 'testuser';
-
-      // Initialize referral data
       async function initializeReferralData() {
         try {
-          const response = await fetch(`http://localhost:3000/api/referral/${PLACEHOLDER_USERNAME}`);
+          // Get username from Telegram WebApp if available
+          let username = 'testuser';
+          if (window.Telegram && window.Telegram.WebApp) {
+            username = window.Telegram.WebApp.initDataUnsafe.user?.username || username;
+          }
+
+          const response = await fetch(`http://localhost:3000/api/referral/${username}`);
           const referralData = await response.json();
           
-          // Update referral code and link
+          // Update referral link
           const baseUrl = window.location.origin;
           const referralLink = `${baseUrl}?ref=${referralData.code}`;
           document.getElementById('referralLink').textContent = referralLink;
@@ -259,15 +185,23 @@
         }
       }
 
-      // Copy referral link to clipboard
       async function copyReferralLink() {
         const referralLink = document.getElementById('referralLink').textContent;
         try {
           await navigator.clipboard.writeText(referralLink);
-          alert('Referral link copied to clipboard!');
+          // Use Telegram's native popup if available
+          if (window.Telegram && window.Telegram.WebApp) {
+            window.Telegram.WebApp.showPopup({
+              title: 'Success',
+              message: 'Referral link copied to clipboard!',
+              buttons: [{type: 'ok'}]
+            });
+          } else {
+            alert('Referral link copied to clipboard!');
+          }
         } catch (error) {
           console.error('Error copying referral link:', error);
-          // Fallback for older browsers
+          // Fallback copy method
           const textArea = document.createElement('textarea');
           textArea.value = referralLink;
           document.body.appendChild(textArea);
@@ -278,13 +212,20 @@
         }
       }
 
-      // Share referral link
       async function shareReferralLink() {
         const referralLink = document.getElementById('referralLink').textContent;
-        if (navigator.share) {
+        const shareText = 'Join me on Odyssey of Fate!';
+        
+        // Use Telegram's native sharing if available
+        if (window.Telegram && window.Telegram.WebApp) {
+          window.Telegram.WebApp.switchInlineQuery(
+            `${shareText}\n${referralLink}`,
+            ['users', 'groups', 'channels']
+          );
+        } else if (navigator.share) {
           try {
             await navigator.share({
-              title: 'Join me on Odyssey of Fate!',
+              title: shareText,
               text: 'Use my referral link to join and earn rewards:',
               url: referralLink
             });
@@ -292,8 +233,8 @@
             console.error('Error sharing:', error);
           }
         } else {
-          // Fallback for browsers that don't support Web Share API
-          window.open(`https://t.me/share/url?url=${encodeURIComponent(referralLink)}&text=${encodeURIComponent('Join me on Odyssey of Fate!')}`);
+          // Fallback to Telegram share URL
+          window.open(`https://t.me/share/url?url=${encodeURIComponent(referralLink)}&text=${encodeURIComponent(shareText)}`);
         }
       }
     </script>
