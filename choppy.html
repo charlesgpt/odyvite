@@ -2,14 +2,18 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="theme-color" content="#000000" />
 
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./choppy.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Autour One:wght@400&display=swap"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Autour One:wght@400&display=swap" />
 
     <style>
       @font-face {
@@ -49,23 +53,12 @@
       <div class="choppy-inner">
         <div class="frame-parent2">
           <div class="title-scroll-group">
-            <img
-              class="title-scroll-icon3"
-              alt=""
-              src="/title-scroll@2x.png"
-            />
-
+            <img class="title-scroll-icon3" alt="" src="/title-scroll@2x.png" />
             <a class="oracle">Oracle</a>
           </div>
           <div class="coin-wrapper">
             <div class="coin">
-              <img
-                class="coin-icon"
-                loading="lazy"
-                alt=""
-                src="/coin@2x.png"
-              />
-
+              <img class="coin-icon" loading="lazy" alt="" src="/coin@2x.png" />
               <div class="wrapper">
                 <a class="a" id="userBalance">100</a>
               </div>
@@ -73,45 +66,20 @@
           </div>
         </div>
       </div>
+
       <main class="settings">
         <img class="image-114-icon" alt="" src="/image-114@2x.png" />
-
-        <img
-          class="back-button-icon3"
-          loading="lazy"
-          alt=""
-          src="/back-button@2x.png"
-          onclick="history.back()"
-          style="cursor: pointer;"
-        />
-
-        <img
-          class="settings-button-icon3"
-          loading="lazy"
-          alt=""
-          src="/settings-button@2x.png"
-          onclick="document.getElementById('settings-panel').style.display = 'block'"
-          style="cursor: pointer;"
-        />
-
-        <img
-          class="panel-small-14"
-          alt=""
-          src="/panel-small-11@2x.png"
-        />
+        <img class="back-button-icon3" loading="lazy" alt="" src="/back-button@2x.png" onclick="history.back()" />
+        <img class="settings-button-icon3" loading="lazy" alt="" src="/settings-button@2x.png" onclick="document.getElementById('settings-panel').style.display = 'block'" />
+        <img class="panel-small-14" alt="" src="/panel-small-11@2x.png" />
 
         <div class="ellipse-parent">
           <div class="ellipse-div"></div>
           <img class="frame-1-icon" alt="" src="/frame-1@2x.png" />
-
-          <img
-            class="bear-icon"
-            loading="lazy"
-            alt=""
-            src="/bear@2x.png"
-          />
+          <img class="bear-icon" loading="lazy" alt="" src="/bear@2x.png" />
         </div>
       </main>
+
       <div class="content">
         <div class="title1">
           <h2 class="choppy-market">Choppy Market</h2>
@@ -137,23 +105,13 @@
               <div class="rectangle-div"></div>
               <div class="shop-image-parent">
                 <a href="./referral.html" class="shop-image">
-                  <img
-                    class="shop-icon3"
-                    loading="lazy"
-                    alt=""
-                    src="/shop-icon@2x.png"
-                  />
+                  <img class="shop-icon3" loading="lazy" alt="" src="/shop-icon@2x.png" />
                 </a>
                 <a href="./referral.html" class="referral3">Referral</a>
               </div>
               <div class="shop-image-parent">
                 <a href="./quest.html">
-                  <img
-                    class="quest-icom-icon3"
-                    loading="lazy"
-                    alt=""
-                    src="/quest-icom@2x.png"
-                  />
+                  <img class="quest-icom-icon3" loading="lazy" alt="" src="/quest-icom@2x.png" />
                 </a>
                 <div class="quests-wrapper">
                   <a href="./quest.html" class="quests3">Quests</a>
@@ -162,12 +120,7 @@
               <div class="leaderboard-group">
                 <a href="./leader-board.html" class="leaderboard3">Leaderboard</a>
                 <a href="./leader-board.html">
-                  <img
-                    class="trophy-icon3"
-                    loading="lazy"
-                    alt=""
-                    src="/trophy-icon@2x.png"
-                  />
+                  <img class="trophy-icon3" loading="lazy" alt="" src="/trophy-icon@2x.png" />
                 </a>
               </div>
             </footer>
@@ -197,6 +150,16 @@
     </div>
 
     <script>
+      // Prevent default touch behaviors
+      document.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+      }, { passive: false });
+
+      // Prevent zooming
+      document.addEventListener('gesturestart', function(e) {
+        e.preventDefault();
+      });
+
       // Start background music when the page loads
       window.addEventListener('load', function() {
         const bgMusic = document.getElementById('bgMusic');
@@ -207,6 +170,13 @@
 
         // Initialize user data
         initializeUser();
+
+        // Handle Telegram WebApp initialization
+        if (window.Telegram && window.Telegram.WebApp) {
+          const webapp = window.Telegram.WebApp;
+          webapp.ready();
+          webapp.expand();
+        }
       });
 
       // Placeholder username (will be replaced with Telegram username later)
@@ -222,6 +192,15 @@
           console.error('Error initializing user:', error);
         }
       }
+
+      // Handle back button for Telegram WebApp
+      document.querySelector('.back-button-icon3').addEventListener('click', function() {
+        if (window.Telegram && window.Telegram.WebApp) {
+          window.Telegram.WebApp.close();
+        } else {
+          history.back();
+        }
+      });
     </script>
   </body>
 </html>
