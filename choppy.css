@@ -1,5 +1,4 @@
 :root {
-  /* Add viewport-relative units */
   --vh: 1vh;
   --vw: 1vw;
 }
@@ -32,7 +31,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: calc(var(--vh) * 2) calc(var(--vw) * 10) calc(var(--vh) * 1.5) calc(var(--vw) * 10);
-  background-image: url(/title-scroll@2x.png);
+  background-image: url(./public/title-scroll@2x.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -140,9 +139,10 @@
 
 .panel-small-14 {
   position: absolute;
-  top: calc(var(--vh) * 30);
-  left: 0;
-  width: 100%;
+  top: calc(var(--vh) * 35);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(500px, 90vw);
   height: auto;
   object-fit: contain;
   z-index: 1;
@@ -213,6 +213,7 @@
   text-shadow: 0.5px 0 0#492b00, 0 0.5px 0#492b00, -0.5px 0 0#492b00,
     0-0.5px 0#492b00;
   z-index: 2;
+  color: var(--color-saddlebrown-300);
 }
 
 .title1 {
@@ -220,9 +221,10 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  padding: 0 calc(var(--vw) * 5);
+  padding: calc(var(--vh) * 2) calc(var(--vw) * 5);
   width: 100%;
   box-sizing: border-box;
+  margin-top: calc(var(--vh) * 25);
 }
 
 .black-swan-lurks {
@@ -240,6 +242,9 @@
   display: inline-block;
   max-width: 100%;
   z-index: 2;
+  text-align: center;
+  line-height: 1.4;
+  padding: 0 calc(var(--vw) * 4);
 }
 
 .paragraph {
@@ -248,9 +253,11 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  padding: 0 calc(var(--vw) * 5);
+  padding: calc(var(--vh) * 15) calc(var(--vw) * 5) calc(var(--vh) * 2);
   box-sizing: border-box;
   max-width: 100%;
+  position: relative;
+  z-index: 3;
 }
 
 .button-icon8 {
@@ -278,7 +285,7 @@
   padding: calc(var(--vh) * 2) calc(var(--vw) * 10);
   background-color: transparent;
   flex: 1;
-  background-image: url(/button@2x.png);
+  background-image: url(./public/button@2x.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -295,6 +302,7 @@
   display: flex;
   justify-content: center;
   padding: 0 calc(var(--vw) * 5);
+  margin-top: calc(var(--vh) * 2);
 }
 
 .rectangle-parent {
@@ -360,6 +368,8 @@
   gap: calc(var(--vh) * 3);
   width: 100%;
   padding-bottom: calc(var(--vh) * 15);
+  position: relative;
+  z-index: 2;
 }
 
 .choppy {
@@ -369,7 +379,7 @@
   overflow: hidden;
   padding: calc(var(--vh) * 1) 0 0;
   box-sizing: border-box;
-  background-image: url(/choppy@3x.png);
+  background-image: url(./public/choppy@3x.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -382,7 +392,6 @@
   user-select: none;
 }
 
-/* Settings Panel Styles */
 .settings-panel {
   position: fixed;
   top: 0;
@@ -459,14 +468,12 @@
   background: linear-gradient(to bottom, #e5c04c, #d4af37);
 }
 
-/* Initialize viewport height for mobile */
 @supports (height: 100dvh) {
   .choppy {
     min-height: 100dvh;
   }
 }
 
-/* Handle notched displays */
 @supports (padding: env(safe-area-inset-top)) {
   .choppy {
     padding-top: calc(env(safe-area-inset-top) + var(--vh) * 1);
@@ -475,5 +482,54 @@
   
   .rectangle-parent {
     padding-bottom: calc(env(safe-area-inset-bottom) + var(--vh) * 2);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .title-scroll-group {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  
+  .coin-wrapper {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  
+  .paragraph {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  
+  .continue1 {
+    font-size: var(--font-size-lgi);
+  }
+  
+  .continue-button {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  
+  .leaderboard3,
+  .quests3,
+  .referral3 {
+    font-size: var(--font-size-base);
+  }
+  
+  .rectangle-parent {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  
+  .settings-content {
+    margin: 20px;
+    width: calc(100% - 40px);
   }
 }
