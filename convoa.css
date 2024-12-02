@@ -126,7 +126,7 @@ body {
   width: 100%;
   max-width: 600px;
   position: relative;
-  padding: calc(var(--vh) * 8) calc(var(--vw) * 8) calc(var(--vh) * 5);
+  padding: calc(var(--vh) * 8) calc(var(--vw) * 6) calc(var(--vh) * 5);
   box-sizing: border-box;
   margin-top: calc(var(--vh) * 8);
   display: flex;
@@ -147,9 +147,9 @@ body {
 
 .speaker {
   position: absolute;
-  top: calc(var(--vh) * 5);
-  left: calc(var(--vw) * 18);
-  font-size: min(var(--font-size-xl), 6vw);
+  top: calc(var(--vh) * -5);
+  left: calc(var(--vw) * 3);
+  font-size: min(var(--font-size-xl), 5.5vw);
   color: #FFD700;
   font-family: var(--font-greek-freak);
   text-align: left;
@@ -164,28 +164,32 @@ body {
 }
 
 .dialogue-text {
-  font-size: min(var(--font-size-3xl), 5vw);
+  font-size: min(var(--font-size-3xl), 3.8vw);
   color: var(--color-white);
   text-align: center;
-  width: 100%;
+  width: 85%;
   text-shadow: 0 0 20px rgba(255, 215, 0, 0.3),
                2px 2px 4px rgba(0, 0, 0, 0.8),
                1px 0 0 #492b00,
                0 1px 0 #492b00,
                -1px 0 0 #492b00,
                0 -1px 0 #492b00;
-  line-height: 1.4;
-  padding: calc(var(--vh) * 2) calc(var(--vw) * 9);
+  line-height: 1.5;
+  padding: calc(var(--vh) * 3) calc(var(--vw) * 3);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: calc(var(--vh) * 15);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 85%;
 }
 
 .dialogue-text p {
-  margin: calc(var(--vh) * 1) 0;
+  margin: calc(var(--vh) * 1.5) 0;
+  max-width: 100%;
 }
 
 .speaker-icon {
@@ -206,8 +210,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: calc(var(--vh) * 4) 0;
-  margin-top: calc(var(--vh) * 2);
+  padding: calc(var(--vh) * 6) 0;
+  margin-top: calc(var(--vh) * 4);
   z-index: 5;
 }
 
@@ -224,7 +228,7 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3));
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
 }
 
 .button-container:active {
@@ -380,62 +384,18 @@ body {
 
 @media screen and (max-width: 450px) {
   .dialogue-text {
-    font-size: min(var(--font-size-lg), 4.5vw);
-  }
-
-  .continue {
-    font-size: min(var(--font-size-lgi), 4.5vw);
-  }
-
-  .referral,
-  .quests,
-  .leaderboard {
-    font-size: min(var(--font-size-base), 3.5vw);
-  }
-
-  .dialogue-box {
-    padding: calc(var(--vh) * 7) calc(var(--vw) * 6) calc(var(--vh) * 4);
+    font-size: min(var(--font-size-lg), 3.8vw);
+    padding: calc(var(--vh) * 2) calc(var(--vw) * 3);
+    width: 80%;
+    max-width: 80%;
+    line-height: 1.4;
   }
 
   .speaker {
-    top: calc(var(--vh) * -4);
-    left: calc(var(--vw) * 3);
-    font-size: min(var(--font-size-xl), 5.5vw);
-  }
-
-  .dialogue-text {
-    font-size: min(var(--font-size-lg), 4.5vw);
-    padding: calc(var(--vh) * 1.5) calc(var(--vw) * 3);
-    min-height: calc(var(--vh) * 12);
-  }
-
-  .speaker-icon {
-    width: min(120px, 22vw);
-    top: calc(var(--vh) * -7);
-  }
-}
-
-@media screen and (max-height: 600px) {
-  .dialogue-box {
-    padding: calc(var(--vh) * 6) calc(var(--vw) * 5) calc(var(--vh) * 3);
-    margin-top: calc(var(--vh) * 6);
-  }
-
-  .speaker {
-    top: calc(var(--vh) * -3.5);
-    left: calc(var(--vw) * 2);
-  }
-
-  .dialogue-text {
-    min-height: calc(var(--vh) * 10);
-  }
-
-  .speaker-icon {
-    width: min(100px, 20vw);
-    top: calc(var(--vh) * -6);
+    left: calc(var(--vw) * 4);
   }
 
   .button-wrapper {
-    padding: calc(var(--vh) * 3) 0;
+    padding: calc(var(--vh) * 4) 0;
   }
 }
