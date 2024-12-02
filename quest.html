@@ -2,39 +2,32 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="theme-color" content="#000000" />
 
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./quest.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Autour One:wght@400&display=swap"
-    />
 
     <style>
       @font-face {
         font-family: "Xtra";
-        src: url("/Xtra.ttf");
+        src: url("./public/Xtra.ttf");
         font-weight: 400;
       }
       @font-face {
         font-family: "GemFont One";
-        src: url("/GemFont One.ttf");
+        src: url("./public/GemFont One.ttf");
         font-weight: 400;
       }
       @font-face {
         font-family: "Greek-Freak";
-        src: url("/Greek-Freak.ttf");
-        font-weight: 400;
-      }
-      @font-face {
-        font-family: "Greek";
-        src: url("/Greek-Regular.ttf");
-        font-weight: 400;
-      }
-      @font-face {
-        font-family: "Augusta";
-        src: url("/Augusta.ttf");
+        src: url("./public/Greek-Freak.ttf");
         font-weight: 400;
       }
     </style>
@@ -43,258 +36,173 @@
     <div class="quest">
       <!-- Background Music -->
       <audio id="bgMusic" loop>
-        <source src="/music.mp3" type="audio/mpeg">
+        <source src="./public/music.mp3" type="audio/mpeg">
       </audio>
 
-      <img class="bg-icon2" alt="" src="/bg@2x.png" />
-      <img class="image-103-icon2" alt="" src="/image-103@2x.png" />
       <img
-        class="soti1111-scene-of-an-ancient-g-icon5"
+        class="background-image"
         alt=""
-        src="/soti1111-scene-of-an-ancient-greek-coin-flipping-in-midair-glo-ad535c06450d4988be9bab2507b82aa8-1@2x.png"
+        src="./public/image-114@2x.png"
       />
-      <img class="quest-child" alt="" src="/frame-13@2x.png" />
 
-      <div class="quest-inner">
-        <div class="frame-parent25">
-          <div class="title-scroll-parent4">
-            <img
-              class="title-scroll-icon10"
-              alt=""
-              src="/title-scroll@2x.png"
-            />
-            <a class="quests11">Quests</a>
-          </div>
-          <div class="frame-wrapper8">
-            <div class="daily-tab-parent">
-              <div class="daily-tab">
-                <img
-                  class="stone-slab2-13"
-                  alt=""
-                  src="/stone-slab2-12@2x.png"
-                />
-                <a class="earn">Earn</a>
-              </div>
-              <button class="weekly-tab">
-                <img
-                  class="stone-slab2-13"
-                  alt=""
-                  src="/stone-slab2-12@2x.png"
-                />
-                <a class="claim">Claim</a>
-              </button>
-            </div>
-          </div>
+      <section class="menu">
+        <div class="buttons">
+          <img
+            class="back-button-icon"
+            alt=""
+            src="./public/back-button@2x.png"
+            onclick="history.back()"
+          />
         </div>
-      </div>
+        <div class="title-wrapper">
+          <div class="title">QUESTS</div>
+        </div>
+        <div class="buttons">
+          <img
+            class="settings-button-icon"
+            alt=""
+            src="./public/settings-button@2x.png"
+            onclick="document.getElementById('settings-panel').style.display = 'block'"
+          />
+        </div>
+      </section>
 
-      <main class="soti1111-scene-of-an-ancient-g-group">
-        <img
-          class="soti1111-scene-of-an-ancient-g-icon6"
-          alt=""
-          src="/soti1111-scene-of-an-ancient-greek-ornate-altar-with-greek-symb-443696c315ce43ca98fe120e80f26663-11@2x.png"
-        />
-
-        <section class="rectangle-parent5">
-          <footer class="frame-child21"></footer>
-          <div class="frame-child22"></div>
-        </section>
-        <img class="panel3-1-icon1" alt="" src="/panel3-11@2x.png" />
-
-        <img
-          class="back-button-icon11"
-          loading="lazy"
-          alt=""
-          src="/back-button@2x.png"
-          onclick="history.back()"
-          style="cursor: pointer;"
-        />
-
-        <img
-          class="settings-button-icon11"
-          loading="lazy"
-          alt=""
-          src="/settings-button@2x.png"
-          onclick="document.getElementById('settings-panel').style.display = 'block'"
-          style="cursor: pointer;"
-        />
-      </main>
-
-      <div class="frame-parent26">
-        <div class="coin-balance-container">
-          <div class="coin-balance4">
-            <img
-              class="coin-icon18"
-              loading="lazy"
-              alt=""
-              src="/coin@2x.png"
-            />
-            <div class="container">
-              <div class="div6" id="userBalance">0</div>
-            </div>
+      <section class="game-content">
+        <div class="balance-container">
+          <div class="balance">
+            <span id="userBalance">0</span>
+            <img class="coin-icon" src="./public/coin@2x.png" alt="coins" />
           </div>
         </div>
 
-        <div class="quest-grid">
+        <div class="tabs-container">
+          <a href="./quest.html" class="tab active">
+            <img class="tab-bg" src="./public/stone-slab2-12@2x.png" alt="" />
+            <div class="tab-glow"></div>
+            <span class="tab-text">EARN</span>
+          </a>
+          <a href="./claim.html" class="tab">
+            <img class="tab-bg" src="./public/stone-slab2-12@2x.png" alt="" />
+            <div class="tab-glow"></div>
+            <span class="tab-text">CLAIM</span>
+          </a>
+        </div>
+
+        <div class="quests-container">
           <!-- Twitter Quest -->
-          <div class="quest-1">
-            <div class="quest-containers">
-              <div class="follow-us-on" onclick="window.open('https://x.com/IthacaProtocol', '_blank')" style="cursor: pointer;">Follow us on X (Twitter)</div>
-            </div>
-            <div class="claim-buttons-row">
-              <div class="claim1" onclick="handleQuest('twitter_follow')" style="cursor: pointer;">Claim</div>
-              <div class="coin-icons-row">
-                <img class="button-img-icon" alt="" src="/button-img@2x.png" />
-                <img class="coin-icon19" loading="lazy" alt="" src="/coin-1@2x.png" />
-                <div class="coin-count-row">
-                  <div class="empty-labels">1000</div>
-                </div>
+          <div class="quest-card" data-quest-id="twitter_follow">
+            <div class="quest-content">
+              <div class="quest-title">Follow us on X (Twitter)</div>
+              <div class="quest-reward">
+                <span class="reward-amount">1000</span>
+                <img class="reward-icon" src="./public/coin@2x.png" alt="coins" />
               </div>
             </div>
+            <button class="claim-button" onclick="handleQuest('twitter_follow')">
+              <span class="button-text">Claim</span>
+            </button>
           </div>
 
           <!-- Telegram Quest -->
-          <div class="quest-2">
-            <div class="follow-us-on-telegram-wrapper">
-              <div class="follow-us-on" onclick="window.open('https://t.me/ithaca_protocol', '_blank')" style="cursor: pointer;">Follow us on Telegram</div>
-            </div>
-            <div class="claim-buttons-row">
-              <div class="claim1" onclick="handleQuest('telegram_follow')" style="cursor: pointer;">Claim</div>
-              <div class="button-img-parent">
-                <img class="button-img-icon" alt="" src="/button-img1@2x.png" />
-                <img class="coin-icon19" loading="lazy" alt="" src="/coin-21@2x.png" />
-                <div class="coin-count-row">
-                  <div class="empty-labels">400</div>
-                </div>
+          <div class="quest-card" data-quest-id="telegram_follow">
+            <div class="quest-content">
+              <div class="quest-title">Follow us on Telegram</div>
+              <div class="quest-reward">
+                <span class="reward-amount">400</span>
+                <img class="reward-icon" src="./public/coin@2x.png" alt="coins" />
               </div>
             </div>
+            <button class="claim-button" onclick="handleQuest('telegram_follow')">
+              <span class="button-text">Claim</span>
+            </button>
           </div>
 
           <!-- Discord Quest -->
-          <div class="quest-3">
-            <div class="follow-us-on-telegram-wrapper">
-              <div class="follow-us-on" onclick="window.open('https://discord.gg/ithaca', '_blank')" style="cursor: pointer;">Join Our on Discord</div>
-            </div>
-            <div class="claim-buttons-row">
-              <div class="claim1" onclick="handleQuest('discord_join')" style="cursor: pointer;">Claim</div>
-              <div class="button-img-group">
-                <img class="button-img-icon" alt="" src="/button-img2@2x.png" />
-                <img class="coin-icon19" loading="lazy" alt="" src="/coin-3@2x.png" />
-                <div class="coin-count-row">
-                  <div class="empty-labels">350</div>
-                </div>
+          <div class="quest-card" data-quest-id="discord_join">
+            <div class="quest-content">
+              <div class="quest-title">Join Our Discord</div>
+              <div class="quest-reward">
+                <span class="reward-amount">350</span>
+                <img class="reward-icon" src="./public/coin@2x.png" alt="coins" />
               </div>
             </div>
+            <button class="claim-button" onclick="handleQuest('discord_join')">
+              <span class="button-text">Claim</span>
+            </button>
           </div>
 
           <!-- Farcaster Quest -->
-          <div class="quest-3">
-            <div class="follow-us-on-telegram-wrapper">
-              <div class="follow-us-on" onclick="window.open('https://warpcast.com/ithacaprotocol/', '_blank')" style="cursor: pointer;">Follow us on Farcaster</div>
-            </div>
-            <div class="claim-buttons-row">
-              <div class="claim1" onclick="handleQuest('farcaster_follow')" style="cursor: pointer;">Claim</div>
-              <div class="button-img-container">
-                <img class="button-img-icon" alt="" src="/button-img3@2x.png" />
-                <img class="coin-icon19" loading="lazy" alt="" src="/coin-4@2x.png" />
-                <div class="coin-count-row">
-                  <div class="empty-labels">250</div>
-                </div>
+          <div class="quest-card" data-quest-id="farcaster_follow">
+            <div class="quest-content">
+              <div class="quest-title">Follow us on Farcaster</div>
+              <div class="quest-reward">
+                <span class="reward-amount">250</span>
+                <img class="reward-icon" src="./public/coin@2x.png" alt="coins" />
               </div>
             </div>
+            <button class="claim-button" onclick="handleQuest('farcaster_follow')">
+              <span class="button-text">Claim</span>
+            </button>
           </div>
 
           <!-- Ithaca App Quest -->
-          <div class="quest-5">
-            <div class="connect-wallet-on-ithaca-app-wrapper">
-              <div class="follow-us-on" onclick="window.open('https://app.ithacaprotocol.io/', '_blank')" style="cursor: pointer;">Connect Wallet on Ithaca App</div>
-            </div>
-            <div class="claim-buttons-row">
-              <div class="claim1" onclick="handleQuest('ithaca_wallet')" style="cursor: pointer;">Claim</div>
-              <div class="button-img-parent1">
-                <img class="button-img-icon" alt="" src="/button-img4@2x.png" />
-                <img class="coin-icon19" loading="lazy" alt="" src="/coin-5@2x.png" />
-                <div class="coin-count-row">
-                  <div class="empty-labels">3000</div>
-                </div>
+          <div class="quest-card" data-quest-id="ithaca_wallet">
+            <div class="quest-content">
+              <div class="quest-title">Connect Wallet on Ithaca App</div>
+              <div class="quest-reward">
+                <span class="reward-amount">3000</span>
+                <img class="reward-icon" src="./public/coin@2x.png" alt="coins" />
               </div>
             </div>
+            <button class="claim-button" onclick="handleQuest('ithaca_wallet')">
+              <span class="button-text">Claim</span>
+            </button>
           </div>
 
           <!-- IO Bot Quest -->
-          <div class="quest-6">
-            <div class="connect-wallet-on-io-bot-wrapper">
-              <div class="follow-us-on" onclick="window.open('https://t.me/IthacaOptionBot', '_blank')" style="cursor: pointer;">Connect Wallet on IO Bot</div>
-            </div>
-            <div class="claim-buttons-row">
-              <div class="claim1" onclick="handleQuest('io_wallet')" style="cursor: pointer;">Claim</div>
-              <div class="coin-icons-row">
-                <img class="button-img-icon" alt="" src="/button-img@2x.png" />
-                <img class="coin-icon19" loading="lazy" alt="" src="/coin-1@2x.png" />
-                <div class="coin-count-row">
-                  <div class="empty-labels">3000</div>
-                </div>
+          <div class="quest-card" data-quest-id="io_wallet">
+            <div class="quest-content">
+              <div class="quest-title">Connect Wallet on IO Bot</div>
+              <div class="quest-reward">
+                <span class="reward-amount">3000</span>
+                <img class="reward-icon" src="./public/coin@2x.png" alt="coins" />
               </div>
             </div>
+            <button class="claim-button" onclick="handleQuest('io_wallet')">
+              <span class="button-text">Claim</span>
+            </button>
           </div>
 
           <!-- Twitter Engagement Quest -->
-          <div class="quest-7">
-            <div class="quest-containers">
-              <div class="follow-us-on" onclick="window.open('https://x.com/IthacaProtocol', '_blank')" style="cursor: pointer;">X Post - Like comment Rt</div>
-            </div>
-            <div class="claim-buttons-row">
-              <div class="claim1" onclick="handleQuest('twitter_engage')" style="cursor: pointer;">Claim</div>
-              <div class="button-img-parent">
-                <img class="button-img-icon" alt="" src="/button-img1@2x.png" />
-                <img class="coin-icon19" loading="lazy" alt="" src="/coin-21@2x.png" />
-                <div class="coin-count-row">
-                  <div class="empty-labels">300</div>
-                </div>
+          <div class="quest-card" data-quest-id="twitter_engage">
+            <div class="quest-content">
+              <div class="quest-title">X Post - Like, Comment & RT</div>
+              <div class="quest-reward">
+                <span class="reward-amount">300</span>
+                <img class="reward-icon" src="./public/coin@2x.png" alt="coins" />
               </div>
             </div>
+            <button class="claim-button" onclick="handleQuest('twitter_engage')">
+              <span class="button-text">Claim</span>
+            </button>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="rectangle-parent6">
-        <div class="frame-child23"></div>
-        <div class="frame-parent27">
-          <a href="./referral.html" class="shop-icon-wrapper5">
-            <img
-              class="shop-icon11"
-              loading="lazy"
-              alt=""
-              src="/shop-icon@2x.png"
-            />
-          </a>
-          <a href="./referral.html" class="referral11">Referral</a>
-        </div>
-        <div class="frame-parent27">
-          <a href="./quest.html">
-            <img
-              class="quest-icom-icon11"
-              loading="lazy"
-              alt=""
-              src="/quest-icom@2x.png"
-            />
-          </a>
-          <div class="quests-wrapper6">
-            <a href="./quest.html" class="quests12">Quests</a>
-          </div>
-        </div>
-        <div class="leaderboard-parent5">
-          <a href="./leader-board.html" class="leaderboard13">Leaderboard</a>
-          <a href="./leader-board.html">
-            <img
-              class="trophy-icon11"
-              loading="lazy"
-              alt=""
-              src="/trophy-icon@2x.png"
-            />
-          </a>
-        </div>
-      </div>
+      <footer class="lower-menu">
+        <a href="./referral.html" class="menu-item">
+          <img class="menu-icon" src="./public/shop-icon@2x.png" alt="Referral" />
+          <span class="menu-text">Referral</span>
+        </a>
+        <a href="./quest.html" class="menu-item active">
+          <img class="menu-icon" src="./public/quest-icom@2x.png" alt="Quests" />
+          <span class="menu-text">Quests</span>
+        </a>
+        <a href="./leader-board.html" class="menu-item">
+          <img class="menu-icon" src="./public/trophy-icon@2x.png" alt="Leaderboard" />
+          <span class="menu-text">Leaderboard</span>
+        </a>
+      </footer>
 
       <!-- Settings Panel -->
       <div id="settings-panel" class="settings-panel" style="display: none;">
@@ -318,26 +226,33 @@
     </div>
 
     <script>
-      // Placeholder username (will be replaced with Telegram username later)
-      const PLACEHOLDER_USERNAME = 'testuser';
+      document.addEventListener('DOMContentLoaded', function() {
+        // Initialize Telegram WebApp
+        if (window.Telegram && window.Telegram.WebApp) {
+          const webapp = window.Telegram.WebApp;
+          webapp.ready();
+          webapp.expand();
+        }
 
-      // Start background music when the page loads
-      window.addEventListener('load', function() {
+        // Start background music
         const bgMusic = document.getElementById('bgMusic');
         bgMusic.volume = 0.5;
-        bgMusic.play().catch(function(error) {
-          console.log("Audio autoplay failed:", error);
-        });
+        bgMusic.play().catch(console.error);
 
         // Initialize user data and quests
         initializeUser();
         loadQuestStatus();
       });
 
-      // Initialize user data
       async function initializeUser() {
         try {
-          const response = await fetch(`http://localhost:3000/api/user/${PLACEHOLDER_USERNAME}`);
+          // Get username from Telegram WebApp if available
+          let username = 'testuser';
+          if (window.Telegram && window.Telegram.WebApp) {
+            username = window.Telegram.WebApp.initDataUnsafe.user?.username || username;
+          }
+
+          const response = await fetch(`http://localhost:3000/api/user/${username}`);
           const userData = await response.json();
           document.getElementById('userBalance').textContent = userData.balance;
         } catch (error) {
@@ -345,20 +260,26 @@
         }
       }
 
-      // Load quest status
       async function loadQuestStatus() {
         try {
-          const response = await fetch(`http://localhost:3000/api/quests/${PLACEHOLDER_USERNAME}`);
+          // Get username from Telegram WebApp if available
+          let username = 'testuser';
+          if (window.Telegram && window.Telegram.WebApp) {
+            username = window.Telegram.WebApp.initDataUnsafe.user?.username || username;
+          }
+
+          const response = await fetch(`http://localhost:3000/api/quests/${username}`);
           const quests = await response.json();
           
           quests.forEach(quest => {
-            const questElement = document.querySelector(`[onclick="handleQuest('${quest.questId}')"]`);
-            if (questElement) {
+            const questCard = document.querySelector(`[data-quest-id="${quest.questId}"]`);
+            if (questCard) {
+              const claimButton = questCard.querySelector('.claim-button');
               if (quest.completed) {
-                questElement.textContent = 'Claim';
-                questElement.parentElement.classList.add('completed');
+                claimButton.textContent = 'Claim';
+                questCard.classList.add('completed');
               } else {
-                questElement.textContent = 'Complete';
+                claimButton.textContent = 'Complete';
               }
             }
           });
@@ -367,19 +288,29 @@
         }
       }
 
-      // Handle quest completion or claiming
       async function handleQuest(questId) {
         try {
+          // Get username from Telegram WebApp if available
+          let username = 'testuser';
+          if (window.Telegram && window.Telegram.WebApp) {
+            username = window.Telegram.WebApp.initDataUnsafe.user?.username || username;
+          }
+
+          const questCard = document.querySelector(`[data-quest-id="${questId}"]`);
+          const claimButton = questCard.querySelector('.claim-button');
+          
+          // Show loading state
+          claimButton.disabled = true;
+          claimButton.classList.add('loading');
+
           // First try to complete the quest
           const completeResponse = await fetch('http://localhost:3000/api/quests/complete', {
             method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-              username: PLACEHOLDER_USERNAME,
+              username: username,
               questId: questId,
-              socialData: 'placeholder' // This would be replaced with actual social data
+              socialData: 'placeholder'
             })
           });
 
@@ -390,26 +321,66 @@
             // If quest is already completed, try to claim reward
             const claimResponse = await fetch('http://localhost:3000/api/quests/claim', {
               method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
+              headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
-                username: PLACEHOLDER_USERNAME,
+                username: username,
                 questId: questId
               })
             });
 
             if (claimResponse.ok) {
               const result = await claimResponse.json();
-              // Update balance
-              document.getElementById('userBalance').textContent = result.newBalance;
+              // Update balance with animation
+              animateBalance(parseInt(document.getElementById('userBalance').textContent), result.newBalance);
+              // Show success message using Telegram's native popup
+              if (window.Telegram && window.Telegram.WebApp) {
+                window.Telegram.WebApp.showPopup({
+                  title: 'Success',
+                  message: 'Reward claimed successfully!',
+                  buttons: [{type: 'ok'}]
+                });
+              }
               // Reload quest status
               loadQuestStatus();
             }
           }
         } catch (error) {
           console.error('Error handling quest:', error);
+          // Show error message using Telegram's native popup
+          if (window.Telegram && window.Telegram.WebApp) {
+            window.Telegram.WebApp.showPopup({
+              title: 'Error',
+              message: 'Failed to process quest. Please try again.',
+              buttons: [{type: 'ok'}]
+            });
+          }
+        } finally {
+          // Reset button state
+          const questCard = document.querySelector(`[data-quest-id="${questId}"]`);
+          const claimButton = questCard.querySelector('.claim-button');
+          claimButton.disabled = false;
+          claimButton.classList.remove('loading');
         }
+      }
+
+      function animateBalance(start, end) {
+        const duration = 1000;
+        const startTime = performance.now();
+        const balanceElement = document.getElementById('userBalance');
+        
+        function update(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          
+          const current = Math.floor(start + (end - start) * progress);
+          balanceElement.textContent = current;
+          
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          }
+        }
+        
+        requestAnimationFrame(update);
       }
     </script>
   </body>
