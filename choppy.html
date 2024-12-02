@@ -13,32 +13,31 @@
 
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./choppy.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Autour One:wght@400&display=swap" />
 
     <style>
       @font-face {
         font-family: "Xtra";
-        src: url("/Xtra.ttf");
+        src: url("./public/Xtra.ttf");
         font-weight: 400;
       }
       @font-face {
         font-family: "GemFont One";
-        src: url("/GemFont One.ttf");
+        src: url("./public/GemFont One.ttf");
         font-weight: 400;
       }
       @font-face {
         font-family: "Greek-Freak";
-        src: url("/Greek-Freak.ttf");
+        src: url("./public/Greek-Freak.ttf");
         font-weight: 400;
       }
       @font-face {
         font-family: "Greek";
-        src: url("/Greek-Regular.ttf");
+        src: url("./public/Greek-Regular.ttf");
         font-weight: 400;
       }
       @font-face {
         font-family: "Augusta";
-        src: url("/Augusta.ttf");
+        src: url("./public/Augusta.ttf");
         font-weight: 400;
       }
     </style>
@@ -47,86 +46,106 @@
     <div class="choppy">
       <!-- Background Music -->
       <audio id="bgMusic" loop>
-        <source src="/music.mp3" type="audio/mpeg">
+        <source src="./public/music.mp3" type="audio/mpeg">
       </audio>
 
-      <div class="choppy-inner">
-        <div class="frame-parent2">
-          <div class="title-scroll-group">
-            <img class="title-scroll-icon3" alt="" src="/title-scroll@2x.png" />
-            <a class="oracle">Oracle</a>
-          </div>
-          <div class="coin-wrapper">
-            <div class="coin">
-              <img class="coin-icon" loading="lazy" alt="" src="/coin@2x.png" />
-              <div class="wrapper">
-                <a class="a" id="userBalance">100</a>
-              </div>
-            </div>
+      <img
+        class="background-image"
+        alt=""
+        src="./public/image-114@2x.png"
+      />
+
+      <section class="menu">
+        <div class="buttons">
+          <img
+            class="back-button-icon"
+            alt=""
+            src="./public/back-button@2x.png"
+            onclick="history.back()"
+          />
+        </div>
+        <div class="prologue-wrapper">
+          <div class="prologue">Oracle</div>
+        </div>
+        <div class="buttons">
+          <img
+            class="settings-button-icon"
+            alt=""
+            src="./public/settings-button@2x.png"
+            onclick="document.getElementById('settings-panel').style.display = 'block'"
+          />
+        </div>
+      </section>
+
+      <div class="coin-display">
+        <div class="coin">
+          <img class="coin-icon" alt="" src="./public/coin@2x.png" />
+          <div class="coin-value">
+            <span id="userBalance">100</span>
           </div>
         </div>
       </div>
 
-      <main class="settings">
-        <img class="image-114-icon" alt="" src="/image-114@2x.png" />
-        <img class="back-button-icon3" loading="lazy" alt="" src="/back-button@2x.png" onclick="history.back()" />
-        <img class="settings-button-icon3" loading="lazy" alt="" src="/settings-button@2x.png" onclick="document.getElementById('settings-panel').style.display = 'block'" />
-        <img class="panel-small-14" alt="" src="/panel-small-11@2x.png" />
+      <section class="content">
+        <div class="market-info">
+          <div class="market-panel">
+            <img class="panel-bg" alt="" src="./public/panel-small-11@2x.png" />
+            <div class="panel-content">
+              <div class="market-image">
+                <img class="choppy-image" alt="" src="./public/choppy@2x.png" />
+              </div>
 
-        <div class="ellipse-parent">
-          <div class="ellipse-div"></div>
-          <img class="frame-1-icon" alt="" src="/frame-1@2x.png" />
-          <img class="bear-icon" loading="lazy" alt="" src="/bear@2x.png" />
-        </div>
-      </main>
+              <div class="market-title">
+                <h2 class="market-name">CHOPPY MARKET</h2>
+              </div>
 
-      <div class="content">
-        <div class="title1">
-          <h2 class="choppy-market">Choppy Market</h2>
-        </div>
-        <div class="description">
-          <div class="paragraph">
-            <h3 class="in-a-choppy-container">
-              <span>In a choppy market, </span>
-              <span class="black-swan-lurks">heads come 60%</span>
-              <span> of the time, and a </span>
-              <span class="black-swan-lurks">black swan lurks with a 10%</span>
-              <span> chance. </span>
-            </h3>
-          </div>
-          <div class="continue-button-parent">
-            <div class="continue-button">
-              <a href="./flip.html" class="frame-button">
-                <img class="button-icon8" alt="" src="/button@2x.png" />
-                <div class="continue1">Continue</div>
-              </a>
+              <div class="market-description">
+                <h3 class="description-text">
+                  IN A CHOPPY MARKET, HEADS COME 60% OF THE TIME, AND A BLACK SWAN LURKS WITH A 10% CHANCE.
+                </h3>
+              </div>
+
+              <div class="button-wrapper">
+                <a href="./flip.html" class="button-container">
+                  <div class="continue">Continue</div>
+                </a>
+              </div>
             </div>
-            <footer class="rectangle-parent">
-              <div class="rectangle-div"></div>
-              <div class="shop-image-parent">
-                <a href="./referral.html" class="shop-image">
-                  <img class="shop-icon3" loading="lazy" alt="" src="/shop-icon@2x.png" />
-                </a>
-                <a href="./referral.html" class="referral3">Referral</a>
-              </div>
-              <div class="shop-image-parent">
-                <a href="./quest.html">
-                  <img class="quest-icom-icon3" loading="lazy" alt="" src="/quest-icom@2x.png" />
-                </a>
-                <div class="quests-wrapper">
-                  <a href="./quest.html" class="quests3">Quests</a>
-                </div>
-              </div>
-              <div class="leaderboard-group">
-                <a href="./leader-board.html" class="leaderboard3">Leaderboard</a>
-                <a href="./leader-board.html">
-                  <img class="trophy-icon3" loading="lazy" alt="" src="/trophy-icon@2x.png" />
-                </a>
-              </div>
-            </footer>
           </div>
         </div>
-      </div>
+      </section>
+
+      <footer class="lower-menu">
+        <a href="./referral.html" class="store">
+          <img
+            class="shop-icon"
+            loading="lazy"
+            alt=""
+            src="./public/shop-icon@2x.png"
+          />
+          <div class="referral">Referral</div>
+        </a>
+        
+        <a href="./quest.html" class="tasks">
+          <img
+            class="quest-icon"
+            loading="lazy"
+            alt=""
+            src="./public/quest-icom@2x.png"
+          />
+          <div class="quests">Quests</div>
+        </a>
+        
+        <a href="./leader-board.html" class="achievements">
+          <img
+            class="trophy-icon"
+            loading="lazy"
+            alt=""
+            src="./public/trophy-icon@2x.png"
+          />
+          <div class="leaderboard">Leaderboard</div>
+        </a>
+      </footer>
 
       <!-- Settings Panel -->
       <div id="settings-panel" class="settings-panel" style="display: none;">
@@ -150,57 +169,51 @@
     </div>
 
     <script>
-      // Prevent default touch behaviors
-      document.addEventListener('touchmove', function(e) {
-        e.preventDefault();
-      }, { passive: false });
-
-      // Prevent zooming
-      document.addEventListener('gesturestart', function(e) {
-        e.preventDefault();
-      });
-
-      // Start background music when the page loads
-      window.addEventListener('load', function() {
-        const bgMusic = document.getElementById('bgMusic');
-        bgMusic.volume = 0.5; // Set initial volume
-        bgMusic.play().catch(function(error) {
-          console.log("Audio autoplay failed:", error);
-        });
-
-        // Initialize user data
-        initializeUser();
-
+      document.addEventListener('DOMContentLoaded', function() {
         // Handle Telegram WebApp initialization
         if (window.Telegram && window.Telegram.WebApp) {
           const webapp = window.Telegram.WebApp;
           webapp.ready();
           webapp.expand();
-        }
-      });
 
-      // Placeholder username (will be replaced with Telegram username later)
-      const PLACEHOLDER_USERNAME = 'testuser';
+          // Set Telegram theme color
+          document.documentElement.style.setProperty('--tg-theme-bg-color', webapp.backgroundColor);
+          document.documentElement.style.setProperty('--tg-theme-text-color', webapp.textColor);
+        }
+
+        // Start background music
+        const bgMusic = document.getElementById('bgMusic');
+        bgMusic.volume = 0.5;
+        bgMusic.play().catch(function(error) {
+          console.log("Audio autoplay failed:", error);
+        });
+
+        // Add active state for buttons
+        const buttons = document.querySelectorAll('a, .buttons img');
+        buttons.forEach(button => {
+          button.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.95)';
+          });
+          button.addEventListener('touchend', function() {
+            this.style.transform = 'scale(1)';
+          });
+        });
+
+        // Initialize user data
+        initializeUser();
+      });
 
       // Initialize user data
       async function initializeUser() {
         try {
-          const response = await fetch(`http://localhost:3000/api/user/${PLACEHOLDER_USERNAME}`);
+          const username = localStorage.getItem('username') || 'testuser';
+          const response = await fetch(`http://localhost:3000/api/user/${username}`);
           const userData = await response.json();
           document.getElementById('userBalance').textContent = userData.balance;
         } catch (error) {
           console.error('Error initializing user:', error);
         }
       }
-
-      // Handle back button for Telegram WebApp
-      document.querySelector('.back-button-icon3').addEventListener('click', function() {
-        if (window.Telegram && window.Telegram.WebApp) {
-          window.Telegram.WebApp.close();
-        } else {
-          history.back();
-        }
-      });
     </script>
   </body>
 </html>
