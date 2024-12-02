@@ -245,19 +245,21 @@
   text-align: center;
   line-height: 1.4;
   padding: 0 calc(var(--vw) * 6);
+  color: var(--color-saddlebrown-100);
 }
 
 .paragraph {
   align-self: stretch;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding: calc(var(--vh) * 25) calc(var(--vw) * 8) calc(var(--vh) * 2);
+  padding: calc(var(--vh) * 15) calc(var(--vw) * 8) calc(var(--vh) * 2);
   box-sizing: border-box;
   max-width: 100%;
   position: relative;
   z-index: 3;
+  margin-top: calc(var(--vh) * 10);
 }
 
 .button-icon8 {
@@ -284,7 +286,6 @@
   border: 0;
   padding: calc(var(--vh) * 2) calc(var(--vw) * 10);
   background-color: transparent;
-  flex: 1;
   background-image: url(./public/button@2x.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -295,7 +296,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 250px;
+  width: min(200px, 50vw);
 }
 
 .continue-button {
@@ -303,8 +304,10 @@
   display: flex;
   justify-content: center;
   padding: 0 calc(var(--vw) * 5);
-  margin-top: calc(var(--vh) * -5);
-  position: relative;
+  position: absolute;
+  bottom: calc(var(--vh) * 15);
+  left: 0;
+  right: 0;
   z-index: 4;
 }
 
@@ -368,9 +371,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: calc(var(--vh) * 3);
   width: 100%;
-  padding-bottom: calc(var(--vh) * 15);
+  height: 100vh;
   position: relative;
   z-index: 2;
 }
