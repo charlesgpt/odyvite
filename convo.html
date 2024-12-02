@@ -51,13 +51,7 @@
       </audio>
 
       <img
-        class="throneroom-1-icon1"
-        alt=""
-        src="./public/throneroom-1@2x.png"
-      />
-
-      <img
-        class="soti1111-greek-trireme-sailing-icon1"
+        class="background-image"
         alt=""
         src="./public/soti1111-greek-trireme-sailing-away-from-burning-troy-ar-5191-52affaba18774b91820c6b542e6e16ca@2x.png"
       />
@@ -86,7 +80,7 @@
         </div>
       </section>
 
-      <section class="title">
+      <section class="content">
         <div class="ten-years-of-war-one-night-of-wrapper">
           <div class="ten-years-of">
             Ten years of war. One night of cunning. Troy burns, but the journey
@@ -103,39 +97,39 @@
             <div class="continue">Skip</div>
           </a>
         </div>
-
-        <footer class="lower-menu">
-          <a href="./referral.html" class="store">
-            <img
-              class="shop-icon1"
-              loading="lazy"
-              alt=""
-              src="./public/shop-icon@2x.png"
-            />
-            <div class="referral1">Referral</div>
-          </a>
-          
-          <a href="./quest.html" class="tasks">
-            <img
-              class="quest-icom-icon1"
-              loading="lazy"
-              alt=""
-              src="./public/quest-icom@2x.png"
-            />
-            <div class="quests1">Quests</div>
-          </a>
-          
-          <a href="./leader-board.html" class="achievements">
-            <img
-              class="trophy-icon1"
-              loading="lazy"
-              alt=""
-              src="./public/trophy-icon@2x.png"
-            />
-            <div class="leaderboard1">Leaderboard</div>
-          </a>
-        </footer>
       </section>
+
+      <footer class="lower-menu">
+        <a href="./referral.html" class="store">
+          <img
+            class="shop-icon1"
+            loading="lazy"
+            alt=""
+            src="./public/shop-icon@2x.png"
+          />
+          <div class="referral1">Referral</div>
+        </a>
+        
+        <a href="./quest.html" class="tasks">
+          <img
+            class="quest-icom-icon1"
+            loading="lazy"
+            alt=""
+            src="./public/quest-icom@2x.png"
+          />
+          <div class="quests1">Quests</div>
+        </a>
+        
+        <a href="./leader-board.html" class="achievements">
+          <img
+            class="trophy-icon1"
+            loading="lazy"
+            alt=""
+            src="./public/trophy-icon@2x.png"
+          />
+          <div class="leaderboard1">Leaderboard</div>
+        </a>
+      </footer>
 
       <!-- Settings Panel -->
       <div id="settings-panel" class="settings-panel" style="display: none;">
@@ -177,16 +171,6 @@
         bgMusic.play().catch(function(error) {
           console.log("Audio autoplay failed:", error);
         });
-
-        // Prevent zooming
-        document.addEventListener('gesturestart', function(e) {
-          e.preventDefault();
-        });
-
-        // Prevent default touch behaviors
-        document.addEventListener('touchmove', function(e) {
-          e.preventDefault();
-        }, { passive: false });
 
         // Add active state for buttons
         const buttons = document.querySelectorAll('a, .buttons img');
