@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <!-- Previous head section remains the same -->
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -104,23 +103,23 @@
             </div>
           </div>
 
-          <div class="bet-container">
+          <form onsubmit="event.preventDefault(); document.activeElement.blur();" class="bet-container">
             <div class="greek-pattern left"></div>
             <input 
               type="number" 
               id="betAmount" 
               class="bet-input" 
               placeholder="ENTER BET AMOUNT"
-              onkeyup="if(event.key === 'Enter') { this.blur(); }"
               inputmode="numeric"
               pattern="[0-9]*"
+              enterkeyhint="done"
             />
             <div class="bet-controls">
-              <button onclick="adjustBet('up')" class="bet-arrow">▲</button>
-              <button onclick="adjustBet('down')" class="bet-arrow">▼</button>
+              <button type="button" onclick="adjustBet('up')" class="bet-arrow">▲</button>
+              <button type="button" onclick="adjustBet('down')" class="bet-arrow">▼</button>
             </div>
             <div class="greek-pattern right"></div>
-          </div>
+          </form>
 
           <button class="flip-button" onclick="flipCoin()">
             <span class="flip-text">FLIP COIN</span>
@@ -164,7 +163,6 @@
       </div>
     </div>
 
-    <!-- Previous script section remains the same -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
       let selectedSide = 'heads';
@@ -191,6 +189,21 @@
         initializeGame();
         startTimer();
         initializeChart();
+
+        // Add input event listeners
+        const betInput = document.getElementById('betAmount');
+        
+        betInput.addEventListener('keyup', function(event) {
+          if (event.key === 'Enter') {
+            this.blur();
+          }
+        });
+
+        betInput.addEventListener('blur', function() {
+          const currentBet = parseInt(this.value) || 0;
+          const balance = parseInt(document.getElementById('userBalance').textContent);
+          this.value = Math.min(currentBet, balance);
+        });
       });
 
       function initializeGame() {
