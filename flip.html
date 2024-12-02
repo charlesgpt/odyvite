@@ -106,7 +106,15 @@
 
           <div class="bet-container">
             <div class="greek-pattern left"></div>
-            <input type="number" id="betAmount" class="bet-input" placeholder="ENTER BET AMOUNT" />
+            <input 
+              type="number" 
+              id="betAmount" 
+              class="bet-input" 
+              placeholder="ENTER BET AMOUNT"
+              onkeyup="if(event.key === 'Enter') { this.blur(); }"
+              inputmode="numeric"
+              pattern="[0-9]*"
+            />
             <div class="bet-controls">
               <button onclick="adjustBet('up')" class="bet-arrow">▲</button>
               <button onclick="adjustBet('down')" class="bet-arrow">▼</button>
