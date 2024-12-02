@@ -175,7 +175,7 @@ body {
                -1px 0 0 #492b00,
                0 -1px 0 #492b00;
   line-height: 1.5;
-  padding: calc(var(--vh) * 13) calc(var(--vw) * 3);
+  padding: calc(var(--vh) * 19) calc(var(--vw) * 3);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
