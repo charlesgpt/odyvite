@@ -115,7 +115,7 @@
   padding: calc(var(--vh) * 4) calc(var(--vw) * 5);
   box-sizing: border-box;
   z-index: 4;
-  margin-top: calc(var(--vh) * 15);
+  margin-top: calc(var(--vh) * 10);
 }
 
 .ten-years-of-war-one-night-of-wrapper {
@@ -151,8 +151,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: calc(var(--vh) * 3);
-  padding: calc(var(--vh) * 2) 0;
+  gap: calc(var(--vh) * 10); /* Increased gap between buttons */
+  padding: calc(var(--vh) * 4) 0;
+  margin: calc(var(--vh) * 4) 0;
 }
 
 .button-group,
@@ -335,6 +336,10 @@
   .leaderboard1 {
     font-size: min(var(--font-size-base), 3.5vw);
   }
+
+  .frame-wrapper {
+    gap: calc(var(--vh) * 8);
+  }
 }
 
 @media screen and (max-height: 600px) {
@@ -344,7 +349,12 @@
 
   .title {
     gap: calc(var(--vh) * 3);
-    margin-top: calc(var(--vh) * 10);
+    margin-top: calc(var(--vh) * 8);
+  }
+
+  .frame-wrapper {
+    gap: calc(var(--vh) * 6);
+    margin: calc(var(--vh) * 2) 0;
   }
 
   .lower-menu {
