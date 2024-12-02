@@ -260,7 +260,7 @@
   max-width: 100%;
   position: relative;
   z-index: 3;
-  margin-top: calc(var(--vh) * -5);
+  margin-top: calc(var(--vh) * -10);
 }
 
 .button-icon12 {
