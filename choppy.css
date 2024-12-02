@@ -259,7 +259,7 @@
   max-width: 100%;
   position: relative;
   z-index: 3;
-  margin-top: calc(var(--vh) * -4);
+  margin-top: calc(var(--vh) * -8);
 }
 
 .button-icon8 {
