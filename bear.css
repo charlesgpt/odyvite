@@ -304,9 +304,9 @@
   align-self: stretch;
   display: flex;
   justify-content: center;
-  padding: 0 calc(var(--vw) * 5);
+  padding: 0 calc(var(--vw) * 0);
   position: absolute;
-  bottom: calc(var(--vh) * 60);
+  bottom: calc(var(--vh) * 80);
   left: 0;
   right: 0;
   z-index: 4;
