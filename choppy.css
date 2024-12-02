@@ -224,7 +224,7 @@
   padding: calc(var(--vh) * 2) calc(var(--vw) * 5);
   width: 100%;
   box-sizing: border-box;
-  margin-top: calc(var(--vh) * 25);
+  margin-top: calc(var(--vh) * 35);
 }
 
 .black-swan-lurks {
@@ -244,7 +244,7 @@
   z-index: 2;
   text-align: center;
   line-height: 1.4;
-  padding: 0 calc(var(--vw) * 4);
+  padding: 0 calc(var(--vw) * 6);
 }
 
 .paragraph {
@@ -253,7 +253,7 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  padding: calc(var(--vh) * 15) calc(var(--vw) * 5) calc(var(--vh) * 2);
+  padding: calc(var(--vh) * 25) calc(var(--vw) * 8) calc(var(--vh) * 2);
   box-sizing: border-box;
   max-width: 100%;
   position: relative;
@@ -295,6 +295,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 250px;
 }
 
 .continue-button {
@@ -302,7 +303,9 @@
   display: flex;
   justify-content: center;
   padding: 0 calc(var(--vw) * 5);
-  margin-top: calc(var(--vh) * 2);
+  margin-top: calc(var(--vh) * -5);
+  position: relative;
+  z-index: 4;
 }
 
 .rectangle-parent {
