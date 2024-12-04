@@ -42,7 +42,7 @@
       <img
         class="background-image"
         alt=""
-        src="./public/image-114@2x.png"
+        src="./public/cpbg.png"
       />
 
       <section class="menu">
@@ -168,6 +168,7 @@
       let selectedSide = 'heads';
       let flipHistory = [];
       let balanceHistory = [100];
+      let betsHistory = [];
       let timer = 90;
       let chart;
       let timerInterval;
@@ -186,6 +187,7 @@
         bgMusic.play().catch(console.error);
 
         // Initialize game
+        resetGameState();
         initializeGame();
         startTimer();
         initializeChart();
@@ -206,18 +208,27 @@
         });
       });
 
-      function initializeGame() {
-        // Initialize history coins
+      function resetGameState() {
+        // Reset all game-related arrays
+        flipHistory = [];
+        balanceHistory = [100];
+        betsHistory = [];
+        selectedSide = 'heads';
+        
+        // Reset history coins display
         const historyCoins = document.getElementById('historyCoins');
-        for (let i = 0; i < 7; i++) {
-          const coin = document.createElement('img');
-          coin.src = './public/coin@2x.png';
-          coin.className = 'history-coin';
-          historyCoins.appendChild(coin);
+        if (historyCoins) {
+          historyCoins.innerHTML = ''; // Clear existing coins
         }
+      }
+
+      function initializeGame() {
+        // Initialize with empty history
+        const historyCoins = document.getElementById('historyCoins');
+        historyCoins.innerHTML = ''; // Clear any existing coins
 
         // Set initial balance
-        document.getElementById('userBalance').textContent = '1000';
+        document.getElementById('userBalance').textContent = '100';
       }
 
       function startTimer() {
@@ -228,7 +239,18 @@
           timer--;
           if (timer <= 0) {
             clearInterval(timerInterval);
-            // Handle round end
+            // Save game data before redirecting
+            const gameData = {
+              balance: parseInt(document.getElementById('userBalance').textContent),
+              history: flipHistory,
+              balanceHistory: balanceHistory,
+              bets: betsHistory
+            };
+            localStorage.setItem('gameData', JSON.stringify(gameData));
+            // Reset game state before redirecting
+            resetGameState();
+            // Redirect to stats page
+            window.location.href = './stats.html';
           }
           updateTimer();
         }, 1000);
@@ -257,19 +279,77 @@
         }
       }
 
+      function determineMarketState(balanceHistory) {
+        if (balanceHistory.length < 3) return 'choppy';
+        
+        const recentChanges = [];
+        for (let i = 1; i < balanceHistory.length; i++) {
+          recentChanges.push(balanceHistory[i] - balanceHistory[i-1]);
+        }
+        
+        const positiveChanges = recentChanges.filter(change => change > 0).length;
+        const ratio = positiveChanges / recentChanges.length;
+        
+        if (ratio >= 0.7) return 'bull';
+        if (ratio <= 0.3) return 'bear';
+        return 'choppy';
+      }
+
       function flipCoin() {
         const betAmount = parseInt(document.getElementById('betAmount').value);
         const balance = parseInt(document.getElementById('userBalance').textContent);
+        const currentBalance = balance;
 
         if (!betAmount || betAmount <= 0) {
-          alert('Please enter a valid bet amount');
+          if (window.Telegram && window.Telegram.WebApp) {
+            window.Telegram.WebApp.showPopup({
+              title: 'Invalid Bet',
+              message: 'Please enter a valid bet amount',
+              buttons: [{type: 'ok'}]
+            });
+          } else {
+            alert('Please enter a valid bet amount');
+          }
           return;
         }
 
         if (betAmount > balance) {
-          alert('Insufficient balance');
+          if (window.Telegram && window.Telegram.WebApp) {
+            window.Telegram.WebApp.showPopup({
+              title: 'Insufficient Balance',
+              message: 'Not enough balance for this bet',
+              buttons: [{type: 'ok'}]
+            });
+          } else {
+            alert('Insufficient balance');
+          }
           return;
         }
+
+        // Calculate optimal bet based on Kelly criterion
+        let optimalBet;
+        const marketState = determineMarketState(balanceHistory);
+        switch (marketState) {
+          case 'bull':
+            optimalBet = currentBalance * 0.4; // 40% of current balance
+            break;
+          case 'bear':
+            optimalBet = currentBalance * 0.06; // 6% of current balance
+            break;
+          case 'choppy':
+            optimalBet = currentBalance * 0.2; // 20% of current balance
+            break;
+          default:
+            optimalBet = currentBalance * 0.2; // Default to choppy market
+        }
+
+        // Record bet data
+        betsHistory.push({
+          amount: betAmount,
+          optimalBet: optimalBet,
+          balance: currentBalance,
+          marketState: marketState
+        });
 
         // Animate coin flip
         const mainCoin = document.querySelector('.main-coin');
@@ -288,6 +368,14 @@
           showResultIndicator(won ? betAmount : -betAmount);
           
           // Update history
+          flipHistory.push({
+            side: selectedSide,
+            result: result,
+            bet: betAmount,
+            won: won,
+            balanceChange: won ? betAmount : -betAmount,
+            marketState: marketState
+          });
           updateHistory(result, newBalance);
           
           // Stop animation
@@ -317,11 +405,20 @@
 
       function updateHistory(result, balance) {
         // Update coin history
-        const historyCoins = document.querySelectorAll('.history-coin');
-        for (let i = historyCoins.length - 1; i > 0; i--) {
-          historyCoins[i].src = historyCoins[i-1].src;
+        const historyCoins = document.getElementById('historyCoins');
+        
+        // Create new coin element
+        const newCoin = document.createElement('img');
+        newCoin.src = `./public/${result === 'heads' ? 'coin@2x' : 'tail'}.png`;
+        newCoin.className = 'history-coin';
+        
+        // Insert at the beginning
+        historyCoins.insertBefore(newCoin, historyCoins.firstChild);
+        
+        // Keep only last 7 coins
+        while (historyCoins.children.length > 7) {
+          historyCoins.removeChild(historyCoins.lastChild);
         }
-        historyCoins[0].src = `./public/${result === 'heads' ? 'coin@2x' : 'tail'}.png`;
 
         // Update balance history and chart
         balanceHistory.push(balance);

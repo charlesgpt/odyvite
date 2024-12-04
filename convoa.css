@@ -8,11 +8,12 @@ body {
   padding: 0;
   min-height: 100vh;
   background-color: #000;
+  overflow: hidden;
 }
 
 .convo3 {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -22,8 +23,7 @@ body {
   font-size: var(--font-size-3xl);
   color: var(--color-white);
   font-family: var(--font-xtra);
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .background-image {
@@ -101,16 +101,17 @@ body {
 
 .content {
   width: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: calc(var(--vh) * 4);
-  padding: calc(var(--vh) * 4) calc(var(--vw) * 5);
+  padding: 0 calc(var(--vw) * 5);
   box-sizing: border-box;
   z-index: 4;
-  margin-top: calc(var(--vh) * 5);
-  margin-bottom: calc(var(--vh) * 20);
+  position: relative;
+  margin-top: calc(var(--vh) * 2);
+  margin-bottom: calc(var(--vh) * 10);
 }
 
 .dialogue-wrapper {
@@ -118,21 +119,60 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: calc(var(--vh) * 12);
-  margin-bottom: calc(var(--vh) * 6);
+  gap: calc(var(--vh) * 4);
+  position: relative;
+  min-height: calc(var(--vh) * 60);
+}
+
+.dialogue-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--vh) * 4);
+  position: relative;
+  transition: transform 0.5s ease;
+}
+
+/* Move Athena's dialogue up when Poseidon appears */
+.dialogue-container.show-second .athena-box {
+  transform: translateY(calc(var(--vh) * -15));
+  transition: transform 0.5s ease;
+}
+
+/* Move both dialogues up when showing continue button */
+.dialogue-container.show-continue {
+  transform: translateY(calc(var(--vh) * -25));
 }
 
 .dialogue-box {
   width: 100%;
   max-width: 600px;
   position: relative;
-  padding: calc(var(--vh) * 8) calc(var(--vw) * 6) calc(var(--vh) * 5);
+  padding: calc(var(--vh) * 8) calc(var(--vw) * 4) calc(var(--vh) * 6);
   box-sizing: border-box;
-  margin-top: calc(var(--vh) * 8);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: calc(var(--vh) * 2);
+  transition: all 0.5s ease;
+  transform-origin: center;
+}
+
+.dialogue-box[style*="display: flex"] {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .panel-small {
@@ -147,7 +187,7 @@ body {
 
 .speaker {
   position: absolute;
-  top: calc(var(--vh) * -5);
+  top: calc(var(--vh) * -3);
   left: calc(var(--vw) * 3);
   font-size: min(var(--font-size-xl), 5.5vw);
   color: #FFD700;
@@ -174,29 +214,24 @@ body {
                0 1px 0 #492b00,
                -1px 0 0 #492b00,
                0 -1px 0 #492b00;
-  line-height: 1.5;
-  padding: calc(var(--vh) * 19) calc(var(--vw) * 3);
+  line-height: 1.4;
+  padding: calc(var(--vh) * 4) calc(var(--vw) * 3);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(var(--vh) * 15);
+  min-height: calc(var(--vh) * 12);
   word-wrap: break-word;
   overflow-wrap: break-word;
   max-width: 85%;
 }
 
-.dialogue-text p {
-  margin: calc(var(--vh) * 1.5) 0;
-  max-width: 100%;
-}
-
 .speaker-icon {
   position: absolute;
-  width: min(140px, 25vw);
+  width: min(120px, 22vw);
   height: auto;
-  top: calc(var(--vh) * -8);
+  top: calc(var(--vh) * -6);
   left: 50%;
   transform: translateX(-50%);
   object-fit: contain;
@@ -206,13 +241,32 @@ body {
 
 .button-wrapper {
   width: 100%;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: calc(var(--vh) * 6) 0;
-  margin-top: calc(var(--vh) * 4);
+  padding: calc(var(--vh) * 2) 0;
   z-index: 5;
+  margin-top: calc(var(--vh) * 4);
+  position: absolute;
+  bottom: calc(var(--vh) * 15);
+  left: 0;
+  transition: all 0.5s ease;
+}
+
+.button-wrapper[style*="display: flex"] {
+  animation: buttonFadeIn 0.5s ease forwards;
+}
+
+@keyframes buttonFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .button-container {
@@ -368,7 +422,7 @@ body {
     min-height: 100dvh;
   }
   .convo3 {
-    min-height: 100dvh;
+    height: 100dvh;
   }
 }
 
@@ -396,6 +450,6 @@ body {
   }
 
   .button-wrapper {
-    padding: calc(var(--vh) * 4) 0;
+    padding: calc(var(--vh) * 2) 0;
   }
 }

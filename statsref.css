@@ -1,0 +1,605 @@
+.bg-icon1,
+.image-103-icon1 {
+  align-self: stretch;
+  overflow: hidden;
+  max-height: 100%;
+}
+.bg-icon1 {
+  position: relative;
+  max-width: 100%;
+  object-fit: cover;
+  display: none;
+  z-index: 0;
+}
+.image-103-icon1 {
+  z-index: 1;
+}
+.image-103-icon1,
+.soti1111-scene-of-an-ancient-g-icon2,
+.stats-child {
+  position: relative;
+  max-width: 100%;
+  object-fit: cover;
+  display: none;
+}
+.soti1111-scene-of-an-ancient-g-icon2 {
+  width: 986px;
+  height: 1176px;
+  z-index: 2;
+}
+.stats-child {
+  align-self: stretch;
+  overflow: hidden;
+  max-height: 100%;
+  z-index: 3;
+}
+.soti1111-scene-of-an-ancient-g-icon3 {
+  position: absolute;
+  top: -36px;
+  left: -193px;
+  width: 887px;
+  height: 1055px;
+  object-fit: cover;
+}
+.frame-child4,
+.rectangle-footer {
+  position: absolute;
+  top: 677px;
+  left: 0;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.5));
+  width: 500px;
+  height: 323px;
+}
+.frame-child4 {
+  top: 323px;
+  left: 500px;
+  transform: rotate(-180deg);
+  transform-origin: 0 0;
+}
+.rectangle-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+.back-button-icon3,
+.settings-button-icon3 {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: 3;
+}
+.settings-button-icon3 {
+  left: 418px;
+}
+.scene-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.title-scroll-icon3 {
+  height: 80px;
+  width: 320px;
+  position: relative;
+  object-fit: cover;
+  display: none;
+}
+.risk-profile {
+  text-decoration: none;
+  flex: 1;
+  position: relative;
+  color: inherit;
+  text-shadow: 0.2px 0 0#492b00, 0 0.2px 0#492b00, -0.2px 0 0#492b00,
+    0-0.2px 0#492b00;
+  z-index: 4;
+}
+.stats-inner,
+.title-scroll-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.title-scroll-container {
+  flex: 1;
+  padding: var(--padding-8xl) 84px var(--padding-5xl) 86px;
+  background-image: url(./public/title-scroll@2x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  z-index: 3;
+}
+.stats-inner {
+  align-self: stretch;
+  padding: 0 90px;
+}
+.panel3-1-icon1 {
+  width: 500px;
+  height: 788.6px;
+  position: relative;
+  object-fit: cover;
+  display: none;
+  max-width: 100%;
+}
+.optimal-strategist {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+.optimal-strategist-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-44xl);
+  color: var(--color-saddlebrown);
+}
+.your-decisions-align {
+  flex: 1;
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  z-index: 1;
+}
+.your-decisions-align-with-a-ma-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 45px;
+  box-sizing: border-box;
+  max-width: 100%;
+  font-size: var(--font-size-lg);
+  font-family: var(--font-xtra);
+}
+.average-bet {
+  flex: 1;
+  position: relative;
+  display: inline-block;
+  min-width: 82px;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.wealth-icon-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-3xs) 0 var(--padding-2xs);
+}
+.average-bet-divider {
+  flex: 1;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.average-bet-divider-wrapper {
+  width: 101px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-5xl) 0 25px;
+  box-sizing: border-box;
+  margin-top: -3px;
+  font-size: var(--font-size-5xl);
+  color: var(--color-saddlebrown);
+  font-family: var(--font-augusta);
+}
+.optimal-bet-icon {
+  height: 1px;
+  width: 65.5px;
+  position: relative;
+  z-index: 1;
+}
+.average-bet-wrapper,
+.optimal-bet-icon-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-mid) 0 var(--padding-mini);
+}
+.average-bet-wrapper {
+  align-self: stretch;
+  justify-content: flex-end;
+  padding: 0 var(--padding-12xs) 0 0;
+}
+.wealth-value {
+  position: relative;
+  z-index: 1;
+}
+.wealth-value-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 21px 0 var(--padding-xl);
+}
+.optimal-bet-value-child {
+  align-self: stretch;
+  height: 1px;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.optimal-bet-value {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 0 var(--padding-12xs);
+  gap: 5px;
+}
+.optimal-bet-value-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-mid) var(--padding-smi) var(--padding-mini);
+  font-size: var(--font-size-5xl);
+  color: var(--color-saddlebrown);
+  font-family: var(--font-augusta);
+}
+.optimal-bet {
+  align-self: stretch;
+  position: relative;
+  z-index: 1;
+}
+.optimal-bet-divider {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+.optimal-bet-divider-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-mid) 0 var(--padding-xl);
+  font-size: var(--font-size-5xl);
+  color: var(--color-saddlebrown);
+  font-family: var(--font-augusta);
+}
+.frame-parent6,
+.wealth-value-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 3px;
+}
+.frame-parent6 {
+  align-self: stretch;
+  gap: 1px;
+}
+.average-bet-chart,
+.average-bet-chart-wrapper,
+.final-wealth-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.average-bet-chart {
+  align-self: stretch;
+  gap: 12px;
+}
+.average-bet-chart-wrapper,
+.final-wealth-wrapper {
+  padding: var(--padding-2xs) 0 0;
+}
+.final-wealth-wrapper {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 var(--padding-16xl);
+}
+.coin-icon15,
+.final-wealth-coin {
+  position: relative;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.coin-icon15 {
+  width: 26.3px;
+  height: 26.3px;
+  object-fit: cover;
+}
+.coin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 0 6.9px;
+}
+.final-wealth-coin-value-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 5.7px;
+}
+.frame-wrapper3 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-20xl);
+  font-size: 35.1px;
+  color: var(--color-saddlebrown);
+  font-family: var(--font-augusta);
+}
+.button-icon2 {
+  height: 86.3px;
+  width: 200px;
+  position: relative;
+  object-fit: cover;
+  display: none;
+}
+.continue1 {
+  position: relative;
+  display: inline-block;
+  min-width: 93px;
+  z-index: 1;
+}
+.button1,
+.frame-parent7 {
+  display: flex;
+  justify-content: flex-start;
+}
+.button1 {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: var(--padding-14xl) 53px 30.3px 54px;
+  background-image: url(./public/button1@2x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  z-index: 1;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--color-white);
+}
+.frame-parent7 {
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4.5px;
+  min-width: 130px;
+  font-size: 23.4px;
+}
+.frame-parent5 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 26px;
+  flex-shrink: 0;
+  margin-top: -3px;
+}
+.wealth-icon-container-parent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.frame-wrapper2,
+.panel3-1-group {
+  align-self: stretch;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.frame-wrapper2 {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-xl) 0 30px;
+  font-size: var(--font-size-base);
+}
+.panel3-1-group {
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--padding-64xl) var(--padding-44xl) 92.3px;
+  gap: 9px;
+  background-image: url(./public/panel3-1@2x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  z-index: 3;
+}
+.frame-child5 {
+  height: 323px;
+  width: 500px;
+  position: relative;
+  background: linear-gradient(180deg, transparent, #000);
+  display: none;
+  max-width: 100%;
+}
+.shop-icon3 {
+  height: 64px;
+  width: 64px;
+  position: relative;
+  object-fit: cover;
+  z-index: 4;
+}
+.shop-icon-frame {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-11xs);
+}
+.referral3 {
+  align-self: stretch;
+  position: relative;
+  z-index: 3;
+  margin-top: -4px;
+}
+.frame-parent8 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.quest-icom-icon3 {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  object-fit: cover;
+  z-index: 3;
+}
+.quests3 {
+  flex: 1;
+  position: relative;
+  z-index: 4;
+}
+.quests-container {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-12xs) 0 var(--padding-11xs);
+  margin-top: -4px;
+}
+.leaderboard3 {
+  width: 119px;
+  position: absolute;
+  margin: 0 !important;
+  bottom: -16px;
+  left: -27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 119px;
+  z-index: 3;
+}
+.trophy-icon3 {
+  height: 64px;
+  width: 64.6px;
+  position: relative;
+  object-fit: cover;
+  z-index: 4;
+}
+.leaderboard-parent1,
+.rectangle-parent1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.leaderboard-parent1 {
+  justify-content: flex-start;
+  position: relative;
+}
+.rectangle-parent1 {
+  align-self: stretch;
+  background: linear-gradient(180deg, transparent, #000);
+  justify-content: space-between;
+  padding: var(--padding-201xl) var(--padding-64xl) var(--padding-4xl)
+    var(--padding-63xl);
+  box-sizing: border-box;
+  max-width: 100%;
+  gap: var(--gap-xl);
+  z-index: 1;
+  margin-top: -217.6px;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+  font-family: var(--font-gemfont-one);
+}
+.frame-parent4,
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frame-parent4 {
+  align-self: stretch;
+  max-width: 100%;
+  font-size: var(--font-size-13xl);
+  color: var(--color-saddlebrown-200);
+}
+.stats {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  padding: var(--padding-base) 0 0;
+  box-sizing: border-box;
+  gap: 10px;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  font-size: var(--font-size-11xl);
+  color: var(--color-saddlebrown);
+  font-family: var(--font-greek-freak);
+}
+@media screen and (max-width: 450px) {
+  .optimal-strategist-wrapper,
+  .stats-inner,
+  .title-scroll-container {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .your-decisions-align-with-a-ma-wrapper {
+    padding-bottom: var(--padding-10xl);
+    box-sizing: border-box;
+  }
+  .average-bet-divider,
+  .optimal-bet-divider,
+  .wealth-value {
+    font-size: var(--font-size-lgi);
+  }
+  .average-bet-chart-wrapper {
+    flex: 1;
+  }
+  .continue1 {
+    font-size: var(--font-size-lgi);
+  }
+  .frame-parent5 {
+    flex-wrap: wrap;
+  }
+  .panel3-1-group {
+    padding: var(--padding-16xl) var(--padding-xl) var(--padding-20xl);
+    box-sizing: border-box;
+  }
+  .leaderboard3,
+  .quests3,
+  .referral3 {
+    font-size: var(--font-size-base);
+  }
+  .rectangle-parent1 {
+    flex-wrap: wrap;
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}

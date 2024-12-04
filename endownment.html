@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="theme-color" content="#000000" />
 
-    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./global2.css" />
     <link rel="stylesheet" href="./endownment.css" />
 
     <style>
@@ -33,7 +33,7 @@
     </style>
   </head>
   <body>
-    <div class="convo3">
+    <div class="endownment">
       <!-- Background Music -->
       <audio id="bgMusic" loop>
         <source src="./public/music.mp3" type="audio/mpeg">
@@ -54,8 +54,8 @@
             onclick="history.back()"
           />
         </div>
-        <div class="prologue-wrapper">
-          <div class="prologue">Oracle</div>
+        <div class="title-wrapper">
+          <div class="title">Oracle</div>
         </div>
         <div class="buttons">
           <img
@@ -68,22 +68,33 @@
       </section>
 
       <section class="content">
-        <div class="dialogue-wrapper">
-          <div class="dialogue-box">
-            <img class="panel-small" alt="" src="./public/panel3-1@2x.png" />
-            <div class="dialogue-text">
-              <p>The Oracle has biased the sacred knucklebones, favoring heads with a X% chance, but beware, for the quarreling gods even though they endowed you <img class="coin-icon" alt="" src="./public/coin1@2x.png"/> 100 they have also cursed the game with a 1-X-Y% chance of a Black Swan event.</p>
-              <p>The divine challenge is thus:</p>
-              <p>How much of your wealth to risk and whether to back heads, favored by fate, or tails, defying the odds with a Y% chance.</p>
-              <p>Win, and you double your bet; lose, and that portion of your wealth is cast into the void. But if the Black Swan strikes, you lose half your entire fortune, no matter your bet.</p>
-              <p>Will you risk it all for glory or play it safe and squander the favor of the Oracle?</p>
-              <p><span class="highlight">With 100 and 2 minutes</span>, can you outwit fate, balance risk and reward, and survive the chaos to ascend to immortality?</p>
-            </div>
+        <div class="panel">
+          <img class="panel-background" alt="" src="./public/panel3-1@2x.png" />
+          <div class="panel-text">
+            <p>
+              The Oracle has biased the sacred knucklebones, favoring heads with a 70% chance—but beware, for the quarreling gods even though they endowed you <img class="coin-icon" alt="" src="./public/coin1@2x.png"/> 100 they have also cursed the game with a 1% chance of a Black Swan event.
+            </p>
+            <p>The divine challenge is thus:</p>
+            <p>
+              How much of your wealth to risk and whether to back heads, favored by fate, or tails, defying the odds with a y% chance.
+            </p>
+            <p>
+              Win, and you double your bet; lose, and that portion of your wealth is cast into the void.
+            </p>
+            <p>
+              But if the Black Swan strikes, you lose half your entire fortune, no matter your bet.
+            </p>
+            <p>
+              Will you risk it all for glory or play it safe and squander the favor of the Oracle?
+            </p>
+            <p>
+              With 100 <img class="coin-icon" alt="" src="./public/coin1@2x.png"/> and 2 minutes, can you outwit fate, balance risk and reward, and survive the chaos to ascend to immortality?
+            </p>
           </div>
         </div>
 
         <div class="button-wrapper">
-          <a href="./diceroll2.html" class="button-container">
+          <a href="./flip.html" class="button-container">
             <div class="continue">Continue</div>
           </a>
         </div>
@@ -172,30 +183,6 @@
             this.style.transform = 'scale(1)';
           });
         });
-
-        // Initialize user with 100 balance
-        const username = localStorage.getItem('username');
-        if (username) {
-          fetch(`/api/user/${username}`)
-            .then(response => response.json())
-            .then(user => {
-              if (user) {
-                fetch('/api/user/update-balance', {
-                  method: 'POST',
-                  headers: {
-                    'Content-Type': 'application/json',
-                  },
-                  body: JSON.stringify({
-                    username: username,
-                    balance: 100
-                  })
-                });
-              }
-            })
-            .catch(error => {
-              console.error('Error initializing user balance:', error);
-            });
-        }
       });
     </script>
   </body>

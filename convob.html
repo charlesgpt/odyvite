@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <!-- [Previous head section remains the same] -->
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -68,31 +69,28 @@
       </section>
 
       <section class="content">
-        <div class="dialogue-wrapper">
-          <div class="dialogue-box poseidon-box">
-            <img class="panel-small" alt="" src="./public/panel-small-1@2x.png" />
-            <div class="speaker">Poseidon:</div>
-            <div class="dialogue-text">
-              Triumph? They looted my temples! They mocked a god! You call this wisdom? I call it arrogance.
+        <div class="dialogue-wrapper" id="dialogueWrapper">
+          <div class="dialogue-container">
+            <div class="dialogue-box athena-box">
+              <img class="panel-small" alt="" src="./public/panel-small-1@2x.png" />
+              <div class="speaker">Athena:</div>
+              <div class="dialogue-text"></div>
+              <img class="speaker-icon" alt="" src="./public/group-1707479564@2x.png" />
             </div>
-            <img class="speaker-icon" alt="" src="./public/group-1707479564-1@2x.png" />
+
+            <div class="dialogue-box poseidon-box" style="display: none;">
+              <img class="panel-small" alt="" src="./public/panel-small-1@2x.png" />
+              <div class="speaker">Poseidon:</div>
+              <div class="dialogue-text"></div>
+              <img class="speaker-icon" alt="" src="./public/group-1707479564-1@2x.png" />
+            </div>
           </div>
 
-          <div class="dialogue-box athena-box">
-            <img class="panel-small" alt="" src="./public/panel-small-1@2x.png" />
-            <div class="speaker">Athena:</div>
-            <div class="dialogue-text">
-              <p>Let them sail, then.</p>
-              <p>The sea will remind them who rules it.</p>
-            </div>
-            <img class="speaker-icon" alt="" src="./public/group-1707479564@2x.png" />
+          <div class="button-wrapper" style="display: none;">
+            <a href="./convoc.html" class="button-container">
+              <div class="continue">Continue</div>
+            </a>
           </div>
-        </div>
-
-        <div class="button-wrapper">
-          <a href="./convo3.html" class="button-container">
-            <div class="continue">Continue</div>
-          </a>
         </div>
       </section>
 
@@ -179,6 +177,71 @@
             this.style.transform = 'scale(1)';
           });
         });
+
+        // Initialize dialogue system
+        const dialogues = [
+          {
+            element: document.querySelector('.athena-box'),
+            text: "You dare challenge my authority? I am the goddess of wisdom and war!"
+          },
+          {
+            element: document.querySelector('.poseidon-box'),
+            text: "And I am the god of the seas! Your wisdom brought destruction to my temples. There must be consequences."
+          }
+        ];
+        
+        const dialogueContainer = document.querySelector('.dialogue-container');
+        const continueButton = document.querySelector('.button-wrapper');
+        let isAnimating = false;
+
+        function typeWriter(element, text, speed = 30) {
+          return new Promise(resolve => {
+            let i = 0;
+            element.textContent = '';
+            function type() {
+              if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+              } else {
+                resolve();
+              }
+            }
+            type();
+          });
+        }
+
+        async function playDialogues() {
+          if (isAnimating) return;
+          isAnimating = true;
+
+          // Show and type first dialogue
+          dialogues[0].element.style.display = 'flex';
+          await typeWriter(dialogues[0].element.querySelector('.dialogue-text'), dialogues[0].text);
+          
+          // Wait a bit before showing second dialogue
+          await new Promise(resolve => setTimeout(resolve, 1000));
+          
+          // Show second dialogue and move first dialogue up
+          dialogues[1].element.style.display = 'flex';
+          dialogueContainer.classList.add('show-second');
+          await typeWriter(dialogues[1].element.querySelector('.dialogue-text'), dialogues[1].text);
+          
+          // Wait a bit, then move both dialogues up
+          await new Promise(resolve => setTimeout(resolve, 1000));
+          dialogueContainer.classList.add('show-continue');
+          
+          // Wait for the animation to complete, then show continue button
+          await new Promise(resolve => setTimeout(resolve, 500));
+          continueButton.style.display = 'flex';
+          continueButton.style.opacity = '1';
+          continueButton.style.transform = 'translateY(0)';
+          
+          isAnimating = false;
+        }
+
+        // Start dialogue sequence automatically
+        playDialogues();
       });
     </script>
   </body>

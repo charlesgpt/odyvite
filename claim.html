@@ -2,14 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="theme-color" content="#000000" />
 
     <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./quest1.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Autour One:wght@400&display=swap"
-    />
+    <link rel="stylesheet" href="./claim.css" />
 
     <style>
       @font-face {
@@ -27,175 +30,285 @@
         src: url("./public/Greek-Freak.ttf");
         font-weight: 400;
       }
-      @font-face {
-        font-family: "Greek";
-        src: url("./public/Greek-Regular.ttf");
-        font-weight: 400;
-      }
-      @font-face {
-        font-family: "Augusta";
-        src: url("./public/Augusta.ttf");
-        font-weight: 400;
-      }
     </style>
   </head>
   <body>
-    <div class="quest1">
-      <img class="bg-icon4" alt="" src="./public/bg@2x.png" />
-
-      <img class="image-103-icon4" alt="" src="./public/image-103@2x.png" />
+    <div class="quest">
+      <!-- Background Music -->
+      <audio id="bgMusic" loop>
+        <source src="./public/music.mp3" type="audio/mpeg">
+      </audio>
 
       <img
-        class="soti1111-scene-of-an-ancient-g-icon9"
+        class="background-image"
         alt=""
-        src="./public/soti1111-scene-of-an-ancient-greek-coin-flipping-in-midair-glo-ad535c06450d4988be9bab2507b82aa8-1@2x.png"
+        src="./public/image-114@2x.png"
       />
 
-      <img class="quest-item" alt="" src="./public/frame-13@2x.png" />
+      <section class="menu">
+        <div class="buttons">
+          <img
+            class="back-button-icon"
+            alt=""
+            src="./public/back-button@2x.png"
+            onclick="history.back()"
+          />
+        </div>
+        <div class="title-wrapper">
+          <div class="title">QUESTS</div>
+        </div>
+        <div class="buttons">
+          <img
+            class="settings-button-icon"
+            alt=""
+            src="./public/settings-button@2x.png"
+            onclick="document.getElementById('settings-panel').style.display = 'block'"
+          />
+        </div>
+      </section>
 
-      <div class="quest-inner1">
-        <div class="frame-parent30">
-          <div class="title-scroll-parent6">
-            <img
-              class="title-scroll-icon12"
-              alt=""
-              src="./public/title-scroll@2x.png"
-            />
+      <section class="game-content">
+        <div class="tabs-container">
+          <a href="./quest.html" class="tab">
+            <img class="tab-bg" src="./public/stone-slab2-12@2x.png" alt="" />
+            <div class="tab-glow"></div>
+            <span class="tab-text">EARN</span>
+          </a>
+          <a href="./claim.html" class="tab active">
+            <img class="tab-bg" src="./public/stone-slab2-12@2x.png" alt="" />
+            <div class="tab-glow"></div>
+            <span class="tab-text">CLAIM</span>
+          </a>
+        </div>
 
-            <a class="quests14">Quests</a>
+        <div class="claim-panel">
+          <div class="panel-header">
+            <img class="panel-bg" src="./public/panel3-11@2x.png" alt="" />
+            <h2 class="panel-title">Connect Your Wallet</h2>
           </div>
-          <div class="frame-wrapper9">
-            <div class="daily-tab-group">
-              <div class="daily-tab1">
-                <img
-                  class="stone-slab2-14"
-                  alt=""
-                  src="./public/stone-slab2-12@2x.png"
-                />
 
-                <a class="earn1">Earn</a>
+          <div class="panel-content">
+            <div class="options-section">
+              <div class="option-item telegram">
+                <div class="option-header">
+                  <img class="option-icon" src="./public/button-img@2x.png" alt="" />
+                  <h3 class="option-title">Telegram Bot</h3>
+                </div>
+                <div class="option-link-container">
+                  <a href="https://t.me/IthacaOptionBot" target="_blank" class="option-link">
+                    @IthacaOptionBot
+                  </a>
+                  <button class="action-button" onclick="openTelegramBot()">
+                    <img class="button-bg" src="./public/button@2x.png" alt="" />
+                    <span class="button-text">Open Bot</span>
+                  </button>
+                </div>
               </div>
-              <button class="weekly-tab1">
-                <img
-                  class="stone-slab2-14"
-                  alt=""
-                  src="./public/stone-slab2-12@2x.png"
-                />
 
-                <a class="claim8">Claim</a>
-              </button>
+              <div class="divider">
+                <div class="divider-line"></div>
+                <span class="divider-text">OR</span>
+                <div class="divider-line"></div>
+              </div>
+
+              <div class="option-item webapp">
+                <div class="option-header">
+                  <img class="option-icon" src="./public/button-img1@2x.png" alt="" />
+                  <h3 class="option-title">Ithaca App</h3>
+                </div>
+                <div class="option-link-container">
+                  <a href="https://app.ithacaprotocol.io" target="_blank" class="option-link">
+                    app.ithacaprotocol.io
+                  </a>
+                  <button class="action-button" onclick="openIthacaApp()">
+                    <img class="button-bg" src="./public/button@2x.png" alt="" />
+                    <span class="button-text">Open App</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="wallet-section">
+              <div class="wallet-header">
+                <img class="wallet-icon" src="./public/button-img2@2x.png" alt="" />
+                <h3 class="wallet-title">Link Your Wallet</h3>
+              </div>
+              
+              <form onsubmit="event.preventDefault(); linkWallet();" class="wallet-form">
+                <div class="input-container">
+                  <input 
+                    type="text" 
+                    id="walletAddress" 
+                    class="wallet-input" 
+                    placeholder="Enter EVM Wallet Address"
+                    pattern="^0x[a-fA-F0-9]{40}$"
+                    required
+                  />
+                  <div class="input-border"></div>
+                </div>
+                <button type="submit" class="submit-button">
+                  <img class="button-bg" src="./public/button@2x.png" alt="" />
+                  <span class="button-text">Link Wallet</span>
+                </button>
+              </form>
             </div>
           </div>
         </div>
-      </div>
-      <div class="connect-your-evm-wallet-wrapper">
-        <h2 class="connect-your-evm">Connect Your EVM Wallet</h2>
-      </div>
-      <main class="soti1111-scene-of-an-ancient-g-container">
-        <img
-          class="soti1111-scene-of-an-ancient-g-icon10"
-          alt=""
-          src="./public/soti1111-scene-of-an-ancient-greek-ornate-altar-with-greek-symb-443696c315ce43ca98fe120e80f26663-11@2x.png"
-        />
+      </section>
 
-        <section class="rectangle-parent9">
-          <footer class="frame-child27"></footer>
-          <div class="frame-child28"></div>
-        </section>
-        <img class="panel3-1-icon3" alt="" src="./public/panel3-11@2x.png" />
+      <footer class="lower-menu">
+        <a href="./referral.html" class="menu-item">
+          <img class="menu-icon" src="./public/shop-icon@2x.png" alt="Referral" />
+          <span class="menu-text">Referral</span>
+        </a>
+        <a href="./quest.html" class="menu-item active">
+          <img class="menu-icon" src="./public/quest-icom@2x.png" alt="Quests" />
+          <span class="menu-text">Quests</span>
+        </a>
+        <a href="./leader-board.html" class="menu-item">
+          <img class="menu-icon" src="./public/trophy-icon@2x.png" alt="Leaderboard" />
+          <span class="menu-text">Leaderboard</span>
+        </a>
+      </footer>
 
-        <img
-          class="back-button-icon13"
-          loading="lazy"
-          alt=""
-          src="./public/back-button@2x.png"
-        />
-
-        <img
-          class="settings-button-icon13"
-          loading="lazy"
-          alt=""
-          src="./public/settings-button@2x.png"
-        />
-      </main>
-      <div class="quest-inner2">
-        <div class="frame-parent31">
-          <div class="you-can-either-use-ithaca-opt-parent">
-            <h3 class="you-can-either-container">
-              <span>
-                <p class="you-can-either">You can EITHER use:</p>
-                <p class="you-can-either">
-                  <span>Ithaca Option Bot (Telegram): </span>
-                  <span class="httpstmeithacaoptionbot"
-                    >https://t.me/IthacaOptionBot</span
-                  >
-                </p>
-              </span>
-            </h3>
-            <h3 class="or">OR</h3>
+      <!-- Settings Panel -->
+      <div id="settings-panel" class="settings-panel" style="display: none;">
+        <div class="settings-content">
+          <h3>Settings</h3>
+          <div class="volume-control">
+            <label for="volume">Music Volume:</label>
+            <input 
+              type="range" 
+              id="volume" 
+              min="0" 
+              max="1" 
+              step="0.1" 
+              value="0.5"
+              onchange="document.getElementById('bgMusic').volume = this.value"
+            >
           </div>
-          <h3 class="ithaca-app-httpsappithaca-container">
-            <span>
-              <p class="you-can-either">Ithaca App:</p>
-              <p class="httpsappithacaprotocolio">
-                https://app.ithacaprotocol.io
-              </p>
-            </span>
-          </h3>
-        </div>
-      </div>
-      <div class="frame-parent32">
-        <div class="past-your-evm-wallet-address-b-wrapper">
-          <h3 class="past-your-evm">Past your EVM Wallet Address Below:</h3>
-        </div>
-        <div class="frame-parent33">
-          <div class="rectangle-parent10">
-            <div class="frame-child29"></div>
-            <div class="frame-parent34">
-              <div class="shop-icon-wrapper6">
-                <img
-                  class="shop-icon13"
-                  loading="lazy"
-                  alt=""
-                  src="./public/shop-icon@2x.png"
-                />
-              </div>
-              <a class="referral15">Referral </a>
-            </div>
-            <div class="frame-parent34">
-              <img
-                class="quest-icom-icon13"
-                loading="lazy"
-                alt=""
-                src="./public/quest-icom@2x.png"
-              />
-
-              <div class="quests-wrapper7">
-                <div class="quests15">Quests</div>
-              </div>
-            </div>
-            <div class="leaderboard-parent6">
-              <div class="leaderboard15">Leaderboard</div>
-              <img
-                class="trophy-icon13"
-                loading="lazy"
-                alt=""
-                src="./public/trophy-icon@2x.png"
-              />
-            </div>
-          </div>
-          <div class="coin-amount2">
-            <div class="x3fdb027aa3446d6a57af6954207bb">
-              0x3fDb027Aa3446D6a57af6954207BB53b985DF081
-            </div>
-          </div>
-          <div class="button-parent4">
-            <img class="button-icon17" alt="" src="./public/button@2x.png" />
-
-            <div class="link">Link</div>
-          </div>
+          <button onclick="document.getElementById('settings-panel').style.display = 'none'">Close</button>
         </div>
       </div>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Initialize Telegram WebApp
+        if (window.Telegram && window.Telegram.WebApp) {
+          const webapp = window.Telegram.WebApp;
+          webapp.ready();
+          webapp.expand();
+        }
+
+        // Start background music
+        const bgMusic = document.getElementById('bgMusic');
+        bgMusic.volume = 0.5;
+        bgMusic.play().catch(console.error);
+
+        // Add input validation
+        const walletInput = document.getElementById('walletAddress');
+        walletInput.addEventListener('input', function() {
+          this.value = this.value.trim();
+          if (this.value && !this.value.match(/^0x[a-fA-F0-9]{40}$/)) {
+            this.classList.add('invalid');
+          } else {
+            this.classList.remove('invalid');
+          }
+        });
+      });
+
+      function openTelegramBot() {
+        if (window.Telegram && window.Telegram.WebApp) {
+          // Use Telegram's native URL opening
+          window.Telegram.WebApp.openTelegramLink('https://t.me/IthacaOptionBot');
+        } else {
+          window.open('https://t.me/IthacaOptionBot', '_blank');
+        }
+      }
+
+      function openIthacaApp() {
+        if (window.Telegram && window.Telegram.WebApp) {
+          // Use Telegram's native popup for confirmation
+          window.Telegram.WebApp.showPopup({
+            title: 'Open Ithaca App',
+            message: 'You will be redirected to the Ithaca App website. Continue?',
+            buttons: [
+              {type: 'ok', text: 'Continue'},
+              {type: 'cancel'}
+            ]
+          }, function(buttonId) {
+            if (buttonId === 'ok') {
+              window.open('https://app.ithacaprotocol.io', '_blank');
+            }
+          });
+        } else {
+          window.open('https://app.ithacaprotocol.io', '_blank');
+        }
+      }
+
+      async function linkWallet() {
+        const walletAddress = document.getElementById('walletAddress').value.trim();
+        
+        if (!walletAddress.match(/^0x[a-fA-F0-9]{40}$/)) {
+          if (window.Telegram && window.Telegram.WebApp) {
+            window.Telegram.WebApp.showPopup({
+              title: 'Invalid Address',
+              message: 'Please enter a valid EVM wallet address',
+              buttons: [{type: 'ok'}]
+            });
+          } else {
+            alert('Please enter a valid EVM wallet address');
+          }
+          return;
+        }
+
+        try {
+          // Get username from Telegram WebApp if available
+          let username = 'testuser';
+          if (window.Telegram && window.Telegram.WebApp) {
+            username = window.Telegram.WebApp.initDataUnsafe.user?.username || username;
+          }
+
+          const response = await fetch('http://localhost:3000/api/wallet/link', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              username: username,
+              walletAddress: walletAddress
+            })
+          });
+
+          if (response.ok) {
+            if (window.Telegram && window.Telegram.WebApp) {
+              window.Telegram.WebApp.showPopup({
+                title: 'Success',
+                message: 'Wallet linked successfully!',
+                buttons: [{type: 'ok'}]
+              });
+            } else {
+              alert('Wallet linked successfully!');
+            }
+            // Clear input
+            document.getElementById('walletAddress').value = '';
+          } else {
+            throw new Error('Failed to link wallet');
+          }
+        } catch (error) {
+          console.error('Error linking wallet:', error);
+          if (window.Telegram && window.Telegram.WebApp) {
+            window.Telegram.WebApp.showPopup({
+              title: 'Error',
+              message: 'Failed to link wallet. Please try again.',
+              buttons: [{type: 'ok'}]
+            });
+          } else {
+            alert('Failed to link wallet. Please try again.');
+          }
+        }
+      }
+    </script>
   </body>
 </html>

@@ -2,10 +2,18 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="theme-color" content="#000000" />
+
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./stats.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Autour One:wght@400&display=swap" />
+
     <style>
       @font-face {
         font-family: "Xtra";
@@ -22,255 +30,231 @@
         src: url("./public/Greek-Freak.ttf");
         font-weight: 400;
       }
-      @font-face {
-        font-family: "Greek";
-        src: url("./public/Greek-Regular.ttf");
-        font-weight: 400;
-      }
-      @font-face {
-        font-family: "Augusta";
-        src: url("./public/Augusta.ttf");
-        font-weight: 400;
-      }
     </style>
   </head>
   <body>
-    <!-- Background Music -->
-    <audio id="bgMusic" loop>
-      <source src="./public/music.mp3" type="audio/mpeg">
-    </audio>
-
     <div class="stats">
-      <img class="bg-icon1" alt="" src="./public/bg@2x.png" />
-      <img class="image-103-icon1" alt="" src="./public/image-103@2x.png" />
-      <img class="soti1111-scene-of-an-ancient-g-icon3" alt="" src="./public/soti1111-scene-of-an-ancient-greek-coin-flipping-in-midair-glo-ad535c06450d4988be9bab2507b82aa8-1@2x.png" />
-      <img class="stats-child" alt="" src="./public/frame-13@2x.png" />
+      <!-- Background Music -->
+      <audio id="bgMusic" loop>
+        <source src="./public/music.mp3" type="audio/mpeg">
+      </audio>
 
-      <main class="scene-container">
-        <img class="soti1111-scene-of-an-ancient-g-icon4" alt="" src="./public/soti1111-scene-of-an-ancient-greek-ornate-altar-with-greek-symb-443696c315ce43ca98fe120e80f26663-11@2x.png" />
-        <section class="rectangle-parent3">
-          <footer class="frame-child17"></footer>
-          <textarea class="rectangle-textarea" rows="{16}" cols="{25}"></textarea>
-        </section>
-        <img class="back-button-icon10" loading="lazy" alt="" src="./public/back-button@2x.png" onclick="history.back()" style="cursor: pointer;" />
-        <img class="settings-button-icon10" loading="lazy" alt="" src="./public/settings-button@2x.png" onclick="document.getElementById('settings-panel').style.display = 'block'" style="cursor: pointer;" />
-      </main>
+      <img
+        class="background-image"
+        alt=""
+        src="./public/image-114@2x.png"
+      />
 
-      <div class="stats-inner">
-        <div class="title-scroll-parent3">
-          <img class="title-scroll-icon9" alt="" src="./public/title-scroll@2x.png" />
-          <a class="risk-profile">Risk Profile</a>
+      <section class="menu">
+        <div class="buttons">
+          <img
+            class="back-button-icon"
+            alt=""
+            src="./public/back-button@2x.png"
+            onclick="history.back()"
+          />
         </div>
-      </div>
+        <div class="title-wrapper">
+          <div class="title">GAME STATS</div>
+        </div>
+        <div class="buttons">
+          <img
+            class="settings-button-icon"
+            alt=""
+            src="./public/settings-button@2x.png"
+            onclick="document.getElementById('settings-panel').style.display = 'block'"
+          />
+        </div>
+      </section>
 
-      <div class="frame-parent19">
-        <div class="panel3-1-parent">
-          <img class="panel3-1-icon" alt="" src="./public/panel3-1@2x.png" />
-          <div class="optimal-strategist-wrapper">
-            <div class="optimal-strategist" id="playerCategory">Optimal Strategist</div>
-          </div>
-          <div class="your-decisions-align-with-a-ma-wrapper">
-            <div class="your-decisions-align" id="categoryDescription">
-              Your decisions align with a mastery of calculated risk-taking,
-              showcasing an impressive understanding of the balance between
-              growth and preservation. Like an architect of probability, you
-              leveraged the Kelly criterion to optimize your choices,
-              maintaining discipline even in the face of uncertainty.
+      <section class="game-content">
+        <div class="stats-panel">
+          <div class="panel-content">
+            <div class="category-section">
+              <h2 class="category-title" id="playerCategory">Analyzing...</h2>
+              <p class="category-description" id="categoryDescription"></p>
             </div>
-          </div>
-          <div class="frame-wrapper7">
-            <div class="frame-parent20">
-              <div class="frame-parent21">
-                <div class="average-bet-value-container-parent">
-                  <div class="average-bet-value-container">
-                    <div class="average-bet-wrapper">
-                      <div class="optimal-strategist">Average Bet</div>
-                    </div>
-                    <div class="frame-parent22">
-                      <div class="average-bet-divider-wrapper">
-                        <div class="average-bet-divider" id="averageBet">10</div>
-                      </div>
-                      <div class="optimal-bet-icon-wrapper">
-                        <img class="optimal-bet-icon" loading="lazy" alt="" src="./public/vector-3.svg" />
-                      </div>
-                      <div class="optimal-bet-parent">
-                        <div class="optimal-bet">Optimal Bet %</div>
-                        <div class="optimal-bet-divider-wrapper">
-                          <div class="optimal-bet-divider" id="optimalBetPercent">450%</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="frame-parent23">
-                    <div class="vector-wrapper">
-                      <img class="frame-child18" loading="lazy" alt="" src="./public/vector-1.svg" />
-                    </div>
-                    <img class="frame-child19" loading="lazy" alt="" src="./public/vector-1.svg" />
-                  </div>
-                </div>
-                <div class="average-bet-parent">
-                  <div class="optimal-bet">Average Bet %</div>
-                  <div class="wealth-value-container-wrapper">
-                    <div class="wealth-value-container">
-                      <div class="wealth-value-wrapper">
-                        <div class="optimal-bet-divider" id="averageBetPercent">25</div>
-                      </div>
-                      <div class="wealth-icon-container-parent">
-                        <div class="wealth-icon-container">
-                          <img class="optimal-bet-icon" loading="lazy" alt="" src="./public/vector-4.svg" />
-                        </div>
-                        <div class="final-wealth-parent">
-                          <div class="optimal-bet">Final Wealth</div>
-                          <div class="final-wealth-value-container-wrapper">
-                            <div class="final-wealth-value-container">
-                              <div class="optimal-bet-divider" id="finalWealth">1500</div>
-                              <div class="coin-wrapper1">
-                                <img class="coin-icon17" loading="lazy" alt="" src="./public/coin2@2x.png" />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-label">Average Bet</div>
+                <div class="stat-value" id="averageBet">0</div>
               </div>
-              <div class="button-wrapper">
-                <div class="button1">
-                  <img class="button-icon14" alt="" src="./public/button@2x.png" />
-                  <div class="continue4">Continue</div>
+
+              <div class="stat-item">
+                <div class="stat-label">Average Bet %</div>
+                <div class="stat-value" id="averageBetPercent">0%</div>
+              </div>
+
+              <div class="stat-item">
+                <div class="stat-label">Optimal Bet %</div>
+                <div class="stat-value" id="optimalBetPercent">0%</div>
+              </div>
+
+              <div class="stat-item">
+                <div class="stat-label">Final Balance</div>
+                <div class="stat-value balance">
+                  <span id="finalBalance">0</span>
+                  <img class="coin-icon" src="./public/coin@2x.png" alt="coins" />
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="rectangle-parent4">
-          <div class="frame-child20"></div>
-          <div class="frame-parent24">
-            <a href="./referral.html" class="shop-icon-wrapper4">
-              <img class="shop-icon10" loading="lazy" alt="" src="./public/shop-icon@2x.png" />
-            </a>
-            <a href="./referral.html" class="referral10">Referral</a>
-          </div>
-          <div class="frame-parent24">
-            <a href="./quest.html">
-              <img class="quest-icom-icon10" loading="lazy" alt="" src="./public/quest-icom@2x.png" />
-            </a>
-            <div class="quests-wrapper5">
-              <a href="./quest.html" class="quests10">Quests</a>
-            </div>
-          </div>
-          <div class="leaderboard-parent4">
-            <a href="./leader-board.html" class="leaderboard12">Leaderboard</a>
-            <a href="./leader-board.html">
-              <img class="trophy-icon10" loading="lazy" alt="" src="./public/trophy-icon@2x.png" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Settings Panel -->
-    <div id="settings-panel" class="settings-panel" style="display: none;">
-      <div class="settings-content">
-        <h3>Settings</h3>
-        <div class="volume-control">
-          <label for="volume">Music Volume:</label>
-          <input 
-            type="range" 
-            id="volume" 
-            min="0" 
-            max="1" 
-            step="0.1" 
-            value="0.5"
-            onchange="document.getElementById('bgMusic').volume = this.value"
-          >
+            <div class="market-section">
+              <h3 class="market-title">Market Analysis</h3>
+              <div class="market-stats">
+                <div class="market-item">
+                  <div class="market-label">Dominant Market</div>
+                  <div class="market-value" id="dominantMarket">-</div>
+                </div>
+                <div class="market-item">
+                  <div class="market-label">Win Rate</div>
+                  <div class="market-value" id="winRate">0%</div>
+                </div>
+                <div class="market-item">
+                  <div class="market-label">Total Bets</div>
+                  <div class="market-value" id="totalBets">0</div>
+                </div>
+              </div>
+            </div>
+
+            <button class="continue-button" onclick="window.location.href='./flip.html'">
+              <span class="button-text">Play Again</span>
+            </button>
+          </div>
         </div>
-        <button onclick="document.getElementById('settings-panel').style.display = 'none'">Close</button>
+      </section>
+
+      <footer class="lower-menu">
+        <a href="./referral.html" class="menu-item">
+          <img class="menu-icon" src="./public/shop-icon@2x.png" alt="Referral" />
+          <span class="menu-text">Referral</span>
+        </a>
+        <a href="./quest.html" class="menu-item">
+          <img class="menu-icon" src="./public/quest-icom@2x.png" alt="Quests" />
+          <span class="menu-text">Quests</span>
+        </a>
+        <a href="./leader-board.html" class="menu-item">
+          <img class="menu-icon" src="./public/trophy-icon@2x.png" alt="Leaderboard" />
+          <span class="menu-text">Leaderboard</span>
+        </a>
+      </footer>
+
+      <!-- Settings Panel -->
+      <div id="settings-panel" class="settings-panel" style="display: none;">
+        <div class="settings-content">
+          <h3>Settings</h3>
+          <div class="volume-control">
+            <label for="volume">Music Volume:</label>
+            <input 
+              type="range" 
+              id="volume" 
+              min="0" 
+              max="1" 
+              step="0.1" 
+              value="0.5"
+              onchange="document.getElementById('bgMusic').volume = this.value"
+            >
+          </div>
+          <button onclick="document.getElementById('settings-panel').style.display = 'none'">Close</button>
+        </div>
       </div>
     </div>
 
     <script>
-        // Start background music when the page loads
-        window.addEventListener('load', function() {
-            const bgMusic = document.getElementById('bgMusic');
-            bgMusic.volume = 0.5; // Set initial volume
-            bgMusic.play().catch(function(error) {
-                console.log("Audio autoplay failed:", error);
-            });
+      document.addEventListener('DOMContentLoaded', function() {
+        // Initialize Telegram WebApp
+        if (window.Telegram && window.Telegram.WebApp) {
+          const webapp = window.Telegram.WebApp;
+          webapp.ready();
+          webapp.expand();
+        }
+
+        // Start background music
+        const bgMusic = document.getElementById('bgMusic');
+        bgMusic.volume = 0.5;
+        bgMusic.play().catch(console.error);
+
+        // Get game data from localStorage
+        const gameData = JSON.parse(localStorage.getItem('gameData') || '{}');
+        const { balance, history, balanceHistory, bets } = gameData;
+
+        // Calculate metrics
+        const totalBets = history.length;
+        const wins = history.filter(h => h.won).length;
+        const winRate = totalBets ? Math.round((wins / totalBets) * 100) : 0;
+
+        // Calculate market state frequencies
+        const marketStates = history.map(h => h.marketState);
+        const marketCounts = marketStates.reduce((acc, state) => {
+          acc[state] = (acc[state] || 0) + 1;
+          return acc;
+        }, {});
+        const dominantMarket = Object.entries(marketCounts)
+          .sort((a, b) => b[1] - a[1])[0]?.[0] || 'choppy';
+
+        // Kelly fractions for each market state
+        const kellyFractions = {
+          bull: 0.4,    // 70% win probability
+          bear: 0.06,   // 53% win probability
+          choppy: 0.2   // 60% win probability
+        };
+
+        // Analyze betting behavior
+        let optimalBets = 0;
+        let riskTakerBets = 0;
+        let conservativeBets = 0;
+        let totalBetAmount = 0;
+
+        bets.forEach(bet => {
+          const betFraction = bet.amount / bet.balance;
+          const optimalBetSize = kellyFractions[bet.marketState];
+          totalBetAmount += bet.amount;
+
+          if (Math.abs(betFraction - optimalBetSize) < 0.1 * optimalBetSize) {
+            optimalBets++;
+          } else if (betFraction > 1.2 * optimalBetSize) {
+            riskTakerBets++;
+          } else if (betFraction < 0.2 * optimalBetSize) {
+            conservativeBets++;
+          }
         });
 
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get betting history from localStorage
-            const resultHistory = JSON.parse(localStorage.getItem('resultHistory') || '[]');
-            const chartHistory = JSON.parse(localStorage.getItem('chartHistory') || '[100]');
-            const marketState = localStorage.getItem('marketState') || 'choppy';
+        // Calculate metrics
+        const averageBet = totalBets ? Math.round(totalBetAmount / totalBets) : 0;
+        const averageBetPercent = totalBets ? Math.round((totalBetAmount / totalBets / balanceHistory[0]) * 100) : 0;
+        const optimalBetPercent = totalBets ? Math.round((optimalBets / totalBets) * 100) : 0;
 
-            // Kelly fractions for each market state
-            const kellyFractions = {
-                bull: 0.4,    // 70% win probability
-                bear: 0.06,   // 53% win probability
-                choppy: 0.2   // 60% win probability
-            };
+        // Determine player category and description
+        let category, description;
+        if ((optimalBets / totalBets) >= 0.8) {
+          category = "Optimal Strategist";
+          description = "Your decisions align with a mastery of calculated risk-taking, showcasing an impressive understanding of the balance between growth and preservation. Like an architect of probability, you leveraged the Kelly criterion to optimize your choices, maintaining discipline even in the face of uncertainty.";
+        } else if ((riskTakerBets / totalBets) > 0.5) {
+          category = "Risk-Taker";
+          description = "Your betting style shows a preference for aggressive positions. While this can lead to significant gains, it also exposes you to higher risks. Your bold approach demonstrates confidence, but consider incorporating more strategic elements for long-term success.";
+        } else if ((conservativeBets / totalBets) > 0.5) {
+          category = "Conservative Player";
+          description = "You tend to bet cautiously, prioritizing capital preservation. While this approach provides stability, it may limit potential returns. Consider gradually exploring more optimal betting strategies to maximize your growth while maintaining risk control.";
+        } else if ((riskTakerBets / totalBets) >= 0.3 && (conservativeBets / totalBets) >= 0.3) {
+          category = "Inconsistent Player";
+          description = "Your betting pattern shows significant variation between aggressive and conservative approaches. While adaptability can be valuable, a more consistent strategy aligned with optimal betting principles could improve your overall performance.";
+        }
 
-            // Calculate optimal bet size based on market state
-            const optimalBetSize = kellyFractions[marketState];
-            
-            // Analyze betting behavior
-            let optimalBets = 0;
-            let riskTakerBets = 0;
-            let conservativeBets = 0;
-            let totalBets = resultHistory.length;
-            let totalBetAmount = 0;
+        // Update UI
+        document.getElementById('playerCategory').textContent = category;
+        document.getElementById('categoryDescription').textContent = description;
+        document.getElementById('averageBet').textContent = averageBet;
+        document.getElementById('averageBetPercent').textContent = `${averageBetPercent}%`;
+        document.getElementById('optimalBetPercent').textContent = `${optimalBetPercent}%`;
+        document.getElementById('finalBalance').textContent = balance;
+        document.getElementById('dominantMarket').textContent = dominantMarket.charAt(0).toUpperCase() + dominantMarket.slice(1);
+        document.getElementById('winRate').textContent = `${winRate}%`;
+        document.getElementById('totalBets').textContent = totalBets;
 
-            // Calculate bet sizes relative to balance
-            for (let i = 1; i < chartHistory.length; i++) {
-                const previousBalance = chartHistory[i-1];
-                const currentBalance = chartHistory[i];
-                const betAmount = Math.abs(currentBalance - previousBalance);
-                const betFraction = betAmount / previousBalance;
-                totalBetAmount += betAmount;
-
-                // Categorize bet
-                if (Math.abs(betFraction - optimalBetSize) < 0.1 * optimalBetSize) {
-                    optimalBets++;
-                } else if (betFraction > 1.2 * optimalBetSize) {
-                    riskTakerBets++;
-                } else if (betFraction < 0.2 * optimalBetSize) {
-                    conservativeBets++;
-                }
-            }
-
-            // Calculate metrics
-            const averageBet = totalBets ? Math.round(totalBetAmount / totalBets) : 0;
-            const averageBetPercent = totalBets ? Math.round((totalBetAmount / totalBets / 100) * 100) : 0;
-            const finalWealth = chartHistory[chartHistory.length - 1];
-            const optimalBetPercent = totalBets ? Math.round((optimalBets / totalBets) * 100) : 0;
-
-            // Determine player category and description
-            let category, description;
-            if ((optimalBets / totalBets) >= 0.8) {
-                category = "Optimal Strategist";
-                description = "Your decisions align with a mastery of calculated risk-taking, showcasing an impressive understanding of the balance between growth and preservation. Like an architect of probability, you leveraged the Kelly criterion to optimize your choices, maintaining discipline even in the face of uncertainty.";
-            } else if ((riskTakerBets / totalBets) > 0.5) {
-                category = "Risk-Taker";
-                description = "Your betting style shows a preference for aggressive positions. While this can lead to significant gains, it also exposes you to higher risks. Your bold approach demonstrates confidence, but consider incorporating more strategic elements for long-term success.";
-            } else if ((conservativeBets / totalBets) > 0.5) {
-                category = "Conservative Player";
-                description = "You tend to bet cautiously, prioritizing capital preservation. While this approach provides stability, it may limit potential returns. Consider gradually exploring more optimal betting strategies to maximize your growth while maintaining risk control.";
-            } else if ((riskTakerBets / totalBets) >= 0.3 && (conservativeBets / totalBets) >= 0.3) {
-                category = "Inconsistent Player";
-                description = "Your betting pattern shows significant variation between aggressive and conservative approaches. While adaptability can be valuable, a more consistent strategy aligned with optimal betting principles could improve your overall performance.";
-            }
-
-            // Update UI
-            document.getElementById('playerCategory').textContent = category;
-            document.getElementById('categoryDescription').textContent = description;
-            document.getElementById('averageBet').textContent = averageBet;
-            document.getElementById('averageBetPercent').textContent = `${averageBetPercent}%`;
-            document.getElementById('optimalBetPercent').textContent = `${optimalBetPercent}%`;
-            document.getElementById('finalWealth').textContent = finalWealth;
-        });
+        // Clear game data
+        localStorage.removeItem('gameData');
+      });
     </script>
   </body>
 </html>
