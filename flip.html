@@ -2,7 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <meta name="format-detection" content="telephone=no" />
     <meta name="MobileOptimized" content="176" />
     <meta name="HandheldFriendly" content="True" />
@@ -13,37 +16,15 @@
 
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./flip.css" />
-
-    <style>
-      @font-face {
-        font-family: "Xtra";
-        src: url("./public/Xtra.ttf");
-        font-weight: 400;
-      }
-      @font-face {
-        font-family: "GemFont One";
-        src: url("./public/GemFont One.ttf");
-        font-weight: 400;
-      }
-      @font-face {
-        font-family: "Greek-Freak";
-        src: url("./public/Greek-Freak.ttf");
-        font-weight: 400;
-      }
-    </style>
   </head>
   <body>
     <div class="flip">
       <!-- Background Music -->
       <audio id="bgMusic" loop>
-        <source src="./public/music.mp3" type="audio/mpeg">
+        <source src="./public/music.mp3" type="audio/mpeg" />
       </audio>
 
-      <img
-        class="background-image"
-        alt=""
-        src="./public/cpbg.png"
-      />
+      <img class="background-image" alt="" src="./public/cpbg.png" />
 
       <section class="menu">
         <div class="buttons">
@@ -93,424 +74,562 @@
           </div>
 
           <div class="selection-container">
-            <div class="side-option heads" onclick="selectSide('heads')">
+            <div class="side-option heads" onclick="game.selectSide('heads')">
               <img src="./public/coin@2x.png" alt="Heads" class="side-icon" />
               <span class="side-label">HEADS</span>
             </div>
-            <div class="side-option tails" onclick="selectSide('tails')">
+            <div class="side-option tails" onclick="game.selectSide('tails')">
               <img src="./public/tail.png" alt="Tails" class="side-icon" />
               <span class="side-label">TAILS</span>
             </div>
           </div>
 
-          <form onsubmit="event.preventDefault(); document.activeElement.blur();" class="bet-container">
+          <form
+            onsubmit="event.preventDefault(); document.activeElement.blur();"
+            class="bet-container"
+          >
             <div class="greek-pattern left"></div>
-            <input 
-              type="number" 
-              id="betAmount" 
-              class="bet-input" 
+            <input
+              type="number"
+              id="betAmount"
+              class="bet-input"
               placeholder="ENTER BET AMOUNT"
               inputmode="numeric"
               pattern="[0-9]*"
               enterkeyhint="done"
             />
             <div class="bet-controls">
-              <button type="button" onclick="adjustBet('up')" class="bet-arrow">▲</button>
-              <button type="button" onclick="adjustBet('down')" class="bet-arrow">▼</button>
+              <button type="button" onclick="adjustBet('up')" class="bet-arrow">
+                ▲
+              </button>
+              <button
+                type="button"
+                onclick="adjustBet('down')"
+                class="bet-arrow"
+              >
+                ▼
+              </button>
             </div>
             <div class="greek-pattern right"></div>
           </form>
 
-          <button class="flip-button" onclick="flipCoin()">
+          <button class="flip-button" onclick="game.flipCoin()">
             <span class="flip-text">FLIP COIN</span>
           </button>
         </div>
       </section>
 
+      <!-- Footer navigation -->
       <footer class="lower-menu">
         <a href="./referral.html" class="menu-item">
-          <img class="menu-icon" src="./public/shop-icon@2x.png" alt="Referral" />
+          <img
+            class="menu-icon"
+            src="./public/shop-icon@2x.png"
+            alt="Referral"
+          />
           <span class="menu-text">Referral</span>
         </a>
         <a href="./quest.html" class="menu-item">
-          <img class="menu-icon" src="./public/quest-icom@2x.png" alt="Quests" />
+          <img
+            class="menu-icon"
+            src="./public/quest-icom@2x.png"
+            alt="Quests"
+          />
           <span class="menu-text">Quests</span>
         </a>
         <a href="./leader-board.html" class="menu-item">
-          <img class="menu-icon" src="./public/trophy-icon@2x.png" alt="Leaderboard" />
+          <img
+            class="menu-icon"
+            src="./public/trophy-icon@2x.png"
+            alt="Leaderboard"
+          />
           <span class="menu-text">Leaderboard</span>
         </a>
       </footer>
 
       <!-- Settings Panel -->
-      <div id="settings-panel" class="settings-panel" style="display: none;">
+      <div id="settings-panel" class="settings-panel" style="display: none">
         <div class="settings-content">
           <h3>Settings</h3>
           <div class="volume-control">
             <label for="volume">Music Volume:</label>
-            <input 
-              type="range" 
-              id="volume" 
-              min="0" 
-              max="1" 
-              step="0.1" 
+            <input
+              type="range"
+              id="volume"
+              min="0"
+              max="1"
+              step="0.1"
               value="0.5"
               onchange="document.getElementById('bgMusic').volume = this.value"
-            >
+            />
           </div>
-          <button onclick="document.getElementById('settings-panel').style.display = 'none'">Close</button>
+          <button
+            onclick="document.getElementById('settings-panel').style.display = 'none'"
+          >
+            Close
+          </button>
         </div>
       </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-      let selectedSide = 'heads';
-      let flipHistory = [];
-      let balanceHistory = [100];
-      let betsHistory = [];
-      let timer = 90;
-      let chart;
-      let timerInterval;
+      const LABELS = Array(100).fill(0);
+      const GAME_CONFIG = {
+        INITIAL_BALANCE: 100,
+        TIMER_DURATION: 90,
+        MAX_HISTORY_COINS: 7,
+        MARKET_THRESHOLDS: {
+          BULL: 0.7,
+          BEAR: 0.3,
+        },
+        KELLY_CRITERION: {
+          BULL: 0.4,
+          BEAR: 0.06,
+          CHOPPY: 0.2,
+        },
+      };
 
-      document.addEventListener('DOMContentLoaded', function() {
-        // Initialize Telegram WebApp
+      class EventEmitter {
+        constructor() {
+          this.events = {};
+        }
+
+        on(event, callback) {
+          if (!this.events[event]) {
+            this.events[event] = [];
+          }
+          this.events[event].push(callback);
+        }
+
+        emit(event, data) {
+          if (this.events[event]) {
+            this.events[event].forEach((callback) => callback(data));
+          }
+        }
+      }
+
+      class GameState {
+        constructor() {
+          this.balance = GAME_CONFIG.INITIAL_BALANCE;
+          this.selectedSide = "heads";
+          this.flipHistory = [];
+          this.balanceHistory = [GAME_CONFIG.INITIAL_BALANCE];
+          this.betsHistory = [];
+          this.timer = GAME_CONFIG.TIMER_DURATION;
+        }
+
+        updateBalance(amount) {
+          this.balance += amount;
+          this.balanceHistory.push(this.balance);
+          if (this.balanceHistory.length > 10) {
+            this.balanceHistory.shift();
+          }
+        }
+
+        addFlipResult(result) {
+          this.flipHistory.push(result);
+        }
+
+        addBet(bet) {
+          this.betsHistory.push(bet);
+        }
+
+        reset() {
+          this.balance = GAME_CONFIG.INITIAL_BALANCE;
+          this.selectedSide = "heads";
+          this.flipHistory = [];
+          this.balanceHistory = [GAME_CONFIG.INITIAL_BALANCE];
+          this.betsHistory = [];
+          this.timer = GAME_CONFIG.TIMER_DURATION;
+        }
+      }
+
+      class MarketAnalyzer {
+        static determineState(balanceHistory) {
+          if (balanceHistory.length < 3) return "choppy";
+
+          const recentChanges = [];
+          for (let i = 1; i < balanceHistory.length; i++) {
+            recentChanges.push(balanceHistory[i] - balanceHistory[i - 1]);
+          }
+
+          const positiveRatio =
+            recentChanges.filter((change) => change > 0).length /
+            recentChanges.length;
+
+          if (positiveRatio >= GAME_CONFIG.MARKET_THRESHOLDS.BULL)
+            return "bull";
+          if (positiveRatio <= GAME_CONFIG.MARKET_THRESHOLDS.BEAR)
+            return "bear";
+          return "choppy";
+        }
+
+        static calculateOptimalBet(currentBalance, marketState) {
+          return (
+            currentBalance *
+            GAME_CONFIG.KELLY_CRITERION[marketState.toUpperCase()]
+          );
+        }
+      }
+
+      class GameUI {
+        constructor(eventEmitter) {
+          this.eventEmitter = eventEmitter;
+          this.initializeElements();
+          this.bindEvents();
+        }
+
+        initializeElements() {
+          this.elements = {
+            balance: document.getElementById("userBalance"),
+            betInput: document.getElementById("betAmount"),
+            historyCoins: document.getElementById("historyCoins"),
+            countdown: document.getElementById("countdown"),
+            mainCoin: document.querySelector(".main-coin"),
+            resultIndicator: document.getElementById("resultIndicator"),
+            chart: document.getElementById("flipChart"),
+          };
+        }
+
+        bindEvents() {
+          this.elements.betInput.addEventListener("keyup", (event) => {
+            if (event.key === "Enter") event.target.blur();
+          });
+
+          this.elements.betInput.addEventListener("blur", (event) => {
+            const currentBet = parseInt(event.target.value) || 0;
+            const balance = parseInt(this.elements.balance.textContent);
+            event.target.value = Math.min(currentBet, balance);
+          });
+        }
+
+        updateBalance(balance) {
+          this.elements.balance.textContent = balance.toString();
+        }
+
+        updateTimer(time) {
+          this.elements.countdown.textContent = time.toString();
+        }
+
+        showResultIndicator(amount) {
+          const indicator = this.elements.resultIndicator;
+          indicator.textContent = `${amount > 0 ? "+" : ""}${amount}`;
+          indicator.className = `result-indicator ${
+            amount > 0 ? "win" : "lose"
+          }`;
+
+          indicator.style.animation = "none";
+          indicator.offsetHeight; // Trigger reflow
+          indicator.style.animation = null;
+          indicator.classList.add("animate");
+
+          setTimeout(() => {
+            indicator.classList.remove("animate");
+          }, 1500);
+        }
+
+        updateHistory(result) {
+          const newCoin = document.createElement("img");
+          newCoin.src = `./public/${
+            result === "heads" ? "coin@2x" : "tail"
+          }.png`;
+          newCoin.className = "history-coin";
+
+          this.elements.historyCoins.insertBefore(
+            newCoin,
+            this.elements.historyCoins.firstChild
+          );
+
+          while (
+            this.elements.historyCoins.children.length >
+            GAME_CONFIG.MAX_HISTORY_COINS
+          ) {
+            this.elements.historyCoins.removeChild(
+              this.elements.historyCoins.lastChild
+            );
+          }
+        }
+      }
+
+      class ChartManager {
+        constructor(canvasId) {
+          this.ctx = document.getElementById(canvasId).getContext("2d");
+          this.chart = null;
+          this.initializeChart();
+        }
+
+        initializeChart() {
+          const initialData = {
+            labels: LABELS,
+            datasets: [
+              {
+                data: [GAME_CONFIG.INITIAL_BALANCE],
+                borderColor: "rgb(255, 204, 0)",
+                backgroundColor: "rgb(255, 204, 0)",
+                stepped: "middle",
+                pointRadius: 0,
+                tension: 0,
+                segment: { borderJoinStyle: "round" },
+                borderWidth: 1.5,
+              },
+            ],
+          };
+
+          const [max, min] = this.generateAxisBounds(
+            initialData.datasets[0].data
+          );
+
+          this.chart = new Chart(this.ctx, {
+            type: "line",
+            data: initialData,
+            options: {
+              responsive: true,
+              maintainAspectRatio: true,
+              scales: {
+                y: {
+                  min,
+                  max,
+                  ticks: {
+                    count: 4,
+                    color: "#fff",
+                    font: { size: 10, family: "GemFont One" },
+                  },
+                  grid: { display: false },
+                  beginAtZero: false,
+                  border: { color: "#fff", width: 0.5 },
+                },
+                x: {
+                  display: false,
+                  position: "bottom",
+                  grid: { display: false },
+                },
+              },
+              plugins: {
+                title: { display: false },
+                subtitle: { display: false },
+                legend: { display: false },
+                tooltip: { enabled: false },
+              },
+              animation: { duration: 0 },
+            },
+          });
+        }
+
+        updateChart(newBalance) {
+          const balanceHistory = this.chart.data.datasets[0].data;
+          balanceHistory.push(newBalance);
+          this.chart.update();
+
+          if (this.chart.data.labels.length < balanceHistory.length) {
+            this.chart.data.labels.push(0);
+          }
+
+          const [max, min] = this.generateAxisBounds(balanceHistory);
+          this.chart.options.scales.y.min = min;
+          this.chart.options.scales.y.max = max;
+        }
+
+        breathe() {
+          const balanceHistory = this.chart.data.datasets[0].data;
+          const lastBalance = balanceHistory[balanceHistory.length - 1];
+          this.updateChart(lastBalance);
+        }
+
+        generateAxisBounds(values) {
+          const minValue = Math.min(...values);
+          const maxValue = Math.max(...values);
+          const range = maxValue - minValue;
+          const padding = Math.max(range * 0.1, 20);
+
+          let min = Math.floor((minValue - padding) / 20) * 20;
+          let max = Math.ceil((maxValue + padding) / 20) * 20;
+
+          if (min === max) {
+            const baseValue = values[0];
+            const adjustment = Math.max(Math.abs(baseValue) * 0.2, 40);
+            min = Math.floor((baseValue - adjustment) / 20) * 20;
+            max = Math.ceil((baseValue + adjustment) / 20) * 20;
+          }
+
+          return [max, min];
+        }
+      }
+
+      class CoinFlipGame {
+        constructor() {
+          this.eventEmitter = new EventEmitter();
+          this.state = new GameState();
+          this.ui = new GameUI(this.eventEmitter);
+          this.chartManager = new ChartManager("flipChart");
+          this.timerInterval = null;
+
+          this.initializeGame();
+          this.setupEventListeners();
+        }
+
+        initializeGame() {
+          this.state.reset();
+          this.ui.updateBalance(this.state.balance);
+          this.startTimer();
+        }
+
+        setupEventListeners() {
+          this.eventEmitter.on("flip", () => this.flipCoin());
+          this.eventEmitter.on("selectSide", (side) => this.selectSide(side));
+          this.eventEmitter.on("adjustBet", (direction) =>
+            this.adjustBet(direction)
+          );
+        }
+
+        startTimer() {
+          clearInterval(this.timerInterval);
+          this.state.timer = GAME_CONFIG.TIMER_DURATION;
+          this.ui.updateTimer(this.state.timer);
+
+          this.timerInterval = setInterval(() => {
+            this.state.timer--;
+            this.chartManager.breathe();
+            this.chartManager.chart.data.datasets[0].data;
+
+            if (this.state.timer <= 0) {
+              this.endGame();
+            }
+            this.ui.updateTimer(this.state.timer);
+          }, 1000);
+        }
+
+        endGame() {
+          clearInterval(this.timerInterval);
+          const gameData = {
+            balance: this.state.balance,
+            history: this.state.flipHistory,
+            balanceHistory: this.state.balanceHistory,
+            bets: this.state.betsHistory,
+          };
+          localStorage.setItem("gameData", JSON.stringify(gameData));
+          window.location.href = "./stats.html";
+        }
+
+        flipCoin() {
+          const betAmount = parseInt(this.ui.elements.betInput.value);
+
+          if (!this.validateBet(betAmount)) return;
+
+          const marketState = MarketAnalyzer.determineState(
+            this.state.balanceHistory
+          );
+          const optimalBet = MarketAnalyzer.calculateOptimalBet(
+            this.state.balance,
+            marketState
+          );
+
+          this.state.addBet({
+            amount: betAmount,
+            optimalBet,
+            balance: this.state.balance,
+            marketState,
+          });
+
+          this.animateFlip(betAmount, marketState);
+        }
+
+        validateBet(betAmount) {
+          if (!betAmount || betAmount <= 0 || betAmount > this.state.balance) {
+            this.showError(
+              betAmount > this.state.balance
+                ? "Insufficient Balance"
+                : "Invalid Bet"
+            );
+            return false;
+          }
+          return true;
+        }
+
+        animateFlip(betAmount, marketState) {
+          this.ui.elements.mainCoin.classList.add("flipping");
+
+          setTimeout(() => {
+            const result = Math.random() < 0.5 ? "heads" : "tails";
+            const won = result === this.state.selectedSide;
+            const balanceChange = won ? betAmount : -betAmount;
+
+            this.state.updateBalance(balanceChange);
+            this.ui.updateBalance(this.state.balance);
+            this.ui.showResultIndicator(balanceChange);
+
+            this.state.addFlipResult({
+              side: this.state.selectedSide,
+              result,
+              bet: betAmount,
+              won,
+              balanceChange,
+              marketState,
+            });
+
+            this.ui.updateHistory(result);
+            this.chartManager.updateChart(this.state.balance);
+
+            this.ui.elements.mainCoin.classList.remove("flipping");
+            this.ui.elements.mainCoin.querySelector("img").src = `./public/${
+              result === "heads" ? "coin@2x" : "tail"
+            }.png`;
+          }, 1000);
+        }
+
+        showError(message) {
+          if (window.Telegram && window.Telegram.WebApp) {
+            window.Telegram.WebApp.showPopup({
+              title: message,
+              message:
+                message === "Invalid Bet"
+                  ? "Please enter a valid bet amount"
+                  : "Not enough balance for this bet",
+              buttons: [{ type: "ok" }],
+            });
+          } else {
+            alert(message);
+          }
+        }
+
+        selectSide(side) {
+          this.state.selectedSide = side;
+          document
+            .querySelector(".heads")
+            .classList.toggle("active", side === "heads");
+          document
+            .querySelector(".tails")
+            .classList.toggle("active", side === "tails");
+          this.ui.elements.mainCoin.querySelector("img").src = `./public/${
+            side === "heads" ? "coin@2x" : "tail"
+          }.png`;
+        }
+
+        adjustBet(direction) {
+          const currentBet = parseInt(this.ui.elements.betInput.value) || 0;
+          this.ui.elements.betInput.value =
+            direction === "up"
+              ? Math.min(currentBet + 100, this.state.balance)
+              : Math.max(currentBet - 100, 0);
+        }
+      }
+
+      // Instantiate game
+      const game = new CoinFlipGame();
+
+      document.addEventListener("DOMContentLoaded", () => {
         if (window.Telegram && window.Telegram.WebApp) {
           const webapp = window.Telegram.WebApp;
           webapp.ready();
           webapp.expand();
         }
 
-        // Start background music
-        const bgMusic = document.getElementById('bgMusic');
-        bgMusic.volume = 0.5;
-        bgMusic.play().catch(console.error);
-
-        // Initialize game
-        resetGameState();
-        initializeGame();
-        startTimer();
-        initializeChart();
-
-        // Add input event listeners
-        const betInput = document.getElementById('betAmount');
-        
-        betInput.addEventListener('keyup', function(event) {
-          if (event.key === 'Enter') {
-            this.blur();
-          }
-        });
-
-        betInput.addEventListener('blur', function() {
-          const currentBet = parseInt(this.value) || 0;
-          const balance = parseInt(document.getElementById('userBalance').textContent);
-          this.value = Math.min(currentBet, balance);
-        });
+        const bgMusic = document.getElementById("bgMusic");
+        if (bgMusic) {
+          bgMusic.volume = 0.5;
+          bgMusic.play().catch(console.error);
+        }
       });
-
-      function resetGameState() {
-        // Reset all game-related arrays
-        flipHistory = [];
-        balanceHistory = [100];
-        betsHistory = [];
-        selectedSide = 'heads';
-        
-        // Reset history coins display
-        const historyCoins = document.getElementById('historyCoins');
-        if (historyCoins) {
-          historyCoins.innerHTML = ''; // Clear existing coins
-        }
-      }
-
-      function initializeGame() {
-        // Initialize with empty history
-        const historyCoins = document.getElementById('historyCoins');
-        historyCoins.innerHTML = ''; // Clear any existing coins
-
-        // Set initial balance
-        document.getElementById('userBalance').textContent = '100';
-      }
-
-      function startTimer() {
-        clearInterval(timerInterval);
-        timer = 90;
-        updateTimer();
-        timerInterval = setInterval(() => {
-          timer--;
-          if (timer <= 0) {
-            clearInterval(timerInterval);
-            // Save game data before redirecting
-            const gameData = {
-              balance: parseInt(document.getElementById('userBalance').textContent),
-              history: flipHistory,
-              balanceHistory: balanceHistory,
-              bets: betsHistory
-            };
-            localStorage.setItem('gameData', JSON.stringify(gameData));
-            // Reset game state before redirecting
-            resetGameState();
-            // Redirect to stats page
-            window.location.href = './stats.html';
-          }
-          updateTimer();
-        }, 1000);
-      }
-
-      function updateTimer() {
-        document.getElementById('countdown').textContent = timer;
-      }
-
-      function selectSide(side) {
-        selectedSide = side;
-        document.querySelector('.heads').classList.toggle('active', side === 'heads');
-        document.querySelector('.tails').classList.toggle('active', side === 'tails');
-        document.querySelector('.main-coin img').src = `./public/${side === 'heads' ? 'coin@2x' : 'tail'}.png`;
-      }
-
-      function adjustBet(direction) {
-        const input = document.getElementById('betAmount');
-        const currentBet = parseInt(input.value) || 0;
-        const balance = parseInt(document.getElementById('userBalance').textContent);
-        
-        if (direction === 'up') {
-          input.value = Math.min(currentBet + 100, balance);
-        } else {
-          input.value = Math.max(currentBet - 100, 0);
-        }
-      }
-
-      function determineMarketState(balanceHistory) {
-        if (balanceHistory.length < 3) return 'choppy';
-        
-        const recentChanges = [];
-        for (let i = 1; i < balanceHistory.length; i++) {
-          recentChanges.push(balanceHistory[i] - balanceHistory[i-1]);
-        }
-        
-        const positiveChanges = recentChanges.filter(change => change > 0).length;
-        const ratio = positiveChanges / recentChanges.length;
-        
-        if (ratio >= 0.7) return 'bull';
-        if (ratio <= 0.3) return 'bear';
-        return 'choppy';
-      }
-
-      function flipCoin() {
-        const betAmount = parseInt(document.getElementById('betAmount').value);
-        const balance = parseInt(document.getElementById('userBalance').textContent);
-        const currentBalance = balance;
-
-        if (!betAmount || betAmount <= 0) {
-          if (window.Telegram && window.Telegram.WebApp) {
-            window.Telegram.WebApp.showPopup({
-              title: 'Invalid Bet',
-              message: 'Please enter a valid bet amount',
-              buttons: [{type: 'ok'}]
-            });
-          } else {
-            alert('Please enter a valid bet amount');
-          }
-          return;
-        }
-
-        if (betAmount > balance) {
-          if (window.Telegram && window.Telegram.WebApp) {
-            window.Telegram.WebApp.showPopup({
-              title: 'Insufficient Balance',
-              message: 'Not enough balance for this bet',
-              buttons: [{type: 'ok'}]
-            });
-          } else {
-            alert('Insufficient balance');
-          }
-          return;
-        }
-
-        // Calculate optimal bet based on Kelly criterion
-        let optimalBet;
-        const marketState = determineMarketState(balanceHistory);
-        switch (marketState) {
-          case 'bull':
-            optimalBet = currentBalance * 0.4; // 40% of current balance
-            break;
-          case 'bear':
-            optimalBet = currentBalance * 0.06; // 6% of current balance
-            break;
-          case 'choppy':
-            optimalBet = currentBalance * 0.2; // 20% of current balance
-            break;
-          default:
-            optimalBet = currentBalance * 0.2; // Default to choppy market
-        }
-
-        // Record bet data
-        betsHistory.push({
-          amount: betAmount,
-          optimalBet: optimalBet,
-          balance: currentBalance,
-          marketState: marketState
-        });
-
-        // Animate coin flip
-        const mainCoin = document.querySelector('.main-coin');
-        mainCoin.classList.add('flipping');
-
-        // Simulate result
-        setTimeout(() => {
-          const result = Math.random() < 0.5 ? 'heads' : 'tails';
-          const won = result === selectedSide;
-          
-          // Update balance
-          const newBalance = balance + (won ? betAmount : -betAmount);
-          document.getElementById('userBalance').textContent = newBalance;
-          
-          // Show result indicator
-          showResultIndicator(won ? betAmount : -betAmount);
-          
-          // Update history
-          flipHistory.push({
-            side: selectedSide,
-            result: result,
-            bet: betAmount,
-            won: won,
-            balanceChange: won ? betAmount : -betAmount,
-            marketState: marketState
-          });
-          updateHistory(result, newBalance);
-          
-          // Stop animation
-          mainCoin.classList.remove('flipping');
-          document.querySelector('.main-coin img').src = `./public/${result === 'heads' ? 'coin@2x' : 'tail'}.png`;
-        }, 1000);
-      }
-
-      function showResultIndicator(amount) {
-        const indicator = document.getElementById('resultIndicator');
-        indicator.textContent = `${amount > 0 ? '+' : ''}${amount}`;
-        indicator.className = 'result-indicator ' + (amount > 0 ? 'win' : 'lose');
-        
-        // Reset animation
-        indicator.style.animation = 'none';
-        indicator.offsetHeight; // Trigger reflow
-        indicator.style.animation = null;
-        
-        // Add animation class
-        indicator.classList.add('animate');
-        
-        // Remove animation class after it completes
-        setTimeout(() => {
-          indicator.classList.remove('animate');
-        }, 1500);
-      }
-
-      function updateHistory(result, balance) {
-        // Update coin history
-        const historyCoins = document.getElementById('historyCoins');
-        
-        // Create new coin element
-        const newCoin = document.createElement('img');
-        newCoin.src = `./public/${result === 'heads' ? 'coin@2x' : 'tail'}.png`;
-        newCoin.className = 'history-coin';
-        
-        // Insert at the beginning
-        historyCoins.insertBefore(newCoin, historyCoins.firstChild);
-        
-        // Keep only last 7 coins
-        while (historyCoins.children.length > 7) {
-          historyCoins.removeChild(historyCoins.lastChild);
-        }
-
-        // Update balance history and chart
-        balanceHistory.push(balance);
-        if (balanceHistory.length > 10) balanceHistory.shift();
-        updateChart();
-      }
-
-      function initializeChart() {
-        const ctx = document.getElementById('flipChart').getContext('2d');
-        
-        // Create gradient for line
-        const lineGradient = ctx.createLinearGradient(0, 0, 0, 400);
-        lineGradient.addColorStop(0, 'rgba(255, 215, 0, 1)');
-        lineGradient.addColorStop(1, 'rgba(255, 215, 0, 0.1)');
-
-        // Create gradient for fill
-        const fillGradient = ctx.createLinearGradient(0, 0, 0, 400);
-        fillGradient.addColorStop(0, 'rgba(255, 215, 0, 0.2)');
-        fillGradient.addColorStop(1, 'rgba(255, 215, 0, 0)');
-
-        chart = new Chart(ctx, {
-          type: 'line',
-          data: {
-            labels: Array(10).fill(''),
-            datasets: [{
-              data: balanceHistory,
-              borderColor: lineGradient,
-              borderWidth: 2,
-              backgroundColor: fillGradient,
-              fill: true,
-              tension: 0.4,
-              pointBackgroundColor: 'rgba(255, 215, 0, 1)',
-              pointBorderColor: 'rgba(255, 215, 0, 1)',
-              pointRadius: 4,
-              pointHoverRadius: 6,
-              pointBorderWidth: 2,
-              pointHoverBorderWidth: 3,
-              pointShadowBlur: 10,
-              pointShadowColor: 'rgba(255, 215, 0, 0.5)'
-            }]
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            animation: {
-              duration: 1000,
-              easing: 'easeInOutQuart'
-            },
-            plugins: {
-              legend: {
-                display: false
-              }
-            },
-            scales: {
-              y: {
-                beginAtZero: true,
-                grid: {
-                  color: 'rgba(255, 255, 255, 0.1)',
-                  drawBorder: false
-                },
-                ticks: {
-                  color: '#FFD700',
-                  font: {
-                    family: 'Greek-Freak',
-                    size: 12
-                  },
-                  padding: 10
-                }
-              },
-              x: {
-                grid: {
-                  display: false
-                },
-                ticks: {
-                  display: false
-                }
-              }
-            },
-            elements: {
-              line: {
-                borderCapStyle: 'round',
-                borderJoinStyle: 'round'
-              }
-            }
-          }
-        });
-      }
-
-      function updateChart() {
-        chart.data.datasets[0].data = balanceHistory;
-        chart.update('none'); // Use 'none' to disable animation for smoother updates
-      }
     </script>
   </body>
 </html>
